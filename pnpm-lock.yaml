@@ -15,8 +15,8 @@ importers:
         specifier: ^1.4.1
         version: 1.4.1
       '@mapbox/mapbox-sdk':
-        specifier: ^0.15.3
-        version: 0.15.3
+        specifier: ^0.16.0
+        version: 0.16.0
       '@material-ui/core':
         specifier: ^1.5.1
         version: 1.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1206,8 +1206,8 @@ packages:
     peerDependencies:
       mapbox-gl: '>=0.32.1 <2.0.0'
 
-  '@mapbox/mapbox-sdk@0.15.3':
-    resolution: {integrity: sha512-axkdkWzSnH5Nky6plqS1jZc5W4txWQimA3iF1CbYVQYuR1tBZZwe8JcWVB8Lw8y06VuYQLQ7SQscyZagdczUJg==}
+  '@mapbox/mapbox-sdk@0.16.0':
+    resolution: {integrity: sha512-9ZsVY+YVCsodvSAxWvcV2fQiW0WmfY7tSPTLDtiziTo749Muv/N8Z6g1+nySmml4kkuGT2LKjgEPIiMf2MvfIg==}
     engines: {node: '>=6'}
 
   '@mapbox/parse-mapbox-token@0.2.0':
@@ -6357,7 +6357,7 @@ snapshots:
     dependencies:
       mapbox-gl: 1.13.3
 
-  '@mapbox/mapbox-sdk@0.15.3':
+  '@mapbox/mapbox-sdk@0.16.0':
     dependencies:
       '@mapbox/fusspot': 0.4.0
       '@mapbox/parse-mapbox-token': 0.2.0
@@ -6811,7 +6811,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.4
-      '@types/node': 20.5.6
+      '@types/node': 20.10.1
       '@types/responselike': 1.0.0
 
   '@types/estree@0.0.39': {}
@@ -6852,7 +6852,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 20.5.6
+      '@types/node': 20.10.1
 
   '@types/mapbox-gl@2.7.13':
     dependencies:
@@ -6894,7 +6894,7 @@ snapshots:
 
   '@types/responselike@1.0.0':
     dependencies:
-      '@types/node': 20.5.6
+      '@types/node': 20.10.1
 
   '@types/scheduler@0.16.3': {}
 
@@ -9467,7 +9467,7 @@ snapshots:
   normalize-package-data@2.5.0:
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.4
+      resolve: 1.22.8
       semver: 5.7.2
       validate-npm-package-license: 3.0.4
 
