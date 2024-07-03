@@ -1,0 +1,93 @@
+name: Sync Fork
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # every 30 minutes
+  workflow_dispatch: # on button click
+
+jobs:
+  sync-new-connect:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: new-connect
+      - name: Sync fork
+        id: sync
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git remote add upstream https://github.com/commaai/new-connect.git
+          git fetch upstream
+          git rebase upstream/master
+          synced=false
+          if [ -n "$(git diff origin/new-connect new-connect --name-only)" ]; then
+            synced=true
+          fi
+          echo "synced=$synced" >> $GITHUB_OUTPUT
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        id: cpr
+        if: steps.sync.outputs.synced == 'true'
+        with:
+          token: ${{ secrets.PAT }}
+          branch: automated/new-connect-update
+          delete-branch: true
+          title: Upstream new-connect Update
+          body: Automated update from upstream
+          labels: |
+            update
+            chore
+            automated pr
+            autorebase:opt-in
+      - name: Automerge Pull Request
+        if: steps.sync.outputs.synced && 'true' && (steps.cpr.outputs.pull-request-operation == 'created' || steps.cpr.outputs.pull-request-operation == 'updated')
+        run: gh pr merge --rebase --auto "$PR_NUMBER"
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+          PR_NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
+
+  sync-connect:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+      - name: Sync fork
+        id: sync
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git remote add upstream https://github.com/commaai/connect.git
+          git fetch upstream
+          git rebase upstream/master
+          synced=false
+          if [ -n "$(git diff origin/main main --name-only)" ]; then
+            synced=true
+          fi
+          echo "synced=$synced" >> $GITHUB_OUTPUT
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        id: cpr
+        if: steps.sync.outputs.synced == 'true'
+        with:
+          token: ${{ secrets.PAT }}
+          branch: automated/connect-update
+          delete-branch: true
+          title: Upstream connect Update
+          body: Automated update from upstream
+          labels: |
+            update
+            chore
+            automated pr
+            autorebase:opt-in
+      - name: Automerge Pull Request
+        if: steps.sync.outputs.synced && 'true' && (steps.cpr.outputs.pull-request-operation == 'created' || steps.cpr.outputs.pull-request-operation == 'updated')
+        run: gh pr merge --rebase --auto "$PR_NUMBER"
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+          PR_NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
