@@ -196,8 +196,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(rollup@2.79.1)(vite@4.5.3(@types/node@20.10.1)(terser@5.24.0))
       whatwg-fetch:
-        specifier: ^3.6.17
-        version: 3.6.17
+        specifier: ^3.6.20
+        version: 3.6.20
       workbox-window:
         specifier: ^7.0.0
         version: 7.0.0
@@ -4947,8 +4947,8 @@ packages:
   whatwg-encoding@1.0.5:
     resolution: {integrity: sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==}
 
-  whatwg-fetch@3.6.17:
-    resolution: {integrity: sha512-c4ghIvG6th0eudYwKZY5keb81wtFz9/WeAHAoy8+r18kcWlitUIrmGFQ2rWEl4UCKUilD3zCLHOIPheHx5ypRQ==}
+  whatwg-fetch@3.6.20:
+    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
 
   whatwg-mimetype@2.3.0:
     resolution: {integrity: sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==}
@@ -8650,7 +8650,7 @@ snapshots:
   isomorphic-fetch@2.2.1:
     dependencies:
       node-fetch: 1.7.3
-      whatwg-fetch: 3.6.17
+      whatwg-fetch: 3.6.20
 
   istanbul-lib-coverage@3.2.0: {}
 
@@ -10861,7 +10861,7 @@ snapshots:
     dependencies:
       iconv-lite: 0.4.24
 
-  whatwg-fetch@3.6.17: {}
+  whatwg-fetch@3.6.20: {}
 
   whatwg-mimetype@2.3.0: {}
 
