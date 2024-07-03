@@ -62,7 +62,7 @@
     "@swc/jest": "^0.2.29",
     "@tailwindcss/typography": "^0.5.9",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^12.0.0",
+    "@testing-library/react": "^12.1.5",
     "@types/react": "^16.3.0",
     "@types/react-dom": "^16.3.0",
     "@vitejs/plugin-react": "^4.0.4",
