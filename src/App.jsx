@@ -1,6 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { Provider } from 'react-redux';
-import { Route, Switch, Redirect } from 'react-router';
+import { Navigate, Route, Routes } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 import qs from 'query-string';
 import localforage from 'localforage';
@@ -87,23 +87,19 @@ class App extends Component {
 
   authRoutes() {
     return (
-      <Switch>
-        <Route path="/auth/">
-          <Redirect to={this.redirectLink()} />
-        </Route>
+      <Routes>
+        <Route path="/auth/" render={() => <Navigate to={this.redirectLink()} />} />
         <Route path="/" component={Explorer} />
-      </Switch>
+      </Routes>
     );
   }
 
   anonymousRoutes() {
     return (
-      <Switch>
-        <Route path="/auth/">
-          <Redirect to="/" />
-        </Route>
+      <Routes>
+        <Route path="/auth/" render={() => <Navigate to="/" />} />
         <Route path="/" component={AnonymousLanding} />
-      </Switch>
+      </Routes>
     );
   }
 
