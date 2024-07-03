@@ -60,7 +60,7 @@
     "web-vitals": "^4.2.1"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.12.0",
+    "@lhci/cli": "^0.14.0",
     "@swc/core": "^1.6.7",
     "@swc/jest": "^0.2.36",
     "@tailwindcss/typography": "^0.5.13",
