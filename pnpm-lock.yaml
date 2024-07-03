@@ -154,8 +154,8 @@ importers:
         specifier: ^4.6.2
         version: 4.6.2(eslint@8.57.0)
       expect-puppeteer:
-        specifier: ^9.0.2
-        version: 9.0.2
+        specifier: ^10.0.0
+        version: 10.0.0
       identity-obj-proxy:
         specifier: ^3.0.0
         version: 3.0.0
@@ -2726,12 +2726,12 @@ packages:
     resolution: {integrity: sha512-rtmc+cjLZqnu9dSYosX9EWmSJhTwpACgJQTfj4hgg2JjOD/6SIQalZrt4a3aQeh++oNxkazcaxrhPUj6+g5G/Q==}
     engines: {node: '>=0.10.0'}
 
+  expect-puppeteer@10.0.0:
+    resolution: {integrity: sha512-E7sE6nVdEbrnpDOBMmcLgyqLJKt876AlBg1A+gsu5R8cWx+SLafreOgJAgzXg5Qko7Tk0cW5oZdRbHQLU738dg==}
+    engines: {node: '>=16'}
+
   expect-puppeteer@6.1.1:
     resolution: {integrity: sha512-cnQF96qdoEcOD63j5NQMc0RtW9WRMW/WHKXEKsuDQ2tszhVH3qC7zkXXS4D0LTt9qCB3DEExioqylsQXvqPrUw==}
-
-  expect-puppeteer@9.0.2:
-    resolution: {integrity: sha512-nv3RD8MOStXOf4bLpr1wiqxPMLL7MwXvtMeZBtGvg5bubAHiHcYBcvDTJwkUjdOWz3scjOnOOl5z6KZakMobCw==}
-    engines: {node: '>=16'}
 
   expect@27.5.1:
     resolution: {integrity: sha512-E1q5hSUG2AmYQwQJ041nvgpkODHQvB+RKlB4IYdru6uJsyFTRyZAP463M+1lINorwbqAmUggi6+WwkD8lCS/Dw==}
@@ -8670,9 +8670,9 @@ snapshots:
     dependencies:
       os-homedir: 1.0.2
 
-  expect-puppeteer@6.1.1: {}
+  expect-puppeteer@10.0.0: {}
 
-  expect-puppeteer@9.0.2: {}
+  expect-puppeteer@6.1.1: {}
 
   expect@27.5.1:
     dependencies:
@@ -11117,13 +11117,13 @@ snapshots:
 
   string.prototype.matchall@4.0.10:
     dependencies:
-      call-bind: 1.0.5
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.22.3
-      get-intrinsic: 1.2.2
+      es-abstract: 1.23.3
+      get-intrinsic: 1.2.4
       has-symbols: 1.0.3
-      internal-slot: 1.0.6
-      regexp.prototype.flags: 1.5.1
+      internal-slot: 1.0.7
+      regexp.prototype.flags: 1.5.2
       set-function-name: 2.0.1
       side-channel: 1.0.4
 
