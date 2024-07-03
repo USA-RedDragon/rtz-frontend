@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.2.1",
-    "@solidjs/router": "^0.13.5",
+    "@solidjs/router": "^0.13.6",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.11",
     "hls.js": "^1.5.12",
