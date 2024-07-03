@@ -161,8 +161,8 @@ devDependencies:
     specifier: ^27.5.1
     version: 27.5.1
   jest-chain-transform:
-    specifier: ^0.0.5
-    version: 0.0.5(@jest/transform@27.5.1)
+    specifier: ^0.0.8
+    version: 0.0.8(@jest/transform@27.5.1)
   jest-environment-jsdom:
     specifier: ^27.5.1
     version: 27.5.1
@@ -5960,10 +5960,10 @@ packages:
       minimatch: 3.1.2
     dev: true
 
-  /jest-chain-transform@0.0.5(@jest/transform@27.5.1):
-    resolution: {integrity: sha512-5lmLEPg2Ygm5m+KqXx6pFAPTHATxLoL472r0Shv1261jMWr83EwucDfsnVFWhjCBdNxCH4fM/HXWGdrTQC0NcA==}
+  /jest-chain-transform@0.0.8(@jest/transform@27.5.1):
+    resolution: {integrity: sha512-AELTTzYJ34WrmQKAbxUGT+xqnAHu0/XJZhahYNGvBVUhnAayjm1QmT45DQjwEbQPQp7gn6CXzu6rZA03riwBuw==}
     peerDependencies:
-      '@jest/transform': ^27.0.6
+      '@jest/transform': '>=27.0.0'
     dependencies:
       '@jest/transform': 27.5.1
     dev: true
