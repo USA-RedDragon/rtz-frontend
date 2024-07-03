@@ -154,8 +154,8 @@ importers:
         specifier: ^4.6.0
         version: 4.6.0(eslint@8.48.0)
       expect-puppeteer:
-        specifier: ^9.0.0
-        version: 9.0.0
+        specifier: ^9.0.2
+        version: 9.0.2
       identity-obj-proxy:
         specifier: ^3.0.0
         version: 3.0.0
@@ -2530,8 +2530,8 @@ packages:
   expect-puppeteer@6.1.1:
     resolution: {integrity: sha512-cnQF96qdoEcOD63j5NQMc0RtW9WRMW/WHKXEKsuDQ2tszhVH3qC7zkXXS4D0LTt9qCB3DEExioqylsQXvqPrUw==}
 
-  expect-puppeteer@9.0.0:
-    resolution: {integrity: sha512-mxejfYy6hsCpBgaUbKGZzoAy4SgzVhPkVZHuBaJ+xbt+BryolxLzdKU4HhJYH/Ooo9AWghAh7ofAkKEZQ2XzcA==}
+  expect-puppeteer@9.0.2:
+    resolution: {integrity: sha512-nv3RD8MOStXOf4bLpr1wiqxPMLL7MwXvtMeZBtGvg5bubAHiHcYBcvDTJwkUjdOWz3scjOnOOl5z6KZakMobCw==}
     engines: {node: '>=16'}
 
   expect@27.5.1:
@@ -8041,7 +8041,7 @@ snapshots:
 
   expect-puppeteer@6.1.1: {}
 
-  expect-puppeteer@9.0.0: {}
+  expect-puppeteer@9.0.2: {}
 
   expect@27.5.1:
     dependencies:
