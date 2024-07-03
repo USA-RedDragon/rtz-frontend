@@ -1,5 +1,4 @@
 /* eslint-env jest */
-/* eslint-disable no-import-assign */
 import { routerMiddleware, LOCATION_CHANGE } from 'connected-react-router';
 import thunk from 'redux-thunk';
 

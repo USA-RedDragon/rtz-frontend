@@ -13,7 +13,7 @@ export function formatRouteDistance(route) {
         metric = false;
       }
     });
-  } catch (err) {
+  } catch (_err) {
     metric = false;
   }
 
