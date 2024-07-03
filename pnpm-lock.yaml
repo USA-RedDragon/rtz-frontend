@@ -28,7 +28,7 @@ dependencies:
     version: 2.7.0
   connected-react-router:
     specifier: ^4.5.0
-    version: 4.5.0(react-redux@5.1.2)(react-router@5.3.4)(react@18.2.0)(redux@4.2.1)
+    version: 4.5.0(react-redux@5.1.2)(react-router@6.24.1)(react@18.2.0)(redux@4.2.1)
   dayjs:
     specifier: ^1.11.9
     version: 1.11.9
@@ -84,11 +84,11 @@ dependencies:
     specifier: ^5.1.2
     version: 5.1.2(react@18.2.0)(redux@4.2.1)
   react-router:
-    specifier: ^5.3.4
-    version: 5.3.4(react@18.2.0)
+    specifier: ^6.24.1
+    version: 6.24.1(react@18.2.0)
   react-router-dom:
-    specifier: ^5.3.4
-    version: 5.3.4(react@18.2.0)
+    specifier: ^6.24.1
+    version: 6.24.1(react-dom@18.2.0)(react@18.2.0)
   reduce-reducers:
     specifier: ^1.0.4
     version: 1.0.4
@@ -2478,6 +2478,11 @@ packages:
       - supports-color
     dev: true
 
+  /@remix-run/router@1.17.1:
+    resolution: {integrity: sha512-mCOMec4BKd6BRGBZeSnGiIgwsbLGp3yhVqAD8H+PxiRNEHgDpZb8J1TnrSDlg97t0ySKMQJTHCWBCmBpSmkF6Q==}
+    engines: {node: '>=14.0.0'}
+    dev: false
+
   /@rollup/plugin-babel@5.3.1(@babel/core@7.23.5)(rollup@2.79.1):
     resolution: {integrity: sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q==}
     engines: {node: '>= 10.0.0'}
@@ -3984,7 +3989,7 @@ packages:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
     dev: true
 
-  /connected-react-router@4.5.0(react-redux@5.1.2)(react-router@5.3.4)(react@18.2.0)(redux@4.2.1):
+  /connected-react-router@4.5.0(react-redux@5.1.2)(react-router@6.24.1)(react@18.2.0)(redux@4.2.1):
     resolution: {integrity: sha512-SBBmAZrtmw4y7Rkl2PCct8lN/DuCftl7QSAFLgFyjjuYkeJKAzAvQjzNNNE4R3j2+6a4TUiv8qselxQ4+6H5eA==}
     peerDependencies:
       react: ^15.5.4 || ^16.0.0
@@ -3995,7 +4000,7 @@ packages:
       immutable: 3.8.2
       react: 18.2.0
       react-redux: 5.1.2(react@18.2.0)(redux@4.2.1)
-      react-router: 5.3.4(react@18.2.0)
+      react-router: 6.24.1(react@18.2.0)
       redux: 4.2.1
       redux-seamless-immutable: 0.4.0
       seamless-immutable: 7.1.4
@@ -7493,12 +7498,6 @@ packages:
       minipass: 7.0.3
     dev: false
 
-  /path-to-regexp@1.8.0:
-    resolution: {integrity: sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==}
-    dependencies:
-      isarray: 0.0.1
-    dev: false
-
   /path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
@@ -7945,40 +7944,31 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom@5.3.4(react@18.2.0):
-    resolution: {integrity: sha512-m4EqFMHv/Ih4kpcBCONHbkT68KoAeHN4p3lAGoNryfHi0dMy0kCzEZakiKRsvg5wHZ/JLrLW8o8KomWiz/qbYQ==}
+  /react-router-dom@6.24.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-U19KtXqooqw967Vw0Qcn5cOvrX5Ejo9ORmOtJMzYWtCT4/WOfFLIZGGsVLxcd9UkBO0mSTZtXqhZBsWlHr7+Sg==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
-      react: '>=15'
+      react: '>=16.8'
+      react-dom: '>=16.8'
     dependencies:
-      '@babel/runtime': 7.22.11
-      history: 4.10.1
-      loose-envify: 1.4.0
-      prop-types: 15.8.1
+      '@remix-run/router': 1.17.1
       react: 18.2.0
-      react-router: 5.3.4(react@18.2.0)
-      tiny-invariant: 1.3.1
-      tiny-warning: 1.0.3
+      react-dom: 18.2.0(react@18.2.0)
+      react-router: 6.24.1(react@18.2.0)
     dev: false
 
   /react-router-redux@4.0.8:
     resolution: {integrity: sha512-lzlK+S6jZnn17BZbzBe6F8ok3YAhGAUlyWgRu3cz5mT199gKxfem5lNu3qcgzRiVhNEOFVG0/pdT+1t4aWhoQw==}
     dev: false
 
-  /react-router@5.3.4(react@18.2.0):
-    resolution: {integrity: sha512-Ys9K+ppnJah3QuaRiLxk+jDWOR1MekYQrlytiXxC1RyfbdsZkS5pvKAzCCr031xHixZwpnsYNT5xysdFHQaYsA==}
+  /react-router@6.24.1(react@18.2.0):
+    resolution: {integrity: sha512-PTXFXGK2pyXpHzVo3rR9H7ip4lSPZZc0bHG5CARmj65fTT6qG7sTngmb6lcYu1gf3y/8KxORoy9yn59pGpCnpg==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
-      react: '>=15'
+      react: '>=16.8'
     dependencies:
-      '@babel/runtime': 7.22.11
-      history: 4.10.1
-      hoist-non-react-statics: 3.3.2
-      loose-envify: 1.4.0
-      path-to-regexp: 1.8.0
-      prop-types: 15.8.1
+      '@remix-run/router': 1.17.1
       react: 18.2.0
-      react-is: 16.13.1
-      tiny-invariant: 1.3.1
-      tiny-warning: 1.0.3
     dev: false
 
   /react-shallow-renderer@16.15.0(react@18.2.0):
