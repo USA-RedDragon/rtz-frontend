@@ -193,8 +193,8 @@ importers:
         specifier: ^0.20.0
         version: 0.20.0(vite@5.3.3(@types/node@20.10.1)(terser@5.24.0))(workbox-build@7.0.0(@types/babel__core@7.20.5))(workbox-window@7.1.0)
       vite-plugin-svgr:
-        specifier: ^3.3.0
-        version: 3.3.0(rollup@2.79.1)(vite@5.3.3(@types/node@20.10.1)(terser@5.24.0))
+        specifier: ^4.2.0
+        version: 4.2.0(rollup@2.79.1)(vite@5.3.3(@types/node@20.10.1)(terser@5.24.0))
       whatwg-fetch:
         specifier: ^3.6.20
         version: 3.6.20
@@ -1416,11 +1416,11 @@ packages:
     peerDependencies:
       rollup: ^1.20.0||^2.0.0
 
-  '@rollup/pluginutils@5.0.4':
-    resolution: {integrity: sha512-0KJnIoRI8A+a1dqOYLxH8vBf8bphDmty5QvIm2hqm7oFCFYKCAZWWd2hXgMibaPsNDhI0AtpYfQZJG47pt/k4g==}
+  '@rollup/pluginutils@5.1.0':
+    resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
     peerDependenciesMeta:
       rollup:
         optional: true
@@ -1860,9 +1860,6 @@ packages:
 
   '@types/estree@0.0.39':
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
-
-  '@types/estree@1.0.1':
-    resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -2394,10 +2391,6 @@ packages:
 
   cosmiconfig@8.1.3:
     resolution: {integrity: sha512-/UkO2JKI18b5jVMJUp0lvKFMpa/Gye+ZgZjKD+DGEN9y7NRcf/nK1A0sp67ONmKtnDCNMS44E6jrk0Yc3bDuUw==}
-    engines: {node: '>=14'}
-
-  cosmiconfig@8.2.0:
-    resolution: {integrity: sha512-3rTMnFJA1tCOPwRxtgF4wd7Ab2qvDbL8jX+3smjIbS4HlZBagTlpERbdN7iAbWlrfxE3M8c27kTwTawQ7st+OQ==}
     engines: {node: '>=14'}
 
   cosmiconfig@8.3.6:
@@ -5266,10 +5259,10 @@ packages:
       '@vite-pwa/assets-generator':
         optional: true
 
-  vite-plugin-svgr@3.3.0:
-    resolution: {integrity: sha512-vWZMCcGNdPqgziYFKQ3Y95XP0d0YGp28+MM3Dp9cTa/px5CKcHHrIoPl2Jw81rgVm6/ZUNONzjXbZQZ7Kw66og==}
+  vite-plugin-svgr@4.2.0:
+    resolution: {integrity: sha512-SC7+FfVtNQk7So0XMjrrtLAbEC8qjFPifyD7+fs/E6aaNdVde6umlVVh0QuwDLdOMu7vp5RiGFsB70nj5yo0XA==}
     peerDependencies:
-      vite: ^2.6.0 || 3 || 4
+      vite: ^2.6.0 || 3 || 4 || 5
 
   vite@5.3.3:
     resolution: {integrity: sha512-NPQdeCU0Dv2z5fu+ULotpuq5yfCS1BzKUIPhNbP3YBfAMGJXbt2nS+sbTFu+qchaqWTD+H3JK++nRwr6XIcp6A==}
@@ -5740,7 +5733,7 @@ snapshots:
   '@babel/helper-function-name@7.22.5':
     dependencies:
       '@babel/template': 7.22.15
-      '@babel/types': 7.23.5
+      '@babel/types': 7.24.7
 
   '@babel/helper-function-name@7.23.0':
     dependencies:
@@ -5754,7 +5747,7 @@ snapshots:
 
   '@babel/helper-hoist-variables@7.22.5':
     dependencies:
-      '@babel/types': 7.23.5
+      '@babel/types': 7.24.7
 
   '@babel/helper-hoist-variables@7.24.7':
     dependencies:
@@ -5847,7 +5840,7 @@ snapshots:
 
   '@babel/helper-split-export-declaration@7.22.6':
     dependencies:
-      '@babel/types': 7.23.5
+      '@babel/types': 7.24.7
 
   '@babel/helper-split-export-declaration@7.24.7':
     dependencies:
@@ -5881,7 +5874,7 @@ snapshots:
     dependencies:
       '@babel/template': 7.22.5
       '@babel/traverse': 7.22.11
-      '@babel/types': 7.23.5
+      '@babel/types': 7.24.7
     transitivePeerDependencies:
       - supports-color
 
@@ -5919,7 +5912,7 @@ snapshots:
 
   '@babel/parser@7.22.11':
     dependencies:
-      '@babel/types': 7.23.5
+      '@babel/types': 7.24.7
 
   '@babel/parser@7.23.5':
     dependencies:
@@ -6545,7 +6538,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.22.10
       '@babel/parser': 7.23.5
-      '@babel/types': 7.23.5
+      '@babel/types': 7.24.7
 
   '@babel/template@7.24.7':
     dependencies:
@@ -7123,9 +7116,9 @@ snapshots:
       picomatch: 2.3.1
       rollup: 2.79.1
 
-  '@rollup/pluginutils@5.0.4(rollup@2.79.1)':
+  '@rollup/pluginutils@5.1.0(rollup@2.79.1)':
     dependencies:
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.5
       estree-walker: 2.0.2
       picomatch: 2.3.1
     optionalDependencies:
@@ -7387,10 +7380,11 @@ snapshots:
       '@babel/core': 7.24.7
       '@svgr/babel-preset': 8.1.0(@babel/core@7.24.7)
       camelcase: 6.3.0
-      cosmiconfig: 8.2.0
+      cosmiconfig: 8.3.6
       snake-case: 3.0.4
     transitivePeerDependencies:
       - supports-color
+      - typescript
 
   '@svgr/hast-util-to-babel-ast@8.0.0':
     dependencies:
@@ -7520,7 +7514,7 @@ snapshots:
   '@types/babel__core@7.20.1':
     dependencies:
       '@babel/parser': 7.23.5
-      '@babel/types': 7.23.5
+      '@babel/types': 7.24.7
       '@types/babel__generator': 7.6.4
       '@types/babel__template': 7.4.1
       '@types/babel__traverse': 7.20.1
@@ -7554,8 +7548,6 @@ snapshots:
       '@types/responselike': 1.0.0
 
   '@types/estree@0.0.39': {}
-
-  '@types/estree@1.0.1': {}
 
   '@types/estree@1.0.5': {}
 
@@ -8177,13 +8169,6 @@ snapshots:
   core-js@2.6.12: {}
 
   cosmiconfig@8.1.3:
-    dependencies:
-      import-fresh: 3.3.0
-      js-yaml: 4.1.0
-      parse-json: 5.2.0
-      path-type: 4.0.0
-
-  cosmiconfig@8.2.0:
     dependencies:
       import-fresh: 3.3.0
       js-yaml: 4.1.0
@@ -11705,15 +11690,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-svgr@3.3.0(rollup@2.79.1)(vite@5.3.3(@types/node@20.10.1)(terser@5.24.0)):
+  vite-plugin-svgr@4.2.0(rollup@2.79.1)(vite@5.3.3(@types/node@20.10.1)(terser@5.24.0)):
     dependencies:
-      '@rollup/pluginutils': 5.0.4(rollup@2.79.1)
+      '@rollup/pluginutils': 5.1.0(rollup@2.79.1)
       '@svgr/core': 8.1.0
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0)
       vite: 5.3.3(@types/node@20.10.1)(terser@5.24.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
+      - typescript
 
   vite@5.3.3(@types/node@20.10.1)(terser@5.24.0):
     dependencies:
