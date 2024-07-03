@@ -81,8 +81,8 @@ importers:
         specifier: ^2.5.2
         version: 2.5.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-player:
-        specifier: ^2.12.0
-        version: 2.12.0(react@18.2.0)
+        specifier: ^2.16.0
+        version: 2.16.0(react@18.2.0)
       react-redux:
         specifier: ^5.1.2
         version: 5.1.2(react@18.2.0)(redux@4.2.1)
@@ -4135,8 +4135,8 @@ packages:
       react: '>0.13.0'
       react-dom: '>0.13.0'
 
-  react-player@2.12.0:
-    resolution: {integrity: sha512-rymLRz/2GJJD+Wc01S7S+i9pGMFYnNmQibR2gVE3KmHJCBNN8BhPAlOPTGZtn1uKpJ6p4RPLlzPQ1OLreXd8gw==}
+  react-player@2.16.0:
+    resolution: {integrity: sha512-mAIPHfioD7yxO0GNYVFD1303QFtI3lyyQZLY229UEAp/a10cSW+hPcakg0Keq8uWJxT2OiT/4Gt+Lc9bD6bJmQ==}
     peerDependencies:
       react: '>=16.6.0'
 
@@ -9946,7 +9946,7 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       resize-observer-polyfill: 1.5.1
 
-  react-player@2.12.0(react@18.2.0):
+  react-player@2.16.0(react@18.2.0):
     dependencies:
       deepmerge: 4.3.1
       load-script: 1.0.0
