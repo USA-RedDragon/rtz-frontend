@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://api.comma.ai'
+export const BASE_URL = 'https://openpilot.jacob.network'
