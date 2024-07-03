@@ -16,19 +16,19 @@ dependencies:
     version: 0.15.3
   '@material-ui/core':
     specifier: ^1.5.1
-    version: 1.5.1(react-dom@18.2.0)(react@18.2.0)
+    version: 1.5.1(react-dom@18.3.1)(react@18.3.1)
   '@material-ui/icons':
     specifier: ^1.1.1
-    version: 1.1.1(@material-ui/core@1.5.1)(react-dom@18.2.0)(react@18.2.0)
+    version: 1.1.1(@material-ui/core@1.5.1)(react-dom@18.3.1)(react@18.3.1)
   '@sentry/react':
     specifier: ^7.64.0
-    version: 7.64.0(react@18.2.0)
+    version: 7.64.0(react@18.3.1)
   '@sentry/vite-plugin':
     specifier: ^2.7.0
     version: 2.7.0
   connected-react-router:
     specifier: ^4.5.0
-    version: 4.5.0(react-redux@5.1.2)(react-router@5.3.4)(react@18.2.0)(redux@4.2.1)
+    version: 4.5.0(react-redux@5.1.2)(react-router@5.3.4)(react@18.3.1)(redux@4.2.1)
   dayjs:
     specifier: ^1.11.9
     version: 1.11.9
@@ -66,29 +66,29 @@ dependencies:
     specifier: ^3.4.1
     version: 3.4.1
   react:
-    specifier: ~18.2.0
-    version: 18.2.0
+    specifier: ~18.3.1
+    version: 18.3.1
   react-dom:
-    specifier: ~18.2.0
-    version: 18.2.0(react@18.2.0)
+    specifier: ~18.3.1
+    version: 18.3.1(react@18.3.1)
   react-map-gl:
     specifier: ^5.3.21
-    version: 5.3.21(react@18.2.0)
+    version: 5.3.21(react@18.3.1)
   react-measure:
     specifier: ^2.5.2
-    version: 2.5.2(react-dom@18.2.0)(react@18.2.0)
+    version: 2.5.2(react-dom@18.3.1)(react@18.3.1)
   react-player:
     specifier: ^2.12.0
-    version: 2.12.0(react@18.2.0)
+    version: 2.12.0(react@18.3.1)
   react-redux:
     specifier: ^5.1.2
-    version: 5.1.2(react@18.2.0)(redux@4.2.1)
+    version: 5.1.2(react@18.3.1)(redux@4.2.1)
   react-router:
     specifier: ^5.3.4
-    version: 5.3.4(react@18.2.0)
+    version: 5.3.4(react@18.3.1)
   react-router-dom:
     specifier: ^5.3.4
-    version: 5.3.4(react@18.2.0)
+    version: 5.3.4(react@18.3.1)
   reduce-reducers:
     specifier: ^1.0.4
     version: 1.0.4
@@ -117,13 +117,13 @@ devDependencies:
     version: 5.17.0
   '@testing-library/react':
     specifier: ^13.4.0
-    version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+    version: 13.4.0(react-dom@18.3.1)(react@18.3.1)
   '@types/react':
-    specifier: ^18.2.21
-    version: 18.2.21
+    specifier: ^18.3.3
+    version: 18.3.3
   '@types/react-dom':
-    specifier: ^18.2.7
-    version: 18.2.7
+    specifier: ^18.3.0
+    version: 18.3.0
   '@vitejs/plugin-react':
     specifier: ^4.0.4
     version: 4.0.4(vite@4.5.3)
@@ -149,8 +149,8 @@ devDependencies:
     specifier: ^7.33.2
     version: 7.33.2(eslint@8.48.0)
   eslint-plugin-react-hooks:
-    specifier: ^4.6.0
-    version: 4.6.0(eslint@8.48.0)
+    specifier: ^4.6.2
+    version: 4.6.2(eslint@8.48.0)
   expect-puppeteer:
     specifier: ^9.0.0
     version: 9.0.0
@@ -179,8 +179,8 @@ devDependencies:
     specifier: ^19.11.1
     version: 19.11.1
   react-test-renderer:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
+    specifier: ^18.3.1
+    version: 18.3.1(react@18.3.1)
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
@@ -2373,7 +2373,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: false
 
-  /@material-ui/core@1.5.1(react-dom@18.2.0)(react@18.2.0):
+  /@material-ui/core@1.5.1(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-hGT0JelWZGZqgWZzRbON/uqFCgWa4XhmEFG/IEd9SBwCU4sWC99Kv1KpywLhYYWecobqT4Dh7ijO1ZaIAk8HyA==}
     engines: {node: '>=6.0.0'}
     deprecated: Material UI v4 doesn't receive active development since September 2021. See the guide https://mui.com/material-ui/migration/migration-v4/ to upgrade to v5.
@@ -2403,16 +2403,16 @@ packages:
       normalize-scroll-left: 0.1.2
       popper.js: 1.16.1
       prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-event-listener: 0.6.6(react@18.2.0)
-      react-jss: 8.6.1(react@18.2.0)
-      react-transition-group: 2.9.0(react-dom@18.2.0)(react@18.2.0)
-      recompose: 0.28.2(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-event-listener: 0.6.6(react@18.3.1)
+      react-jss: 8.6.1(react@18.3.1)
+      react-transition-group: 2.9.0(react-dom@18.3.1)(react@18.3.1)
+      recompose: 0.28.2(react@18.3.1)
       warning: 4.0.3
     dev: false
 
-  /@material-ui/icons@1.1.1(@material-ui/core@1.5.1)(react-dom@18.2.0)(react@18.2.0):
+  /@material-ui/icons@1.1.1(@material-ui/core@1.5.1)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-d7I2P1Td4S/1zMAYCIrVQVf+6NUZC5fcIuo0wTrKe/mKxYo9eQ+83lPesI9aBAh+ZTQTjPTqoIvm0WD5e+0uKQ==}
     engines: {node: '>=6.0.0'}
     deprecated: 'You can now upgrade to @mui/icons. See the guide: https://mui.com/guides/migration-v4/'
@@ -2422,10 +2422,10 @@ packages:
       react-dom: ^16.3.0
     dependencies:
       '@babel/runtime': 7.0.0-beta.42
-      '@material-ui/core': 1.5.1(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      recompose: 0.27.1(react@18.2.0)
+      '@material-ui/core': 1.5.1(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      recompose: 0.27.1(react@18.3.1)
     dev: false
 
   /@math.gl/web-mercator@3.6.3:
@@ -2627,7 +2627,7 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/react@7.64.0(react@18.2.0):
+  /@sentry/react@7.64.0(react@18.3.1):
     resolution: {integrity: sha512-wOyJUQi7OoT1q+F/fVVv1fzbyO4OYbTu6m1DliLOGQPGEHPBsgPc722smPIExd1/rAMK/FxOuNN5oNhubH8nhg==}
     engines: {node: '>=8'}
     peerDependencies:
@@ -2637,7 +2637,7 @@ packages:
       '@sentry/types': 7.64.0
       '@sentry/utils': 7.64.0
       hoist-non-react-statics: 3.3.2
-      react: 18.2.0
+      react: 18.3.1
       tslib: 2.6.2
     dev: false
 
@@ -3022,7 +3022,7 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react@13.4.0(react-dom@18.2.0)(react@18.2.0):
+  /@testing-library/react@13.4.0(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -3031,9 +3031,9 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.11
       '@testing-library/dom': 8.20.1
-      '@types/react-dom': 18.2.7
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      '@types/react-dom': 18.3.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: true
 
   /@tootallnate/once@1.1.2:
@@ -3183,23 +3183,22 @@ packages:
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/react-dom@18.2.7:
-    resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
+  /@types/react-dom@18.3.0:
+    resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
     dependencies:
-      '@types/react': 18.2.21
+      '@types/react': 18.3.3
     dev: true
 
   /@types/react-transition-group@2.9.2:
     resolution: {integrity: sha512-5Fv2DQNO+GpdPZcxp2x/OQG/H19A01WlmpjVD9cKvVFmoVLOZ9LvBgSWG6pSXIU4og5fgbvGPaCV5+VGkWAEHA==}
     dependencies:
-      '@types/react': 18.2.21
+      '@types/react': 18.3.3
     dev: false
 
-  /@types/react@18.2.21:
-    resolution: {integrity: sha512-neFKG/sBAwGxHgXiIxnbm3/AAVQ/cMRS93hvBpg8xYRbeQSPVABp9U2bRnPf0iI4+Ucdv3plSxKK+3CW2ENJxA==}
+  /@types/react@18.3.3:
+    resolution: {integrity: sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==}
     dependencies:
       '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.3
       csstype: 3.1.2
 
   /@types/resolve@1.17.1:
@@ -3213,9 +3212,6 @@ packages:
     dependencies:
       '@types/node': 20.5.6
     dev: false
-
-  /@types/scheduler@0.16.3:
-    resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
 
   /@types/stack-utils@2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
@@ -3984,7 +3980,7 @@ packages:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
     dev: true
 
-  /connected-react-router@4.5.0(react-redux@5.1.2)(react-router@5.3.4)(react@18.2.0)(redux@4.2.1):
+  /connected-react-router@4.5.0(react-redux@5.1.2)(react-router@5.3.4)(react@18.3.1)(redux@4.2.1):
     resolution: {integrity: sha512-SBBmAZrtmw4y7Rkl2PCct8lN/DuCftl7QSAFLgFyjjuYkeJKAzAvQjzNNNE4R3j2+6a4TUiv8qselxQ4+6H5eA==}
     peerDependencies:
       react: ^15.5.4 || ^16.0.0
@@ -3993,9 +3989,9 @@ packages:
       redux: ^3.6.0 || ^4.0.0
     dependencies:
       immutable: 3.8.2
-      react: 18.2.0
-      react-redux: 5.1.2(react@18.2.0)(redux@4.2.1)
-      react-router: 5.3.4(react@18.2.0)
+      react: 18.3.1
+      react-redux: 5.1.2(react@18.3.1)(redux@4.2.1)
+      react-router: 5.3.4(react@18.3.1)
       redux: 4.2.1
       redux-seamless-immutable: 0.4.0
       seamless-immutable: 7.1.4
@@ -4712,8 +4708,8 @@ packages:
       requireindex: 1.2.0
     dev: true
 
-  /eslint-plugin-react-hooks@4.6.0(eslint@8.48.0):
-    resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
+  /eslint-plugin-react-hooks@4.6.2(eslint@8.48.0):
+    resolution: {integrity: sha512-QzliNJq4GinDBcD8gPB5v0wh6g8q3SUi6EFF0x8N/BL9PoVs0atuGc47ozMRyOWAKdwaZ5OnbOEa3WR+dSGKuQ==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
@@ -7826,23 +7822,23 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
-  /react-dom@18.2.0(react@18.2.0):
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+  /react-dom@18.3.1(react@18.3.1):
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.1
     dependencies:
       loose-envify: 1.4.0
-      react: 18.2.0
-      scheduler: 0.23.0
+      react: 18.3.1
+      scheduler: 0.23.2
 
-  /react-event-listener@0.6.6(react@18.2.0):
+  /react-event-listener@0.6.6(react@18.3.1):
     resolution: {integrity: sha512-+hCNqfy7o9wvO6UgjqFmBzARJS7qrNoda0VqzvOuioEpoEXKutiKuv92dSz6kP7rYLmyHPyYNLesi5t/aH1gfw==}
     peerDependencies:
       react: ^16.3.0
     dependencies:
       '@babel/runtime': 7.23.5
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       warning: 4.0.3
     dev: false
 
@@ -7861,7 +7857,11 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
 
-  /react-jss@8.6.1(react@18.2.0):
+  /react-is@18.3.1:
+    resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+    dev: true
+
+  /react-jss@8.6.1(react@18.3.1):
     resolution: {integrity: sha512-SH6XrJDJkAphp602J14JTy3puB2Zxz1FkM3bKVE8wON+va99jnUTKWnzGECb3NfIn9JPR5vHykge7K3/A747xQ==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -7871,15 +7871,15 @@ packages:
       jss: 9.8.7
       jss-preset-default: 4.5.0(jss@9.8.7)
       prop-types: 15.8.1
-      react: 18.2.0
-      theming: 1.3.0(react@18.2.0)
+      react: 18.3.1
+      theming: 1.3.0(react@18.3.1)
     dev: false
 
   /react-lifecycles-compat@3.0.4:
     resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
     dev: false
 
-  /react-map-gl@5.3.21(react@18.2.0):
+  /react-map-gl@5.3.21(react@18.3.1):
     resolution: {integrity: sha512-hNVYiPBjgfVIcDV70OU9QnzvNCI1NhLm5OHjyY1rKPOKqzV4m9jjuXEKUaWC72vqIHk1Dzb+gG78xWOpqVi6uw==}
     engines: {node: '>= 4', npm: '>= 3'}
     peerDependencies:
@@ -7891,12 +7891,12 @@ packages:
       mapbox-gl: 1.13.3
       mjolnir.js: 2.7.1
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       resize-observer-polyfill: 1.5.1
       viewport-mercator-project: 7.0.4
     dev: false
 
-  /react-measure@2.5.2(react-dom@18.2.0)(react@18.2.0):
+  /react-measure@2.5.2(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-M+rpbTLWJ3FD6FXvYV6YEGvQ5tMayQ3fGrZhRPHrE9bVlBYfDCLuDcgNttYfk8IqfOI03jz6cbpqMRTUclQnaA==}
     peerDependencies:
       react: '>0.13.0'
@@ -7905,12 +7905,12 @@ packages:
       '@babel/runtime': 7.22.11
       get-node-dimensions: 1.2.1
       prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       resize-observer-polyfill: 1.5.1
     dev: false
 
-  /react-player@2.12.0(react@18.2.0):
+  /react-player@2.12.0(react@18.3.1):
     resolution: {integrity: sha512-rymLRz/2GJJD+Wc01S7S+i9pGMFYnNmQibR2gVE3KmHJCBNN8BhPAlOPTGZtn1uKpJ6p4RPLlzPQ1OLreXd8gw==}
     peerDependencies:
       react: '>=16.6.0'
@@ -7919,11 +7919,11 @@ packages:
       load-script: 1.0.0
       memoize-one: 5.2.1
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       react-fast-compare: 3.2.2
     dev: false
 
-  /react-redux@5.1.2(react@18.2.0)(redux@4.2.1):
+  /react-redux@5.1.2(react@18.3.1)(redux@4.2.1):
     resolution: {integrity: sha512-Ns1G0XXc8hDyH/OcBHOxNgQx9ayH3SPxBnFCOidGKSle8pKihysQw2rG/PmciUQRoclhVBO8HMhiRmGXnDja9Q==}
     peerDependencies:
       react: ^0.14.0 || ^15.0.0-0 || ^16.0.0-0
@@ -7934,7 +7934,7 @@ packages:
       invariant: 2.2.4
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       react-is: 16.13.1
       react-lifecycles-compat: 3.0.4
       redux: 4.2.1
@@ -7945,7 +7945,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom@5.3.4(react@18.2.0):
+  /react-router-dom@5.3.4(react@18.3.1):
     resolution: {integrity: sha512-m4EqFMHv/Ih4kpcBCONHbkT68KoAeHN4p3lAGoNryfHi0dMy0kCzEZakiKRsvg5wHZ/JLrLW8o8KomWiz/qbYQ==}
     peerDependencies:
       react: '>=15'
@@ -7954,8 +7954,8 @@ packages:
       history: 4.10.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.2.0
-      react-router: 5.3.4(react@18.2.0)
+      react: 18.3.1
+      react-router: 5.3.4(react@18.3.1)
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
     dev: false
@@ -7964,7 +7964,7 @@ packages:
     resolution: {integrity: sha512-lzlK+S6jZnn17BZbzBe6F8ok3YAhGAUlyWgRu3cz5mT199gKxfem5lNu3qcgzRiVhNEOFVG0/pdT+1t4aWhoQw==}
     dev: false
 
-  /react-router@5.3.4(react@18.2.0):
+  /react-router@5.3.4(react@18.3.1):
     resolution: {integrity: sha512-Ys9K+ppnJah3QuaRiLxk+jDWOR1MekYQrlytiXxC1RyfbdsZkS5pvKAzCCr031xHixZwpnsYNT5xysdFHQaYsA==}
     peerDependencies:
       react: '>=15'
@@ -7975,34 +7975,34 @@ packages:
       loose-envify: 1.4.0
       path-to-regexp: 1.8.0
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       react-is: 16.13.1
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
     dev: false
 
-  /react-shallow-renderer@16.15.0(react@18.2.0):
+  /react-shallow-renderer@16.15.0(react@18.3.1):
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
       object-assign: 4.1.1
-      react: 18.2.0
-      react-is: 18.2.0
+      react: 18.3.1
+      react-is: 18.3.1
     dev: true
 
-  /react-test-renderer@18.2.0(react@18.2.0):
-    resolution: {integrity: sha512-JWD+aQ0lh2gvh4NM3bBM42Kx+XybOxCpgYK7F8ugAlpaTSnWsX+39Z4XkOykGZAHrjwwTZT3x3KxswVWxHPUqA==}
+  /react-test-renderer@18.3.1(react@18.3.1):
+    resolution: {integrity: sha512-KkAgygexHUkQqtvvx/otwxtuFu5cVjfzTCtjXLH9boS19/Nbtg84zS7wIQn39G8IlrhThBpQsMKkq5ZHZIYFXA==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.1
     dependencies:
-      react: 18.2.0
-      react-is: 18.2.0
-      react-shallow-renderer: 16.15.0(react@18.2.0)
-      scheduler: 0.23.0
+      react: 18.3.1
+      react-is: 18.3.1
+      react-shallow-renderer: 16.15.0(react@18.3.1)
+      scheduler: 0.23.2
     dev: true
 
-  /react-transition-group@2.9.0(react-dom@18.2.0)(react@18.2.0):
+  /react-transition-group@2.9.0(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==}
     peerDependencies:
       react: '>=15.0.0'
@@ -8011,13 +8011,13 @@ packages:
       dom-helpers: 3.4.0
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       react-lifecycles-compat: 3.0.4
     dev: false
 
-  /react@18.2.0:
-    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+  /react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
@@ -8062,7 +8062,7 @@ packages:
     dependencies:
       picomatch: 2.3.1
 
-  /recompose@0.27.1(react@18.2.0):
+  /recompose@0.27.1(react@18.3.1):
     resolution: {integrity: sha512-p7xsyi/rfNjHfdP7vPU02uSFa+Q1eHhjKrvO+3+kRP4Ortj+MxEmpmd+UQtBGM2D2iNAjzNI5rCyBKp9Ob5McA==}
     peerDependencies:
       react: ^0.14.0 || ^15.0.0 || ^16.0.0
@@ -8071,12 +8071,12 @@ packages:
       change-emitter: 0.1.6
       fbjs: 0.8.18
       hoist-non-react-statics: 2.5.5
-      react: 18.2.0
+      react: 18.3.1
       react-lifecycles-compat: 3.0.4
       symbol-observable: 1.2.0
     dev: false
 
-  /recompose@0.28.2(react@18.2.0):
+  /recompose@0.28.2(react@18.3.1):
     resolution: {integrity: sha512-baVNKQBQAAAuLRnv6Cb/6/j59a1BVj6c6Pags1KXVyRB0yPfQVUZtuAUnqHDBXoR8iXPrLGWE4RNtCQ/AaRP3g==}
     peerDependencies:
       react: ^0.14.0 || ^15.0.0 || ^16.0.0
@@ -8085,7 +8085,7 @@ packages:
       change-emitter: 0.1.6
       fbjs: 0.8.18
       hoist-non-react-statics: 2.5.5
-      react: 18.2.0
+      react: 18.3.1
       react-lifecycles-compat: 3.0.4
       symbol-observable: 1.2.0
     dev: false
@@ -8397,8 +8397,8 @@ packages:
       xmlchars: 2.2.0
     dev: true
 
-  /scheduler@0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
+  /scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
     dependencies:
       loose-envify: 1.4.0
 
@@ -8909,7 +8909,7 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
-  /theming@1.3.0(react@18.2.0):
+  /theming@1.3.0(react@18.3.1):
     resolution: {integrity: sha512-ya5Ef7XDGbTPBv5ENTwrwkPUexrlPeiAg/EI9kdlUAZhNlRbCdhMKRgjNX1IcmsmiPcqDQZE6BpSaH+cr31FKw==}
     peerDependencies:
       react: '>=0.15'
@@ -8918,7 +8918,7 @@ packages:
       is-function: 1.0.2
       is-plain-object: 2.0.4
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
   /thenify-all@1.6.0:
