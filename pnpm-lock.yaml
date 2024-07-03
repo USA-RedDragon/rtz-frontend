@@ -194,8 +194,8 @@ devDependencies:
     specifier: ^3.2.0
     version: 3.2.0(rollup@2.79.1)(vite@4.5.3)
   whatwg-fetch:
-    specifier: ^3.6.17
-    version: 3.6.17
+    specifier: ^3.6.20
+    version: 3.6.20
   workbox-window:
     specifier: ^7.0.0
     version: 7.0.0
@@ -5890,7 +5890,7 @@ packages:
     resolution: {integrity: sha512-9c4TNAKYXM5PRyVcwUZrF3W09nQ+sO7+jydgs4ZGW9dhsLG2VOlISJABombdQqQRXCwuYG3sYV/puGf5rp0qmA==}
     dependencies:
       node-fetch: 1.7.3
-      whatwg-fetch: 3.6.17
+      whatwg-fetch: 3.6.20
     dev: false
 
   /istanbul-lib-coverage@3.2.0:
@@ -9396,8 +9396,8 @@ packages:
       iconv-lite: 0.4.24
     dev: true
 
-  /whatwg-fetch@3.6.17:
-    resolution: {integrity: sha512-c4ghIvG6th0eudYwKZY5keb81wtFz9/WeAHAoy8+r18kcWlitUIrmGFQ2rWEl4UCKUilD3zCLHOIPheHx5ypRQ==}
+  /whatwg-fetch@3.6.20:
+    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
 
   /whatwg-mimetype@2.3.0:
     resolution: {integrity: sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==}
