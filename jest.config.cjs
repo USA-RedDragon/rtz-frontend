@@ -17,13 +17,13 @@ const config = {
       'jest-chain-transform',
       {
         transformers: [
-          `${cwd}/config/jest/importMetaTransform.js`,
+          `${cwd}/config/jest/importMetaTransform.cjs`,
           '@swc/jest',
         ],
       },
     ],
-    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
-    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
+    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.cjs',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.cjs',
   },
   transformIgnorePatterns: [
     '^.+\\.module\\.(css|sass|scss)$',
