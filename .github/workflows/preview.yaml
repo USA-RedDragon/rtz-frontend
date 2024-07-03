@@ -50,24 +50,14 @@ jobs:
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
-          command: pages deploy dist --project-name=connect --branch=${{ steps.pr.outputs.result }} --commit-dirty=true
+          command: pages deploy dist --project-name=connect-frontend --branch=${{ steps.pr.outputs.result }} --commit-dirty=true
 
       - name: Comment URL on PR
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
             <!-- _(run_id **${{ github.run_id }}**)_ -->
-            Welcome to new-connect! Make sure to:
-            * read the [contributing guidelines](https://github.com/commaai/new-connect?tab=readme-ov-file#contributing)
-            * mark your PR as a draft until it's ready to review
-            * post the preview on [Discord](https://discord.comma.ai); feedback from users will speedup the PR review
-
-            deployed preview: https://${{ steps.pr.outputs.result }}.connect-d5y.pages.dev
+            deployed preview: https://${{ steps.pr.outputs.result }}.connect-frontend-80j.pages.dev
           comment_tag: run_id
           pr_number: ${{ steps.pr.outputs.result }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Use CI_ARTIFACTS_DEPLOY_KEY
-        run: echo "using secret in main"
-        env:
-          CI_ARTIFACTS_DEPLOY_KEY: ${{ secrets.CI_ARTIFACTS_DEPLOY_KEY }}

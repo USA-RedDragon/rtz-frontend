@@ -44,4 +44,4 @@ jobs:
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
-          command: pages deploy dist --project-name=connect --branch=new-connect --commit-dirty=true
+          command: pages deploy dist --project-name=connect-frontend --branch=main --commit-dirty=false
