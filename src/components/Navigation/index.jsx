@@ -10,7 +10,7 @@ import { Search, Clear, Refresh } from '@material-ui/icons';
 import dayjs from 'dayjs';
 
 import { athena as Athena, devices as Devices, navigation as NavigationApi } from '@commaai/api';
-import { primeNav, analyticsEvent } from '../../actions';
+import { primeNav } from '../../actions';
 import { DEFAULT_LOCATION, forwardLookup, getDirections, MAPBOX_STYLE, MAPBOX_TOKEN, networkPositioning, reverseLookup } from '../../utils/geocode';
 import Colors from '../../colors';
 import { PinCarIcon, PinMarkerIcon, PinHomeIcon, PinWorkIcon, PinPinnedIcon } from '../../icons';
@@ -345,7 +345,7 @@ class Navigation extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { dongleId, device } = this.props;
-    const { geoLocateCoords, search, carLastLocation, carNetworkLocation, searchSelect, favoriteLocations } = this.state;
+    const { geoLocateCoords, search, carLastLocation, carNetworkLocation, searchSelect } = this.state;
 
     if ((carLastLocation && !prevState.carLastLocation) || (carNetworkLocation && !prevState.carNetworkLocation)
       || (geoLocateCoords && !prevState.geoLocateCoords) || (searchSelect && prevState.searchSelect !== searchSelect)
@@ -365,19 +365,6 @@ class Navigation extends Component {
 
     if (prevProps.device !== device) {
       this.updateDevice();
-    }
-
-    if (!prevState.hasFocus && this.state.hasFocus) {
-      this.props.dispatch(analyticsEvent('nav_focus', {
-        has_car_location: Boolean(carLastLocation || carNetworkLocation),
-        has_favorites: Object.keys(favoriteLocations)?.length || 0,
-      }));
-    }
-
-    if (search && prevState.search !== search) {
-      this.props.dispatch(analyticsEvent('nav_search', {
-        panned: this.state.noFly || this.state.searchLooking,
-      }));
     }
   }
 
@@ -571,13 +558,6 @@ class Navigation extends Component {
   }
 
   onSearchSelect(item, source) {
-    this.props.dispatch(analyticsEvent('nav_search_select', {
-      source,
-      panned: this.state.noFly || this.state.noFly,
-      is_favorite: Boolean(item.favoriteId),
-      distance: item.distance,
-    }));
-
     this.setState({
       noFly: false,
       searchSelect: item,
@@ -789,10 +769,6 @@ class Navigation extends Component {
     if (!hasNav) {
       return;
     }
-
-    this.props.dispatch(analyticsEvent('nav_navigate', {
-      distance: searchSelect.distance,
-    }));
 
     this.setState({ searchSelect: {
       ...searchSelect,

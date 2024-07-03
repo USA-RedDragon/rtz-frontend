@@ -21,9 +21,8 @@ import { bufferVideo } from '../../timeline/playback';
 import Colors from '../../colors';
 import { InfoOutline } from '../../icons';
 import { deviceIsOnline, deviceOnCellular, getSegmentNumber } from '../../utils';
-import { analyticsEvent, updateRoute } from '../../actions';
+import { updateRoute } from '../../actions';
 import { fetchEvents } from '../../actions/cached';
-import { attachRelTime } from '../../analytics';
 import { setRouteViewed, fetchFiles, doUpload, fetchUploadUrls, fetchAthenaQueue, updateFiles } from '../../actions/files';
 
 const publicTooltip = 'Making a route public allows anyone with the route name or link to access it.';
@@ -272,10 +271,6 @@ class Media extends Component {
       this.props.dispatch(fetchEvents(this.props.currentRoute));
     }
 
-    if (prevState.inView && prevState.inView !== this.state.inView) {
-      this.props.dispatch(analyticsEvent('media_switch_view', { in_view: this.state.inView }));
-    }
-
     if (this.props.currentRoute && ((!prevState.downloadMenu && downloadMenu)
       || (!this.props.files && !prevState.moreInfoMenu && moreInfoMenu)
       || (!prevProps.currentRoute && (downloadMenu || moreInfoMenu)))) {
@@ -307,12 +302,6 @@ class Media extends Component {
       return;
     }
 
-    const event_parameters = {
-      route_start_time: currentRoute.start_time_utc_millis,
-    };
-    attachRelTime(event_parameters, 'route_start_time', true, 'h');
-    this.props.dispatch(analyticsEvent('open_in_useradmin', event_parameters));
-
     const params = { onebox: currentRoute.fullname };
     const win = window.open(`${window.USERADMIN_URL_ROOT}?${qs.stringify(params)}`, '_blank');
     if (win.focus) {
@@ -338,10 +327,6 @@ class Media extends Component {
       return;
     }
 
-    this.props.dispatch(analyticsEvent('files_upload', {
-      type,
-    }));
-
     const routeNoDongleId = currentRoute.fullname.split('|')[1];
     const path = `${routeNoDongleId}--${getSegmentNumber(currentRoute)}/${FILE_NAMES[type]}`;
     const fileName = `${dongleId}|${routeNoDongleId}--${getSegmentNumber(currentRoute)}/${type}`;
@@ -365,10 +350,6 @@ class Media extends Component {
     if (!currentRoute || !files) {
       return;
     }
-
-    this.props.dispatch(analyticsEvent('files_upload_all', {
-      types: types.length === 1 && types[0] === 'logs' ? 'logs' : 'all',
-    }));
 
     const uploading = {};
     const adjusted_start_time = currentRoute.start_time_utc_millis + loop.startTime;
@@ -441,15 +422,6 @@ class Media extends Component {
   }
 
   downloadFile(file, type) {
-    const { currentRoute } = this.props;
-
-    const eventParameters = {
-      type,
-      route_start_time: currentRoute.start_time_utc_millis,
-    };
-    attachRelTime(eventParameters, 'route_start_time', true, 'h');
-    this.props.dispatch(analyticsEvent('download_file', eventParameters));
-
     window.location.href = file.url;
   }
 
