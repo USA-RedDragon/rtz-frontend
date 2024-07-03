@@ -31,8 +31,6 @@
     "@mapbox/mapbox-sdk": "^0.16.0",
     "@material-ui/core": "^1.5.1",
     "@material-ui/icons": "^1.1.1",
-    "@sentry/react": "^8.13.0",
-    "@sentry/vite-plugin": "^2.20.1",
     "connected-react-router": "^4.5.0",
     "dayjs": "^1.11.11",
     "debounce": "^1.2.1",

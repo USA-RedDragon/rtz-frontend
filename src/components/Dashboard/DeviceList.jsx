@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
-import * as Sentry from '@sentry/react';
 
 import { withStyles, Typography, IconButton } from '@material-ui/core';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -117,7 +116,6 @@ class DeviceList extends Component {
         dispatch(updateDevices(devices));
       } catch (err) {
         console.error(err);
-        Sentry.captureException(err, { fingerprint: 'devicelist_visible_listdevices' });
       }
     }
   }

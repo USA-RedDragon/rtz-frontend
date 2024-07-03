@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import qs from 'query-string';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
-import * as Sentry from '@sentry/react';
 
 import { withStyles, Divider, Typography, Menu, MenuItem, CircularProgress, Button, Popper, ListItem } from '@material-ui/core';
 import WarningIcon from '@material-ui/icons/Warning';
@@ -317,7 +316,6 @@ class Media extends Component {
       });
     } catch (err) {
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'media_navigator_share' });
     }
   }
 
@@ -438,7 +436,6 @@ class Media extends Component {
       return null;
     } catch (err) {
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'media_toggle_public' });
       return { error: 'could not update' };
     }
   }
@@ -455,7 +452,6 @@ class Media extends Component {
       }
     } catch (err) {
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'media_fetch_preserved' });
     }
   }
 
@@ -471,7 +467,6 @@ class Media extends Component {
       return { error: 'unable to update' };
     } catch (err) {
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'media_toggle_preserved' });
       this.fetchRoutePreserved();
       return { error: 'could not update' };
     }

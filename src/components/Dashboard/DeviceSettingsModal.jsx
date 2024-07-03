@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as Sentry from '@sentry/react';
 
 import {
   Button,
@@ -194,7 +193,6 @@ class DeviceSettingsModal extends Component {
         hasSavedAlias: true,
       });
     } catch (err) {
-      Sentry.captureException(err, { fingerprint: 'device_settings_alias' });
       this.setState({ error: err.message, loadingDeviceAlias: false });
     }
   }
@@ -221,7 +219,6 @@ class DeviceSettingsModal extends Component {
         this.setState({ error: 'could not find user', loadingDeviceShare: false });
       } else {
         console.error(err);
-        Sentry.captureException(err, { fingerprint: 'device_settings_share' });
         this.setState({ error: 'unable to share', loadingDeviceShare: false });
       }
     }
@@ -261,7 +258,6 @@ class DeviceSettingsModal extends Component {
         this.setState({ loadingUnpair: false, unpaired: false, unpairError: 'Could not successfully unpair' });
       }
     } catch (err) {
-      Sentry.captureException(err, { fingerprint: 'device_settings_unpair' });
       console.error(err);
       this.setState({ loadingUnpair: false, unpaired: false, unpairError: 'Unable to unpair' });
     }

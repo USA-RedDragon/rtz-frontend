@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
-import * as Sentry from '@sentry/react';
 import debounce from 'debounce';
 import ReactMapGL, { GeolocateControl, HTMLOverlay, Marker, Source, WebMercatorViewport, Layer } from 'react-map-gl';
 import { withStyles, TextField, InputAdornment, Typography, Button, Menu, MenuItem, CircularProgress, Popper }
@@ -402,7 +401,6 @@ class Navigation extends Component {
     } catch (err) {
       if (!err.message || err.message.indexOf('no_segments_uploaded') === -1) {
         console.error(err);
-        Sentry.captureException(err, { fingerprint: 'nav_fetch_location' });
       }
     }
   }
@@ -434,7 +432,6 @@ class Navigation extends Component {
       if (this.mounted && dongleId === this.props.dongleId
         && (!err.message || err.message.indexOf('{"error": "Device not registered"}') === -1)) {
         console.error(err);
-        Sentry.captureException(err, { fingerprint: 'nav_fetch_network_location' });
       }
     }
   }
@@ -481,7 +478,6 @@ class Navigation extends Component {
       }
     }).catch((err) => {
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'nav_fetch_locationsdata' });
     });
   }
 
@@ -520,7 +516,6 @@ class Navigation extends Component {
         });
       }).catch((err) => {
         console.error(err);
-        Sentry.captureException(err, { fingerprint: 'nav_geocode_forward_lookup' });
       });
     } else {
       this.setState({
@@ -736,7 +731,6 @@ class Navigation extends Component {
           this.setState({ viewport: newVp });
         } catch (err) {
           console.error(err);
-          Sentry.captureException(err, { fingerprint: 'nav_flymarkers_viewport' });
         }
       }
     }
@@ -797,7 +791,6 @@ class Navigation extends Component {
           saved_next: resp.saved_next,
         } });
       }).catch((err) => {
-        Sentry.captureException(err, { fingerprint: 'nav_set_destination' });
         console.log(`failed to set destination: ${err.message}`);
         this.setState({ searchSelect: {
           ...searchSelect,
@@ -846,7 +839,6 @@ class Navigation extends Component {
         });
       }).catch((err) => {
         console.error(err);
-        Sentry.captureException(err, { fingerprint: 'nav_save_favorite' });
         this.setState({ savingAs: false, savedAs: false });
       });
   }
@@ -867,7 +859,6 @@ class Navigation extends Component {
         }, this.flyToMarkers);
       }).catch((err) => {
         console.error(err);
-        Sentry.captureException(err, { fingerprint: 'nav_delete_favorite' });
         this.setState({ savingAs: false, savedAs: false });
       });
     }
@@ -888,7 +879,6 @@ class Navigation extends Component {
       });
     }).catch((err) => {
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'nav_research_geocode_forward' });
     });
   }
 

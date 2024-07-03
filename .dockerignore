@@ -16,6 +16,3 @@ go/
 .env.development.local
 .env.test.local
 .env.production.local
-
-# Sentry Auth Token
-.env.sentry-build-plugin

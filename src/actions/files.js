@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/react';
 import { athena as Athena, devices as Devices, raw as Raw } from '@commaai/api';
 
 import { updateDeviceOnline, fetchDeviceNetworkStatus } from '.';
@@ -25,7 +24,7 @@ function pathToFileName(dongleId, path) {
   return `${dongleId}|${seg}/${type}`;
 }
 
-async function athenaCall(dongleId, payload, sentryFingerprint, retryCount = 0) {
+async function athenaCall(dongleId, payload, retryCount = 0) {
   try {
     while (openRequests > MAX_OPEN_REQUESTS) {
       // eslint-disable-next-line no-await-in-loop
@@ -39,14 +38,13 @@ async function athenaCall(dongleId, payload, sentryFingerprint, retryCount = 0) 
     openRequests -= 1;
     if (!err.resp && retryCount < MAX_RETRIES) {
       await asyncSleep(2000);
-      return athenaCall(dongleId, payload, sentryFingerprint, retryCount + 1);
+      return athenaCall(dongleId, payload, retryCount + 1);
     }
     if (err.message && (err.message.indexOf('Timed out') === -1
       || err.message.indexOf('Device not registered') === -1)) {
       return { offline: true };
     }
     console.error(err);
-    Sentry.captureException(err, { fingerprint: sentryFingerprint });
     return { error: err.message };
   }
 }
@@ -76,7 +74,6 @@ export async function fetchUploadUrls(dongleId, paths) {
     }
   } catch (err) {
     console.error(err);
-    Sentry.captureException(err, { fingerprint: 'action_files_upload_geturls' });
   }
   return null;
 }
@@ -99,7 +96,6 @@ export function fetchFiles(routeName, nocache = false) {
       files = await Raw.getRouteFiles(routeName, nocache);
     } catch (err) {
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'action_files_fetch_files' });
       return;
     }
 
@@ -300,7 +296,6 @@ export function fetchAthenaQueue(dongleId) {
       queue = await Devices.getAthenaQueue(dongleId);
     } catch (err) {
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'action_files_fetch_athena_queue' });
       return;
     }
 

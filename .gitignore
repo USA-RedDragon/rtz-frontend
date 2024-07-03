@@ -29,7 +29,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Sentry Auth Token
-.env.sentry-build-plugin
-
 .pnpm-store/

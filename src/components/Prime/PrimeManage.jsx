@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 import dayjs from 'dayjs';
-import * as Sentry from '@sentry/react';
 
 import { withStyles, Typography, Button, Modal, Paper, IconButton, CircularProgress } from '@material-ui/core';
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
@@ -233,7 +232,6 @@ class PrimeManage extends Component {
         this.setState({ canceling: false, cancelError: 'Could not cancel due to unknown error. Please try again.' });
       }
     }).catch((err) => {
-      Sentry.captureException(err, { fingerprint: 'primemanage_cancel_prime' });
       this.setState({ canceling: false, cancelError: 'Could not cancel due to unknown error. Please try again.' });
     });
   }
@@ -245,7 +243,6 @@ class PrimeManage extends Component {
     } catch (err) {
       // TODO show error messages
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'prime_goto_stripe_update' });
     }
   }
 
@@ -272,7 +269,6 @@ class PrimeManage extends Component {
     } catch (err) {
       // TODO error handling
       console.error(err);
-      Sentry.captureException(err, { fingerprint: 'prime_fetch_stripe_session' });
     }
   }
 
@@ -295,7 +291,6 @@ class PrimeManage extends Component {
         }
       } else {
         console.error(err);
-        Sentry.captureException(err, { fingerprint: 'prime_fetch_subscription' });
       }
     }
   }

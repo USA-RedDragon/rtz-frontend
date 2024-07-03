@@ -1,5 +1,3 @@
-import * as Sentry from '@sentry/react';
-
 import * as Types from './types';
 import { reverseLookup } from '../utils/geocode';
 import { toBool } from '../utils';
@@ -33,7 +31,6 @@ async function getCacheDB() {
     request = window.indexedDB.open('cacheDB', 2);
   } catch (err) {
     console.error(err);
-    Sentry.captureException(err, { fingerprint: 'cached_open_indexeddb' });
     return Promise.resolve(null);
   }
 
@@ -61,7 +58,6 @@ async function getCacheDB() {
           db.deleteObjectStore(store);
         } catch (err) {
           console.error(err);
-          Sentry.captureException(err, { fingerprint: 'cached_delete_obj_store' });
           resolve(null);
           return;
         }

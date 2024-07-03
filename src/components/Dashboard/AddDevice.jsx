@@ -5,7 +5,6 @@ import qs from 'query-string';
 import QrScanner from 'qr-scanner';
 import { withStyles, Typography, Button, Modal, Paper, Divider, CircularProgress } from '@material-ui/core';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import * as Sentry from '@sentry/react';
 
 import { devices as Devices } from '@commaai/api';
 import { selectDevice, updateDevice } from '../../actions';
@@ -252,7 +251,6 @@ class AddDevice extends Component {
       return;
     }
 
-    Sentry.captureMessage('qr scanned', { extra: { result } });
     const fromUrl = result.startsWith('https://');
     let pairToken;
     if (fromUrl) {
@@ -306,7 +304,6 @@ class AddDevice extends Component {
         this.setState({ pairLoading: false, pairDongleId: resp.dongle_id, pairError: null });
       } else {
         this.setState({ pairLoading: false, pairDongleId: null, pairError: 'Error: could not pair' });
-        Sentry.captureMessage('qr scan failed', { extra: { resp } });
       }
     } catch (err) {
       const msg = pairErrorToMessage(err, 'adddevice_pair_qr');

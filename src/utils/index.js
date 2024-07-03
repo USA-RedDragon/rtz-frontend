@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/react';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import decodeJwt, { InvalidTokenError } from 'jwt-decode';
@@ -89,7 +88,7 @@ export function deviceOnCellular(device) {
   return device.network_metered;
 }
 
-export function pairErrorToMessage(err, sentryFingerprint) {
+export function pairErrorToMessage(err) {
   let msg;
   if (err.message.indexOf('400') === 0) {
     msg = 'invalid request';
@@ -104,14 +103,11 @@ export function pairErrorToMessage(err, sentryFingerprint) {
   } else {
     msg = 'unable to pair';
     console.error(err);
-    if (sentryFingerprint) {
-      Sentry.captureException(err, { fingerprint: sentryFingerprint });
-    }
   }
   return msg;
 }
 
-export function verifyPairToken(pairToken, fromUrl, sentryFingerprint) {
+export function verifyPairToken(pairToken, fromUrl) {
   let decoded;
   try {
     decoded = decodeJwt(pairToken);
@@ -121,7 +117,6 @@ export function verifyPairToken(pairToken, fromUrl, sentryFingerprint) {
       throw new Error('invalid QR code, could not decode pair token');
     } else {
       // unkown error, let server verify token
-      Sentry.captureException(err, { fingerprint: sentryFingerprint });
       return;
     }
   }
@@ -168,7 +163,7 @@ export function deviceVersionAtLeast(device, version) {
     }
     return true;
   } catch (err) {
-    Sentry.captureException(err);
+    console.error(err);
     return false;
   }
 }

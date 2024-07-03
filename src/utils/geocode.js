@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/react';
 import qs from 'query-string';
 import { WebMercatorViewport } from 'react-map-gl';
 
@@ -191,7 +190,7 @@ export async function reverseLookup(coords, navFormat = false) {
       return { place, details };
     }
   } catch (err) {
-    Sentry.captureException(err, { fingerprint: 'geocode_reverse_parse' });
+    console.error(err)
   }
 
   return null;

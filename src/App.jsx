@@ -4,7 +4,6 @@ import { Route, Switch, Redirect } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 import qs from 'query-string';
 import localforage from 'localforage';
-import * as Sentry from '@sentry/react';
 
 import { CircularProgress, Grid } from '@material-ui/core';
 
@@ -13,8 +12,6 @@ import { athena as Athena, auth as Auth, billing as Billing, request as Request 
 
 import { getZoom, getSegmentRange } from './url';
 import store, { history } from './store';
-
-import ErrorFallback from './components/ErrorFallback';
 
 const Explorer = lazy(() => import('./components/explorer'));
 const AnonymousLanding = lazy(() => import('./components/anonymous'));
@@ -58,7 +55,6 @@ class App extends Component {
           }
         } catch (err) {
           console.error(err);
-          Sentry.captureException(err, { fingerprint: 'app_auth_refresh_token' });
         }
       }
     }
@@ -125,15 +121,6 @@ class App extends Component {
         { showLogin ? this.anonymousRoutes() : this.authRoutes() }
       </Suspense>
     );
-
-    // Use ErrorBoundary in production only
-    if (import.meta.env.PROD) {
-      content = (
-        <Sentry.ErrorBoundary fallback={(props) => <ErrorFallback {...props} />}>
-          {content}
-        </Sentry.ErrorBoundary>
-      );
-    }
 
     return (
       <Provider store={store}>
