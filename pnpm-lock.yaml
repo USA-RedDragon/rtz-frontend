@@ -93,8 +93,8 @@ importers:
         specifier: ^5.0.1
         version: 5.0.1
       redux-thunk:
-        specifier: ^2.4.2
-        version: 2.4.2(redux@5.0.1)
+        specifier: ^3.1.0
+        version: 3.1.0(redux@5.0.1)
       web-vitals:
         specifier: ^4.2.1
         version: 4.2.1
@@ -4732,10 +4732,10 @@ packages:
   redux-seamless-immutable@0.4.0:
     resolution: {integrity: sha512-/oS3fhrize9D3RSHemgJxVllohybRrad5IjccotFy8Ni4IKAPTtX1mqszpiCIl12+7v0dNqBpq6ES6R236AliQ==}
 
-  redux-thunk@2.4.2:
-    resolution: {integrity: sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q==}
+  redux-thunk@3.1.0:
+    resolution: {integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==}
     peerDependencies:
-      redux: ^4
+      redux: ^5.0.0
 
   redux@5.0.1:
     resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
@@ -11292,7 +11292,7 @@ snapshots:
       react-router-redux: 4.0.8
       seamless-immutable: 7.1.4
 
-  redux-thunk@2.4.2(redux@5.0.1):
+  redux-thunk@3.1.0(redux@5.0.1):
     dependencies:
       redux: 5.0.1
 
