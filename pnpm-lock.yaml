@@ -99,8 +99,8 @@ dependencies:
     specifier: ^2.4.2
     version: 2.4.2(redux@4.2.1)
   web-vitals:
-    specifier: ^3.4.0
-    version: 3.4.0
+    specifier: ^4.2.1
+    version: 4.2.1
 
 devDependencies:
   '@swc/core':
@@ -9360,8 +9360,8 @@ packages:
       loose-envify: 1.4.0
     dev: false
 
-  /web-vitals@3.4.0:
-    resolution: {integrity: sha512-n9fZ5/bG1oeDkyxLWyep0eahrNcPDF6bFqoyispt7xkW0xhDzpUBTgyDKqWDi1twT0MgH4HvvqzpUyh0ZxZV4A==}
+  /web-vitals@4.2.1:
+    resolution: {integrity: sha512-U6bAxeudnhDqcXNl50JC4hLlqox9DZnngxfISZm3DMZnonW35xtJOVUc091L+DOY+6hVZVpKXoiCP0RiT6339Q==}
     dev: false
 
   /webidl-conversions@3.0.1:
