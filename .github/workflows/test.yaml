@@ -17,7 +17,7 @@ jobs:
       - run: |
           pnpm install --frozen-lockfile
           cd ./node_modules/puppeteer
-          pnpm install --frozen-lockfile
+          pnpm install
 
       - run: pnpm run build:development
 
