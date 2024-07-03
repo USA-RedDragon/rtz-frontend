@@ -27,8 +27,8 @@ dependencies:
     specifier: ^2.7.0
     version: 2.7.0
   connected-react-router:
-    specifier: ^4.5.0
-    version: 4.5.0(react-redux@5.1.2)(react-router@5.3.4)(react@18.2.0)(redux@4.2.1)
+    specifier: ^6.9.3
+    version: 6.9.3(history@4.10.1)(react-redux@5.1.2)(react-router@5.3.4)(react@18.2.0)(redux@4.2.1)
   dayjs:
     specifier: ^1.11.9
     version: 1.11.9
@@ -3984,20 +3984,24 @@ packages:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
     dev: true
 
-  /connected-react-router@4.5.0(react-redux@5.1.2)(react-router@5.3.4)(react@18.2.0)(redux@4.2.1):
-    resolution: {integrity: sha512-SBBmAZrtmw4y7Rkl2PCct8lN/DuCftl7QSAFLgFyjjuYkeJKAzAvQjzNNNE4R3j2+6a4TUiv8qselxQ4+6H5eA==}
+  /connected-react-router@6.9.3(history@4.10.1)(react-redux@5.1.2)(react-router@5.3.4)(react@18.2.0)(redux@4.2.1):
+    resolution: {integrity: sha512-4ThxysOiv/R2Dc4Cke1eJwjKwH1Y51VDwlOrOfs1LjpdYOVvCNjNkZDayo7+sx42EeGJPQUNchWkjAIJdXGIOQ==}
     peerDependencies:
-      react: ^15.5.4 || ^16.0.0
-      react-redux: ^4.4.8 || ^5.0.7
-      react-router: ^4.3.1
+      history: ^4.7.2
+      react: ^16.4.0 || ^17.0.0
+      react-redux: ^6.0.0 || ^7.1.0
+      react-router: ^4.3.1 || ^5.0.0
       redux: ^3.6.0 || ^4.0.0
     dependencies:
-      immutable: 3.8.2
+      history: 4.10.1
+      lodash.isequalwith: 4.4.0
+      prop-types: 15.8.1
       react: 18.2.0
       react-redux: 5.1.2(react@18.2.0)(redux@4.2.1)
       react-router: 5.3.4(react@18.2.0)
       redux: 4.2.1
-      redux-seamless-immutable: 0.4.0
+    optionalDependencies:
+      immutable: 3.8.2
       seamless-immutable: 7.1.4
     dev: false
 
@@ -5546,7 +5550,9 @@ packages:
   /immutable@3.8.2:
     resolution: {integrity: sha512-15gZoQ38eYjEjxkorfbcgBKBL6R7T459OuK+CpcWt7O3KF4uPCx2tD0uFETlUDIyo+1789crbMhTvQBSR5yBMg==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dev: false
+    optional: true
 
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -6906,6 +6912,10 @@ packages:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
 
+  /lodash.isequalwith@4.4.0:
+    resolution: {integrity: sha512-dcZON0IalGBpRmJBmMkaoV7d3I80R2O+FrzsZyHdNSFrANq/cgDqKQNmAHE8UEj4+QYWwwhkQOVdLHiAopzlsQ==}
+    dev: false
+
   /lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
     dev: true
@@ -7960,10 +7970,6 @@ packages:
       tiny-warning: 1.0.3
     dev: false
 
-  /react-router-redux@4.0.8:
-    resolution: {integrity: sha512-lzlK+S6jZnn17BZbzBe6F8ok3YAhGAUlyWgRu3cz5mT199gKxfem5lNu3qcgzRiVhNEOFVG0/pdT+1t4aWhoQw==}
-    dev: false
-
   /react-router@5.3.4(react@18.2.0):
     resolution: {integrity: sha512-Ys9K+ppnJah3QuaRiLxk+jDWOR1MekYQrlytiXxC1RyfbdsZkS5pvKAzCCr031xHixZwpnsYNT5xysdFHQaYsA==}
     peerDependencies:
@@ -8099,13 +8105,6 @@ packages:
 
   /reduce-reducers@1.0.4:
     resolution: {integrity: sha512-Mb2WZ2bJF597exiqX7owBzrqJ74DHLK3yOQjCyPAaNifRncE8OD0wFIuoMhXxTnHK07+8zZ2SJEKy/qtiyR7vw==}
-    dev: false
-
-  /redux-seamless-immutable@0.4.0:
-    resolution: {integrity: sha512-/oS3fhrize9D3RSHemgJxVllohybRrad5IjccotFy8Ni4IKAPTtX1mqszpiCIl12+7v0dNqBpq6ES6R236AliQ==}
-    dependencies:
-      react-router-redux: 4.0.8
-      seamless-immutable: 7.1.4
     dev: false
 
   /redux-thunk@2.4.2(redux@4.2.1):
@@ -8404,7 +8403,9 @@ packages:
 
   /seamless-immutable@7.1.4:
     resolution: {integrity: sha512-XiUO1QP4ki4E2PHegiGAlu6r82o5A+6tRh7IkGGTVg/h+UoeX4nFBeCGPOhb4CYjvkqsfm/TUtvOMYC1xmV30A==}
+    requiresBuild: true
     dev: false
+    optional: true
 
   /semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
