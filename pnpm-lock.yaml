@@ -31,7 +31,7 @@ importers:
         version: 2.20.1(encoding@0.1.13)
       connected-react-router:
         specifier: ^4.5.0
-        version: 4.5.0(react-redux@5.1.2(react@18.3.1)(redux@4.2.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@4.2.1)
+        version: 4.5.0(react-redux@5.1.2(react@18.3.1)(redux@5.0.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@5.0.1)
       dayjs:
         specifier: ^1.11.11
         version: 1.11.11
@@ -85,7 +85,7 @@ importers:
         version: 2.16.0(react@18.3.1)
       react-redux:
         specifier: ^5.1.2
-        version: 5.1.2(react@18.3.1)(redux@4.2.1)
+        version: 5.1.2(react@18.3.1)(redux@5.0.1)
       react-router:
         specifier: ^5.3.4
         version: 5.3.4(react@18.3.1)
@@ -96,11 +96,11 @@ importers:
         specifier: ^1.0.4
         version: 1.0.4
       redux:
-        specifier: ^4.2.1
-        version: 4.2.1
+        specifier: ^5.0.1
+        version: 5.0.1
       redux-thunk:
         specifier: ^2.4.2
-        version: 2.4.2(redux@4.2.1)
+        version: 2.4.2(redux@5.0.1)
       web-vitals:
         specifier: ^3.5.2
         version: 3.5.2
@@ -3608,10 +3608,6 @@ packages:
     resolution: {integrity: sha512-rMyFe1+jnyAAf+NHwTclDz0eAaLkVDdKVHHBFWsBWHnnh5YeJMNWWsv7AbFYXfK3oTqvL7VTWkhNLu1jX24D+g==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
 
-  jest-message-util@29.6.3:
-    resolution: {integrity: sha512-FtzaEEHzjDpQp51HX4UMkPZjy46ati4T5pEMyM6Ik48ztu4T9LQplZ6OsimHx7EuM9dfEh5HJa6D3trEftu3dA==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-
   jest-message-util@29.7.0:
     resolution: {integrity: sha512-GBEV4GRADeP+qtB2+6u61stea8mGcOT4mCtrYISZwfu9/ISHFJ/5zOMXYbpBE9RsS5+Gb63DW4FgmnKJ79Kf6w==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -3669,10 +3665,6 @@ packages:
   jest-util@27.5.1:
     resolution: {integrity: sha512-Kv2o/8jNvX1MQ0KGtw480E/w4fBCDOnH6+6DmeKi6LZUIlKA5kwY0YNdlzaWTiVgxqAqik11QyxDOKk543aKXw==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
-
-  jest-util@29.6.3:
-    resolution: {integrity: sha512-QUjna/xSy4B32fzcKTSz1w7YYzgiHrjjJjevdRf61HYk998R5vVMMNmrHESYZVDS5DSWs+1srPLPKxXPkeSDOA==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
   jest-util@29.7.0:
     resolution: {integrity: sha512-z6EbKajIpqGKU56y5KBUgy1dt1ihhQJgWzUlZHArA/+X2ad7Cb5iF+AK1EWVL/Bo7Rz9uurpqw6SiBCefUbCGA==}
@@ -4384,10 +4376,6 @@ packages:
     resolution: {integrity: sha512-Qb1gy5OrP5+zDf2Bvnzdl3jsTf1qXVMazbvCoKhtKqVs4/YK4ozX4gKQJJVyNe+cajNPn0KoC0MC3FUmaHWEmQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
 
-  pretty-format@29.6.3:
-    resolution: {integrity: sha512-ZsBgjVhFAj5KeK+nHfF1305/By3lechHQSMWCTl8iHSbfOm2TN5nHEtFc/+W7fAyUeCs2n5iow72gld4gW0xDw==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-
   pretty-format@29.7.0:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -4612,8 +4600,8 @@ packages:
     peerDependencies:
       redux: ^4
 
-  redux@4.2.1:
-    resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==}
+  redux@5.0.1:
+    resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
 
   reflect.getprototypeof@1.0.6:
     resolution: {integrity: sha512-fmfw4XgoDke3kdI6h4xcUz1dG8uaiv5q9gcEwLS4Pnth2kxT+GZ7YehS1JTMGBQmtV7Y4GFGbs2re2NqhdozUg==}
@@ -7606,7 +7594,7 @@ snapshots:
   '@types/jest@29.5.4':
     dependencies:
       expect: 29.6.4
-      pretty-format: 29.6.3
+      pretty-format: 29.7.0
     optional: true
 
   '@types/json5@0.0.29': {}
@@ -8178,13 +8166,13 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  connected-react-router@4.5.0(react-redux@5.1.2(react@18.3.1)(redux@4.2.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@4.2.1):
+  connected-react-router@4.5.0(react-redux@5.1.2(react@18.3.1)(redux@5.0.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@5.0.1):
     dependencies:
       immutable: 3.8.2
       react: 18.3.1
-      react-redux: 5.1.2(react@18.3.1)(redux@4.2.1)
+      react-redux: 5.1.2(react@18.3.1)(redux@5.0.1)
       react-router: 5.3.4(react@18.3.1)
-      redux: 4.2.1
+      redux: 5.0.1
       redux-seamless-immutable: 0.4.0
       seamless-immutable: 7.1.4
 
@@ -8834,8 +8822,8 @@ snapshots:
       '@jest/expect-utils': 29.6.4
       jest-get-type: 29.6.3
       jest-matcher-utils: 29.6.4
-      jest-message-util: 29.6.3
-      jest-util: 29.6.3
+      jest-message-util: 29.7.0
+      jest-util: 29.7.0
     optional: true
 
   extract-zip@2.0.1:
@@ -9621,7 +9609,7 @@ snapshots:
       chalk: 4.1.2
       diff-sequences: 29.6.3
       jest-get-type: 29.6.3
-      pretty-format: 29.6.3
+      pretty-format: 29.7.0
     optional: true
 
   jest-docblock@27.5.1:
@@ -9753,7 +9741,7 @@ snapshots:
       chalk: 4.1.2
       jest-diff: 29.6.4
       jest-get-type: 29.6.3
-      pretty-format: 29.6.3
+      pretty-format: 29.7.0
     optional: true
 
   jest-message-util@27.5.1:
@@ -9767,19 +9755,6 @@ snapshots:
       pretty-format: 27.5.1
       slash: 3.0.0
       stack-utils: 2.0.6
-
-  jest-message-util@29.6.3:
-    dependencies:
-      '@babel/code-frame': 7.24.7
-      '@jest/types': 29.6.3
-      '@types/stack-utils': 2.0.1
-      chalk: 4.1.2
-      graceful-fs: 4.2.11
-      micromatch: 4.0.5
-      pretty-format: 29.6.3
-      slash: 3.0.0
-      stack-utils: 2.0.6
-    optional: true
 
   jest-message-util@29.7.0:
     dependencies:
@@ -9936,16 +9911,6 @@ snapshots:
       ci-info: 3.8.0
       graceful-fs: 4.2.11
       picomatch: 2.3.1
-
-  jest-util@29.6.3:
-    dependencies:
-      '@jest/types': 29.6.3
-      '@types/node': 20.10.1
-      chalk: 4.1.2
-      ci-info: 3.8.0
-      graceful-fs: 4.2.11
-      picomatch: 2.3.1
-    optional: true
 
   jest-util@29.7.0:
     dependencies:
@@ -10675,13 +10640,6 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 17.0.2
 
-  pretty-format@29.6.3:
-    dependencies:
-      '@jest/schemas': 29.6.3
-      ansi-styles: 5.2.0
-      react-is: 18.3.1
-    optional: true
-
   pretty-format@29.7.0:
     dependencies:
       '@jest/schemas': 29.6.3
@@ -10854,7 +10812,7 @@ snapshots:
       react: 18.3.1
       react-fast-compare: 3.2.2
 
-  react-redux@5.1.2(react@18.3.1)(redux@4.2.1):
+  react-redux@5.1.2(react@18.3.1)(redux@5.0.1):
     dependencies:
       '@babel/runtime': 7.22.11
       hoist-non-react-statics: 3.3.2
@@ -10864,7 +10822,7 @@ snapshots:
       react: 18.3.1
       react-is: 16.13.1
       react-lifecycles-compat: 3.0.4
-      redux: 4.2.1
+      redux: 5.0.1
 
   react-refresh@0.14.2: {}
 
@@ -10979,13 +10937,11 @@ snapshots:
       react-router-redux: 4.0.8
       seamless-immutable: 7.1.4
 
-  redux-thunk@2.4.2(redux@4.2.1):
+  redux-thunk@2.4.2(redux@5.0.1):
     dependencies:
-      redux: 4.2.1
+      redux: 5.0.1
 
-  redux@4.2.1:
-    dependencies:
-      '@babel/runtime': 7.22.11
+  redux@5.0.1: {}
 
   reflect.getprototypeof@1.0.6:
     dependencies:
