@@ -19,19 +19,19 @@ importers:
         version: 0.16.0
       '@material-ui/core':
         specifier: ^1.5.1
-        version: 1.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@material-ui/icons':
         specifier: ^1.1.1
-        version: 1.1.1(@material-ui/core@1.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 1.1.1(@material-ui/core@1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sentry/react':
         specifier: ^7.118.0
-        version: 7.118.0(react@18.2.0)
+        version: 7.118.0(react@18.3.1)
       '@sentry/vite-plugin':
         specifier: ^2.20.1
         version: 2.20.1(encoding@0.1.13)
       connected-react-router:
         specifier: ^4.5.0
-        version: 4.5.0(react-redux@5.1.2(react@18.2.0)(redux@4.2.1))(react-router@5.3.4(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+        version: 4.5.0(react-redux@5.1.2(react@18.3.1)(redux@4.2.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@4.2.1)
       dayjs:
         specifier: ^1.11.11
         version: 1.11.11
@@ -69,29 +69,29 @@ importers:
         specifier: ^3.4.1
         version: 3.4.1
       react:
-        specifier: ~18.2.0
-        version: 18.2.0
+        specifier: ~18.3.1
+        version: 18.3.1
       react-dom:
-        specifier: ~18.2.0
-        version: 18.2.0(react@18.2.0)
+        specifier: ~18.3.1
+        version: 18.3.1(react@18.3.1)
       react-map-gl:
         specifier: ^5.3.21
-        version: 5.3.21(react@18.2.0)
+        version: 5.3.21(react@18.3.1)
       react-measure:
         specifier: ^2.5.2
-        version: 2.5.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-player:
         specifier: ^2.16.0
-        version: 2.16.0(react@18.2.0)
+        version: 2.16.0(react@18.3.1)
       react-redux:
         specifier: ^5.1.2
-        version: 5.1.2(react@18.2.0)(redux@4.2.1)
+        version: 5.1.2(react@18.3.1)(redux@4.2.1)
       react-router:
         specifier: ^5.3.4
-        version: 5.3.4(react@18.2.0)
+        version: 5.3.4(react@18.3.1)
       react-router-dom:
         specifier: ^5.3.4
-        version: 5.3.4(react@18.2.0)
+        version: 5.3.4(react@18.3.1)
       reduce-reducers:
         specifier: ^1.0.4
         version: 1.0.4
@@ -119,13 +119,13 @@ importers:
         version: 5.17.0
       '@testing-library/react':
         specifier: ^13.4.0
-        version: 13.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 13.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/react':
-        specifier: ^18.2.21
-        version: 18.2.21
+        specifier: ^18.3.3
+        version: 18.3.3
       '@types/react-dom':
-        specifier: ^18.2.7
-        version: 18.2.7
+        specifier: ^18.3.0
+        version: 18.3.0
       '@vitejs/plugin-react':
         specifier: ^4.3.1
         version: 4.3.1(vite@4.5.3(@types/node@20.10.1)(terser@5.24.0))
@@ -151,8 +151,8 @@ importers:
         specifier: ^7.33.2
         version: 7.33.2(eslint@8.57.0)
       eslint-plugin-react-hooks:
-        specifier: ^4.6.0
-        version: 4.6.0(eslint@8.57.0)
+        specifier: ^4.6.2
+        version: 4.6.2(eslint@8.57.0)
       expect-puppeteer:
         specifier: ^9.0.2
         version: 9.0.2
@@ -181,8 +181,8 @@ importers:
         specifier: ^19.11.1
         version: 19.11.1(encoding@0.1.13)
       react-test-renderer:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
@@ -1795,23 +1795,20 @@ packages:
   '@types/prop-types@15.7.5':
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  '@types/react-dom@18.2.7':
-    resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
+  '@types/react-dom@18.3.0':
+    resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
 
   '@types/react-transition-group@2.9.2':
     resolution: {integrity: sha512-5Fv2DQNO+GpdPZcxp2x/OQG/H19A01WlmpjVD9cKvVFmoVLOZ9LvBgSWG6pSXIU4og5fgbvGPaCV5+VGkWAEHA==}
 
-  '@types/react@18.2.21':
-    resolution: {integrity: sha512-neFKG/sBAwGxHgXiIxnbm3/AAVQ/cMRS93hvBpg8xYRbeQSPVABp9U2bRnPf0iI4+Ucdv3plSxKK+3CW2ENJxA==}
+  '@types/react@18.3.3':
+    resolution: {integrity: sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==}
 
   '@types/resolve@1.17.1':
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
 
   '@types/responselike@1.0.0':
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
-
-  '@types/scheduler@0.16.3':
-    resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
 
   '@types/stack-utils@2.0.1':
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
@@ -2586,8 +2583,8 @@ packages:
       '@testing-library/dom':
         optional: true
 
-  eslint-plugin-react-hooks@4.6.0:
-    resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
+  eslint-plugin-react-hooks@4.6.2:
+    resolution: {integrity: sha512-QzliNJq4GinDBcD8gPB5v0wh6g8q3SUi6EFF0x8N/BL9PoVs0atuGc47ozMRyOWAKdwaZ5OnbOEa3WR+dSGKuQ==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
@@ -4039,9 +4036,6 @@ packages:
   performance-now@2.1.0:
     resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
 
-  picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
 
@@ -4218,10 +4212,10 @@ packages:
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
-  react-dom@18.2.0:
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+  react-dom@18.3.1:
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.1
 
   react-event-listener@0.6.6:
     resolution: {integrity: sha512-+hCNqfy7o9wvO6UgjqFmBzARJS7qrNoda0VqzvOuioEpoEXKutiKuv92dSz6kP7rYLmyHPyYNLesi5t/aH1gfw==}
@@ -4239,6 +4233,9 @@ packages:
 
   react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+
+  react-is@18.3.1:
+    resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
   react-jss@8.6.1:
     resolution: {integrity: sha512-SH6XrJDJkAphp602J14JTy3puB2Zxz1FkM3bKVE8wON+va99jnUTKWnzGECb3NfIn9JPR5vHykge7K3/A747xQ==}
@@ -4294,10 +4291,10 @@ packages:
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
 
-  react-test-renderer@18.2.0:
-    resolution: {integrity: sha512-JWD+aQ0lh2gvh4NM3bBM42Kx+XybOxCpgYK7F8ugAlpaTSnWsX+39Z4XkOykGZAHrjwwTZT3x3KxswVWxHPUqA==}
+  react-test-renderer@18.3.1:
+    resolution: {integrity: sha512-KkAgygexHUkQqtvvx/otwxtuFu5cVjfzTCtjXLH9boS19/Nbtg84zS7wIQn39G8IlrhThBpQsMKkq5ZHZIYFXA==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.1
 
   react-transition-group@2.9.0:
     resolution: {integrity: sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==}
@@ -4305,8 +4302,8 @@ packages:
       react: '>=15.0.0'
       react-dom: '>=15.0.0'
 
-  react@18.2.0:
-    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+  react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -4512,8 +4509,8 @@ packages:
     resolution: {integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==}
     engines: {node: '>=10'}
 
-  scheduler@0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
+  scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
 
   seamless-immutable@7.1.4:
     resolution: {integrity: sha512-XiUO1QP4ki4E2PHegiGAlu6r82o5A+6tRh7IkGGTVg/h+UoeX4nFBeCGPOhb4CYjvkqsfm/TUtvOMYC1xmV30A==}
@@ -6703,7 +6700,7 @@ snapshots:
 
   '@mapbox/whoots-js@3.1.0': {}
 
-  '@material-ui/core@1.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@material-ui/core@1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.0.0-rc.1
       '@types/jss': 9.5.8
@@ -6727,21 +6724,21 @@ snapshots:
       normalize-scroll-left: 0.1.2
       popper.js: 1.16.1
       prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-event-listener: 0.6.6(react@18.2.0)
-      react-jss: 8.6.1(react@18.2.0)
-      react-transition-group: 2.9.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      recompose: 0.28.2(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-event-listener: 0.6.6(react@18.3.1)
+      react-jss: 8.6.1(react@18.3.1)
+      react-transition-group: 2.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      recompose: 0.28.2(react@18.3.1)
       warning: 4.0.3
 
-  '@material-ui/icons@1.1.1(@material-ui/core@1.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@material-ui/icons@1.1.1(@material-ui/core@1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.0.0-beta.42
-      '@material-ui/core': 1.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      recompose: 0.27.1(react@18.2.0)
+      '@material-ui/core': 1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      recompose: 0.27.1(react@18.3.1)
 
   '@math.gl/web-mercator@3.6.3':
     dependencies:
@@ -6913,14 +6910,14 @@ snapshots:
       '@sentry/utils': 7.118.0
       localforage: 1.10.0
 
-  '@sentry/react@7.118.0(react@18.2.0)':
+  '@sentry/react@7.118.0(react@18.3.1)':
     dependencies:
       '@sentry/browser': 7.118.0
       '@sentry/core': 7.118.0
       '@sentry/types': 7.118.0
       '@sentry/utils': 7.118.0
       hoist-non-react-statics: 3.3.2
-      react: 18.2.0
+      react: 18.3.1
 
   '@sentry/replay@7.118.0':
     dependencies:
@@ -7131,13 +7128,13 @@ snapshots:
       lodash: 4.17.21
       redent: 3.0.0
 
-  '@testing-library/react@13.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@testing-library/react@13.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.22.11
       '@testing-library/dom': 8.20.1
-      '@types/react-dom': 18.2.7
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      '@types/react-dom': 18.3.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@tootallnate/once@1.1.2': {}
 
@@ -7239,18 +7236,17 @@ snapshots:
 
   '@types/prop-types@15.7.5': {}
 
-  '@types/react-dom@18.2.7':
+  '@types/react-dom@18.3.0':
     dependencies:
-      '@types/react': 18.2.21
+      '@types/react': 18.3.3
 
   '@types/react-transition-group@2.9.2':
     dependencies:
-      '@types/react': 18.2.21
+      '@types/react': 18.3.3
 
-  '@types/react@18.2.21':
+  '@types/react@18.3.3':
     dependencies:
       '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.3
       csstype: 3.1.2
 
   '@types/resolve@1.17.1':
@@ -7260,8 +7256,6 @@ snapshots:
   '@types/responselike@1.0.0':
     dependencies:
       '@types/node': 20.10.1
-
-  '@types/scheduler@0.16.3': {}
 
   '@types/stack-utils@2.0.1': {}
 
@@ -7748,12 +7742,12 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  connected-react-router@4.5.0(react-redux@5.1.2(react@18.2.0)(redux@4.2.1))(react-router@5.3.4(react@18.2.0))(react@18.2.0)(redux@4.2.1):
+  connected-react-router@4.5.0(react-redux@5.1.2(react@18.3.1)(redux@4.2.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@4.2.1):
     dependencies:
       immutable: 3.8.2
-      react: 18.2.0
-      react-redux: 5.1.2(react@18.2.0)(redux@4.2.1)
-      react-router: 5.3.4(react@18.2.0)
+      react: 18.3.1
+      react-redux: 5.1.2(react@18.3.1)(redux@4.2.1)
+      react-router: 5.3.4(react@18.3.1)
       redux: 4.2.1
       redux-seamless-immutable: 0.4.0
       seamless-immutable: 7.1.4
@@ -8212,7 +8206,7 @@ snapshots:
     optionalDependencies:
       '@testing-library/dom': 8.20.1
 
-  eslint-plugin-react-hooks@4.6.0(eslint@8.57.0):
+  eslint-plugin-react-hooks@4.6.2(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
 
@@ -9996,8 +9990,6 @@ snapshots:
 
   performance-now@2.1.0: {}
 
-  picocolors@1.0.0: {}
-
   picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
@@ -10178,17 +10170,17 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  react-dom@18.2.0(react@18.2.0):
+  react-dom@18.3.1(react@18.3.1):
     dependencies:
       loose-envify: 1.4.0
-      react: 18.2.0
-      scheduler: 0.23.0
+      react: 18.3.1
+      scheduler: 0.23.2
 
-  react-event-listener@0.6.6(react@18.2.0):
+  react-event-listener@0.6.6(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.23.5
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       warning: 4.0.3
 
   react-fast-compare@3.2.2: {}
@@ -10199,18 +10191,20 @@ snapshots:
 
   react-is@18.2.0: {}
 
-  react-jss@8.6.1(react@18.2.0):
+  react-is@18.3.1: {}
+
+  react-jss@8.6.1(react@18.3.1):
     dependencies:
       hoist-non-react-statics: 2.5.5
       jss: 9.8.7
       jss-preset-default: 4.5.0(jss@9.8.7)
       prop-types: 15.8.1
-      react: 18.2.0
-      theming: 1.3.0(react@18.2.0)
+      react: 18.3.1
+      theming: 1.3.0(react@18.3.1)
 
   react-lifecycles-compat@3.0.4: {}
 
-  react-map-gl@5.3.21(react@18.2.0):
+  react-map-gl@5.3.21(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.22.11
       '@types/geojson': 7946.0.10
@@ -10218,56 +10212,56 @@ snapshots:
       mapbox-gl: 1.13.3
       mjolnir.js: 2.7.1
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       resize-observer-polyfill: 1.5.1
       viewport-mercator-project: 7.0.4
 
-  react-measure@2.5.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-measure@2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.22.11
       get-node-dimensions: 1.2.1
       prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       resize-observer-polyfill: 1.5.1
 
-  react-player@2.16.0(react@18.2.0):
+  react-player@2.16.0(react@18.3.1):
     dependencies:
       deepmerge: 4.3.1
       load-script: 1.0.0
       memoize-one: 5.2.1
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       react-fast-compare: 3.2.2
 
-  react-redux@5.1.2(react@18.2.0)(redux@4.2.1):
+  react-redux@5.1.2(react@18.3.1)(redux@4.2.1):
     dependencies:
       '@babel/runtime': 7.22.11
       hoist-non-react-statics: 3.3.2
       invariant: 2.2.4
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       react-is: 16.13.1
       react-lifecycles-compat: 3.0.4
       redux: 4.2.1
 
   react-refresh@0.14.2: {}
 
-  react-router-dom@5.3.4(react@18.2.0):
+  react-router-dom@5.3.4(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.22.11
       history: 4.10.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.2.0
-      react-router: 5.3.4(react@18.2.0)
+      react: 18.3.1
+      react-router: 5.3.4(react@18.3.1)
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
 
   react-router-redux@4.0.8: {}
 
-  react-router@5.3.4(react@18.2.0):
+  react-router@5.3.4(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.22.11
       history: 4.10.1
@@ -10275,34 +10269,34 @@ snapshots:
       loose-envify: 1.4.0
       path-to-regexp: 1.8.0
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
       react-is: 16.13.1
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
 
-  react-shallow-renderer@16.15.0(react@18.2.0):
+  react-shallow-renderer@16.15.0(react@18.3.1):
     dependencies:
       object-assign: 4.1.1
-      react: 18.2.0
-      react-is: 18.2.0
+      react: 18.3.1
+      react-is: 18.3.1
 
-  react-test-renderer@18.2.0(react@18.2.0):
+  react-test-renderer@18.3.1(react@18.3.1):
     dependencies:
-      react: 18.2.0
-      react-is: 18.2.0
-      react-shallow-renderer: 16.15.0(react@18.2.0)
-      scheduler: 0.23.0
+      react: 18.3.1
+      react-is: 18.3.1
+      react-shallow-renderer: 16.15.0(react@18.3.1)
+      scheduler: 0.23.2
 
-  react-transition-group@2.9.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-transition-group@2.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       dom-helpers: 3.4.0
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       react-lifecycles-compat: 3.0.4
 
-  react@18.2.0:
+  react@18.3.1:
     dependencies:
       loose-envify: 1.4.0
 
@@ -10333,23 +10327,23 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
-  recompose@0.27.1(react@18.2.0):
+  recompose@0.27.1(react@18.3.1):
     dependencies:
       babel-runtime: 6.26.0
       change-emitter: 0.1.6
       fbjs: 0.8.18
       hoist-non-react-statics: 2.5.5
-      react: 18.2.0
+      react: 18.3.1
       react-lifecycles-compat: 3.0.4
       symbol-observable: 1.2.0
 
-  recompose@0.28.2(react@18.2.0):
+  recompose@0.28.2(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.0.0-beta.56
       change-emitter: 0.1.6
       fbjs: 0.8.18
       hoist-non-react-statics: 2.5.5
-      react: 18.2.0
+      react: 18.3.1
       react-lifecycles-compat: 3.0.4
       symbol-observable: 1.2.0
 
@@ -10538,7 +10532,7 @@ snapshots:
     dependencies:
       xmlchars: 2.2.0
 
-  scheduler@0.23.0:
+  scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
 
@@ -10861,13 +10855,13 @@ snapshots:
 
   text-table@0.2.0: {}
 
-  theming@1.3.0(react@18.2.0):
+  theming@1.3.0(react@18.3.1):
     dependencies:
       brcast: 3.0.2
       is-function: 1.0.2
       is-plain-object: 2.0.4
       prop-types: 15.8.1
-      react: 18.2.0
+      react: 18.3.1
 
   thenify-all@1.6.0:
     dependencies:
