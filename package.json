@@ -21,7 +21,7 @@
   ],
   "private": true,
   "engines": {
-    "node": ">=16"
+    "node": ">=16.20.2"
   },
   "dependencies": {
     "@commaai/api": "github:commaai/comma-api#3.1.2",
