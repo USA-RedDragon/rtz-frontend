@@ -23,7 +23,7 @@
   "engines": {
     "node": ">=16.20.2"
   },
-  "packageManager": "pnpm@9.3.0",
+  "packageManager": "pnpm@9.4.0",
   "dependencies": {
     "@commaai/api": "github:commaai/comma-api#3.1.2",
     "@commaai/my-comma-auth": "^1.4.1",
