@@ -2,59 +2,48 @@ name: test
 
 on:
   push:
-    branches:
-      - master
   pull_request:
   workflow_dispatch:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-pnpm
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
 
       - run: |
-          pnpm install
+          npm ci
           cd ./node_modules/puppeteer
-          pnpm install
+          npm ci
 
-      - run: pnpm run build:development
+      - run: npm run build:development
 
       - name: Lint
-        run: pnpm lint
+        run: npm run lint
 
       - name: Run unit tests
-        run: pnpm test
+        run: npm run test
 
       - name: Run end-to-end tests
-        run: pnpm test-puppeteer-build
-
-  # bundle_size:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: ./.github/actions/setup-pnpm
-  #     - uses: preactjs/compressed-size-action@v2
-  #       with:
-  #         repo-token: ${{ secrets.GITHUB_TOKEN }}
-  #         build-script: build:production
-  #         pattern: "./dist/assets/*.{css,js}"
-  #         strip-hash: "\\b-\\w{8}"
-  #         minimum-change-threshold: 100
+        run: npm run test-puppeteer-build
 
   lighthouse:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-pnpm
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
 
-      - run: pnpm install
-      - run: pnpm build:production
+      - run: npm ci
+      - run: npm run build:production
 
       - name: run Lighthouse CI
         run: |
-          pnpm add -g @lhci/cli@0.12.x
+          npm install -g @lhci/cli@0.12.x
           lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

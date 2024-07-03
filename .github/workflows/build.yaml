@@ -7,17 +7,19 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-pnpm
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
 
       - name: get build info
         id: build_info
         run: echo timestamp=$(git show -s --format=%cI) >> $GITHUB_OUTPUT
 
-      - run: pnpm install
-      - run: pnpm build:production
+      - run: npm ci
+      - run: npm run build:production
         env:
           VITE_APP_GIT_SHA: ${{ github.sha }}
           VITE_APP_GIT_TIMESTAMP: ${{ steps.build_info.outputs.timestamp }}
