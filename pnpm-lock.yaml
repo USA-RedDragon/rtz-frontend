@@ -78,8 +78,8 @@ dependencies:
     specifier: ^2.5.2
     version: 2.5.2(react-dom@18.2.0)(react@18.2.0)
   react-player:
-    specifier: ^2.12.0
-    version: 2.12.0(react@18.2.0)
+    specifier: ^2.16.0
+    version: 2.16.0(react@18.2.0)
   react-redux:
     specifier: ^5.1.2
     version: 5.1.2(react@18.2.0)(redux@4.2.1)
@@ -7910,8 +7910,8 @@ packages:
       resize-observer-polyfill: 1.5.1
     dev: false
 
-  /react-player@2.12.0(react@18.2.0):
-    resolution: {integrity: sha512-rymLRz/2GJJD+Wc01S7S+i9pGMFYnNmQibR2gVE3KmHJCBNN8BhPAlOPTGZtn1uKpJ6p4RPLlzPQ1OLreXd8gw==}
+  /react-player@2.16.0(react@18.2.0):
+    resolution: {integrity: sha512-mAIPHfioD7yxO0GNYVFD1303QFtI3lyyQZLY229UEAp/a10cSW+hPcakg0Keq8uWJxT2OiT/4Gt+Lc9bD6bJmQ==}
     peerDependencies:
       react: '>=16.6.0'
     dependencies:

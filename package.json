@@ -48,7 +48,7 @@
     "react-dom": "~18.2.0",
     "react-map-gl": "^5.3.21",
     "react-measure": "^2.5.2",
-    "react-player": "^2.12.0",
+    "react-player": "^2.16.0",
     "react-redux": "^5.1.2",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
