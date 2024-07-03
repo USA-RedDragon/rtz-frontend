@@ -131,8 +131,8 @@ devDependencies:
     specifier: ^10.4.15
     version: 10.4.15(postcss@8.4.28)
   camelcase:
-    specifier: ^6.3.0
-    version: 6.3.0
+    specifier: ^8.0.0
+    version: 8.0.0
   env-cmd:
     specifier: ^8.0.2
     version: 8.0.2
@@ -3814,6 +3814,11 @@ packages:
   /camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
+    dev: true
+
+  /camelcase@8.0.0:
+    resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
+    engines: {node: '>=16'}
     dev: true
 
   /caniuse-lite@1.0.30001565:
