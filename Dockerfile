@@ -24,7 +24,7 @@ ENV SENTRY_RELEASE $SENTRY_RELEASE
 RUN pnpm build:production
 
 
-FROM nginx:1.24
+FROM nginx:1.27
 
 COPY config.js.template /etc/nginx/templates/config.js.template
 COPY nginx.conf /etc/nginx/conf.d/default.conf
