@@ -25,19 +25,6 @@ jobs:
       - name: Run end-to-end tests
         run: pnpm test-puppeteer-build
 
-  # bundle_size:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: ./.github/actions/setup-pnpm
-  #     - uses: preactjs/compressed-size-action@v2
-  #       with:
-  #         repo-token: ${{ secrets.GITHUB_TOKEN }}
-  #         build-script: build:production
-  #         pattern: "./dist/assets/*.{css,js}"
-  #         strip-hash: "\\b-\\w{8}"
-  #         minimum-change-threshold: 100
-
   lighthouse:
     runs-on: ubuntu-latest
     steps:
@@ -47,8 +34,6 @@ jobs:
       - run: pnpm build:production
 
       - name: run Lighthouse CI
-        run: |
-          pnpm add -g @lhci/cli@0.12.x
-          lhci autorun
+        run: pnpm run lighthouse
         env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}

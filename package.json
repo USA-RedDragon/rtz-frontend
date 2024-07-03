@@ -6,6 +6,7 @@
     "build:development": "env-cmd .env.development vite build --mode development",
     "build:production": "vite build",
     "serve": "vite preview",
+    "lighthouse": "lhci autorun",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "test": "jest",
     "test-coverage": "jest --coverage",
@@ -60,6 +61,7 @@
     "web-vitals": "^4.2.1"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.12.0",
     "@swc/core": "^1.6.7",
     "@swc/jest": "^0.2.36",
     "@tailwindcss/typography": "^0.5.13",
