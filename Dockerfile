@@ -1,4 +1,4 @@
-FROM node:20-alpine AS base
+FROM node:20.15.0-alpine AS base
 
 ARG PNPM_VERSION=8.6.3
 RUN npm install -g pnpm@$PNPM_VERSION
