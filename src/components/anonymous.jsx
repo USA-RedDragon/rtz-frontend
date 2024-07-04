@@ -132,9 +132,6 @@ class AnonymousLanding extends Component {
             <img className={classes.buttonImage} src={AuthGithubIcon} alt="" />
             <Typography className={classes.buttonText}>Sign in with GitHub</Typography>
           </a>
-          <a href="/login" className={`${classes.logInButton}`}>
-            <Typography className={classes.buttonText}>Sign in with Password</Typography>
-          </a>
 
           <span className="max-w-sm text-center mt-2 mb-8 text-sm">
             Make sure to sign in with the same account if you have previously
