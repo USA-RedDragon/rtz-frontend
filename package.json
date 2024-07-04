@@ -7,7 +7,7 @@
     "build:production": "vite build",
     "serve": "vite preview",
     "lighthouse": "lhci autorun",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint": "eslint src",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "test-puppeteer": "jest -c src/__puppeteer__/jest.config.js",
@@ -58,6 +58,9 @@
     "web-vitals": "^4.2.1"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.1.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.6.0",
     "@lhci/cli": "^0.14.0",
     "@swc/core": "^1.6.7",
     "@swc/jest": "^0.2.36",
@@ -76,6 +79,7 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "expect-puppeteer": "^10.0.0",
+    "globals": "^15.8.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-chain-transform": "^0.0.8",
