@@ -45,11 +45,16 @@ class App extends Component {
   }
 
   async componentDidMount() {
+    console.log("Component mount")
     if (window.location) {
       if (window.location.pathname === AuthConfig.AUTH_PATH) {
+        console.log("Auth path")
         try {
           const { code, provider } = qs.parse(window.location.search);
+          console.log("Code", code)
+          console.log("Provider", provider)
           const token = await Auth.refreshAccessToken(code, provider);
+          console.log("Token", token)
           if (token) {
             AuthStorage.setCommaAccessToken(token);
           }
