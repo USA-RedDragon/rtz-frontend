@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import decodeJwt, { InvalidTokenError } from 'jwt-decode';
+import { jwtDecode, InvalidTokenError } from 'jwt-decode';
 
 import { currentOffset } from '../timeline';
 
@@ -110,7 +110,7 @@ export function pairErrorToMessage(err) {
 export function verifyPairToken(pairToken, fromUrl) {
   let decoded;
   try {
-    decoded = decodeJwt(pairToken);
+    decoded = jwtDecode(pairToken);
   } catch (err) {
     // https://github.com/auth0/jwt-decode#getting-started
     if (err instanceof InvalidTokenError) {
