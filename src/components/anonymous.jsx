@@ -1,18 +1,16 @@
-/* global AppleID */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 import window from 'global/window';
 import PropTypes from 'prop-types';
-import qs from 'query-string';
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-import {config as AuthConfig, storage as AuthStorage} from '@commaai/my-comma-auth';
+import { storage as AuthStorage } from '@commaai/my-comma-auth';
 
 import Colors from '../colors';
-import { AuthAppleIcon, AuthGithubIcon, AuthGoogleIcon, RightArrow } from '../icons';
+import { AuthGithubIcon, AuthGoogleIcon, RightArrow } from '../icons';
 
 import PWAIcon from './PWAIcon';
 
@@ -105,24 +103,6 @@ class AnonymousLanding extends Component {
     if (q.has('r')) {
       sessionStorage.setItem('redirectURL', q.get('r'));
     }
-
-    const script = document.createElement('script');
-    document.body.appendChild(script);
-    script.onload = () => {
-      AppleID.auth.init({
-        clientId: AuthConfig.APPLE_CLIENT_ID,
-        scope: AuthConfig.APPLE_SCOPES,
-        redirectURI: AuthConfig.APPLE_REDIRECT_URI,
-        state: AuthConfig.APPLE_STATE,
-      });
-    };
-    script.src = 'https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js';
-    script.async = true;
-    document.addEventListener('AppleIDSignInOnSuccess', (data) => {
-      const { code, state } = data.detail.authorization;
-      window.location = [AuthConfig.APPLE_REDIRECT_PATH, qs.stringify({ code, state })].join('?');
-    });
-    document.addEventListener('AppleIDSignInOnFailure', console.warn);
   }
 
   render() {
@@ -144,17 +124,16 @@ class AnonymousLanding extends Component {
           <Typography className={classes.tagline}>
             Manage your comma device, view your drives, and use comma prime features
           </Typography>
-          <a href={AuthConfig.GOOGLE_REDIRECT_LINK} className={classes.logInButton}>
+          <a href={window.GOOGLE_REDIRECT_LINK} className={classes.logInButton}>
             <img className={classes.buttonImage} src={AuthGoogleIcon} alt="" />
             <Typography className={classes.buttonText}>Sign in with Google</Typography>
           </a>
-          <a onClick={() => AppleID.auth.signIn()} className={classes.logInButton}>
-            <img className={classes.buttonImage} src={AuthAppleIcon} alt="" />
-            <Typography className={classes.buttonText}>Sign in with Apple</Typography>
-          </a>
-          <a href={AuthConfig.GITHUB_REDIRECT_LINK} className={`${classes.logInButton} githubAuth`}>
+          <a href={window.GITHUB_REDIRECT_LINK} className={`${classes.logInButton} githubAuth`}>
             <img className={classes.buttonImage} src={AuthGithubIcon} alt="" />
             <Typography className={classes.buttonText}>Sign in with GitHub</Typography>
+          </a>
+          <a href="/login" className={`${classes.logInButton}`}>
+            <Typography className={classes.buttonText}>Sign in with Password</Typography>
           </a>
 
           <span className="max-w-sm text-center mt-2 mb-8 text-sm">

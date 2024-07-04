@@ -2,13 +2,11 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-import AuthAppleIcon from './auth_apple.png';
 import AuthGithubIcon from './auth_github.png';
 import AuthGoogleIcon from './auth_google.png';
 import IosShareIcon from './ios_share.png';
 
 export {
-  AuthAppleIcon,
   AuthGithubIcon,
   AuthGoogleIcon,
   IosShareIcon,
