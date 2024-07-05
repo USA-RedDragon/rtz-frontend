@@ -100,15 +100,6 @@ const styles = (theme) => ({
     '& p': { display: 'inline-block', marginLeft: 10 },
     color: Colors.white,
   },
-  unpairWarning: {
-    marginTop: 15,
-    padding: 10,
-    display: 'flex',
-    alignItems: 'center',
-    backgroundColor: Colors.orange200,
-    '& p': { display: 'inline-block', marginLeft: 10 },
-    color: Colors.white,
-  },
 });
 
 const initialState = {
@@ -391,13 +382,6 @@ class DeviceSettingsModal extends Component {
             <div className={ classes.unpairError }>
               <ErrorOutline />
               <Typography>{ this.state.unpairError }</Typography>
-            </div>
-            )}
-            { this.props.device.prime
-            && (
-            <div className={ classes.unpairWarning }>
-              <WarningIcon />
-              <Typography>Unpairing will also cancel the comma prime subscription for this device.</Typography>
             </div>
             )}
             <div className={ classes.topButtonGroup }>
