@@ -176,12 +176,6 @@ const styles = (theme) => ({
     padding: 10,
     '& p': { margin: 0 },
   },
-  paymentElement: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    maxWidth: 450,
-  },
 });
 
 class PrimeManage extends Component {
@@ -192,84 +186,19 @@ class PrimeManage extends Component {
       cancelError: null,
       cancelModal: false,
       canceling: false,
-      stripeStatus: null,
       windowWidth: window.innerWidth,
     };
 
-    this.cancelPrime = this.cancelPrime.bind(this);
-    this.fetchStripeSession = this.fetchStripeSession.bind(this);
-    this.gotoUpdate = this.gotoUpdate.bind(this);
     this.fetchSubscription = this.fetchSubscription.bind(this);
     this.onResize = this.onResize.bind(this);
   }
 
   componentDidMount() {
-    this.componentDidUpdate({}, {});
     this.mounted = true;
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevProps.stripeSuccess && this.props.stripeSuccess) {
-      this.setState({
-        stripeStatus: { sessionId: this.props.stripeSuccess, loading: true, paid: null },
-      }, this.fetchStripeSession);
-    }
   }
 
   componentWillUnmount() {
     this.mounted = false;
-  }
-
-  cancelPrime() {
-    this.setState({ canceling: true });
-    Billing.cancelPrime(this.props.dongleId).then((resp) => {
-      if (resp.success) {
-        this.setState({ canceling: false, cancelError: null, cancelSuccess: 'Cancelled subscription.' });
-        this.fetchSubscription();
-      } else if (resp.error) {
-        this.setState({ canceling: false, cancelError: resp.description });
-      } else {
-        this.setState({ canceling: false, cancelError: 'Could not cancel due to unknown error. Please try again.' });
-      }
-    }).catch((err) => {
-      this.setState({ canceling: false, cancelError: 'Could not cancel due to unknown error. Please try again.' });
-    });
-  }
-
-  async gotoUpdate() {
-    try {
-      const resp = await Billing.getStripePortal(this.props.dongleId);
-      window.location = resp.url;
-    } catch (err) {
-      // TODO show error messages
-      console.error(err);
-    }
-  }
-
-  async fetchStripeSession() {
-    const { dongleId } = this.props;
-    const { stripeStatus } = this.state;
-    if (!stripeStatus || !this.mounted) {
-      return;
-    }
-
-    try {
-      const resp = await Billing.getStripeSession(dongleId, stripeStatus.sessionId);
-      const status = resp.payment_status;
-      this.setState({ stripeStatus: {
-        ...stripeStatus,
-        paid: status,
-        loading: status !== 'paid',
-      } });
-      if (status === 'paid') {
-        this.fetchSubscription(true);
-      } else {
-        setTimeout(this.fetchStripeSession, 2000);
-      }
-    } catch (err) {
-      // TODO error handling
-      console.error(err);
-    }
   }
 
   async fetchSubscription(repeat = false) {
@@ -301,11 +230,11 @@ class PrimeManage extends Component {
 
   render() {
     const { dispatch, dongleId, subscription, classes, device } = this.props;
-    const { windowWidth, stripeStatus } = this.state;
+    const { windowWidth } = this.state;
 
     const hasPrimeSub = subscription && subscription.user_id;
 
-    if (!hasPrimeSub && !stripeStatus) {
+    if (!hasPrimeSub) {
       return null;
     }
 
@@ -338,36 +267,6 @@ class PrimeManage extends Component {
           </div>
           <div className={classes.primeContainer} style={{ padding: `16px ${containerPadding}px` }}>
             <Typography variant="title">comma prime</Typography>
-            {stripeStatus && (
-              <>
-                {stripeStatus.paid !== 'paid'
-                  && (
-                    <div className={classes.overviewBlockLoading}>
-                      <CircularProgress size={19} style={{ color: Colors.white }} />
-                      <Typography>Waiting for confirmed payment</Typography>
-                    </div>
-                  )}
-                {Boolean(stripeStatus.paid === 'paid' && !hasPrimeSub)
-                  && (
-                    <div className={classes.overviewBlockLoading}>
-                      <CircularProgress size={19} style={{ color: Colors.white }} />
-                      <Typography>Processing subscription</Typography>
-                    </div>
-                  )}
-                {Boolean(stripeStatus.paid === 'paid' && hasPrimeSub)
-                  && (
-                    <div className={classes.overviewBlockSuccess}>
-                      <Typography>comma prime activated</Typography>
-                      {subscription.is_prime_sim && (
-                        <Typography>
-                          Connectivity will be enabled as soon as activation propagates to your
-                          local cell tower. Rebooting your device may help.
-                        </Typography>
-                      )}
-                    </div>
-                  )}
-              </>
-            )}
             <div className={classes.overviewBlock}>
               <Typography variant="subheading">Device</Typography>
               <div className={classes.manageItem}>
@@ -416,27 +315,6 @@ class PrimeManage extends Component {
                     <Typography>{this.state.error}</Typography>
                   </div>
                 )}
-                <div className={`${classes.overviewBlock} ${classes.paymentElement}`}>
-                  <Button
-                    className={classes.buttons}
-                    style={buttonSmallStyle}
-                    onClick={this.gotoUpdate}
-                    disabled={!hasPrimeSub || (hasCancelAt && !device.eligible_features?.prime_data && subscription.plan === 'data')}
-                  >
-                    {hasCancelAt ? 'Renew subscription' : 'Update payment method'}
-                  </Button>
-                  {!hasCancelAt
-                    && (
-                      <Button
-                        className={`${classes.buttons} ${classes.cancelButton} primeCancel`}
-                        style={buttonSmallStyle}
-                        onClick={() => this.setState({ cancelModal: true })}
-                        disabled={Boolean(!hasPrimeSub)}
-                      >
-                        Cancel subscription
-                      </Button>
-                    )}
-                </div>
                 {hasPrimeSub && subscription.requires_migration
                   && (
                     <div className={classes.overviewBlockDisabled}>
@@ -490,16 +368,6 @@ class PrimeManage extends Component {
             <Typography>
               Your subscription will be cancelled immediately and can be resumed at any time.
             </Typography>
-            <Button
-              variant="contained"
-              className={`${classes.cancelModalButton} primeModalCancel`}
-              onClick={this.cancelPrime}
-              disabled={Boolean(this.state.cancelSuccess || this.state.canceling)}
-            >
-              {this.state.canceling
-                ? <CircularProgress size={19} style={{ color: Colors.white }} />
-                : 'Cancel subscription'}
-            </Button>
             <Button
               variant="contained"
               className={`${classes.closeButton} primeModalClose`}
