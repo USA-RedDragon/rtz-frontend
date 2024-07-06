@@ -9,6 +9,8 @@ The frontend to the comma connect progressive web app. This a react app using [C
 - Removed Plausible analytics
 - Removed custom Comma analytics
 - Installed Renovate to keep dependencies up to date
+- Removed HERE API geocoding based on Comma networks RPC call
+- Remove billing-related code
 
 ## Development
 
