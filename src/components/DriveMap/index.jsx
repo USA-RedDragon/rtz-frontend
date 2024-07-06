@@ -7,7 +7,7 @@ import ReactMapGL, { LinearInterpolator } from 'react-map-gl';
 
 import { fetchDriveCoords } from '../../actions/cached';
 import { currentOffset } from '../../timeline';
-import { DEFAULT_LOCATION, MAPBOX_STYLE, MAPBOX_TOKEN } from '../../utils/geocode';
+import { DEFAULT_LOCATION } from '../../utils/geocode';
 
 const INTERACTION_TIMEOUT = 5000;
 
@@ -292,9 +292,9 @@ class DriveMap extends Component {
           latitude={viewport.latitude}
           longitude={viewport.longitude}
           zoom={viewport.zoom}
-          mapStyle={MAPBOX_STYLE}
+          mapStyle={window.MAPBOX_STYLE}
           maxPitch={0}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
+          mapboxApiAccessToken={window.MAPBOX_TOKEN}
           ref={this.initMap}
           onContextMenu={null}
           dragRotate={false}

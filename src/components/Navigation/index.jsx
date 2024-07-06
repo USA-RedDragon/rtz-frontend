@@ -10,7 +10,7 @@ import dayjs from 'dayjs';
 
 import { athena as Athena, devices as Devices, navigation as NavigationApi } from '@commaai/api';
 import { primeNav } from '../../actions';
-import { DEFAULT_LOCATION, forwardLookup, getDirections, MAPBOX_STYLE, MAPBOX_TOKEN, reverseLookup } from '../../utils/geocode';
+import { DEFAULT_LOCATION, forwardLookup, getDirections, reverseLookup } from '../../utils/geocode';
 import Colors from '../../colors';
 import { PinCarIcon, PinMarkerIcon, PinHomeIcon, PinWorkIcon, PinPinnedIcon } from '../../icons';
 import { timeFromNow } from '../../utils';
@@ -941,12 +941,12 @@ class Navigation extends Component {
           pitch={viewport.pitch}
           onViewportChange={this.viewportChange}
           onContextMenu={null}
-          mapStyle={MAPBOX_STYLE}
+          mapStyle={window.MAPBOX_STYLE}
           width="100%"
           height="100%"
           onNativeClick={this.focus}
           maxPitch={0}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
+          mapboxApiAccessToken={window.MAPBOX_TOKEN}
           attributionControl={false}
           dragRotate={false}
           onError={(err) => this.setState({ mapError: err.error.message })}

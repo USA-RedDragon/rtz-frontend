@@ -9,12 +9,8 @@ export const DEFAULT_LOCATION = {
   longitude: -117.161052,
 };
 
-export const MAPBOX_STYLE = 'mapbox://styles/commaai/cjj4yzqk201c52ss60ebmow0w';
-export const MAPBOX_TOKEN = 'pk.eyJ1IjoiY29tbWFhaSIsImEiOiJjangyYXV0c20wMGU2NDluMWR4amUydGl5In0.6Vb11S6tdX6Arpj6trRE_g';
-const HERE_API_KEY = 'O0atgmTwzKnwYJL2hk5N5qqG2R9y78f5GdHlvr_mtiw';
-
-const geocodingClient = mbxGeocoding({ accessToken: MAPBOX_TOKEN });
-const directionsClient = mbxDirections({ accessToken: MAPBOX_TOKEN });
+const geocodingClient = mbxGeocoding({ accessToken: window.MAPBOX_TOKEN });
+const directionsClient = mbxDirections({ accessToken: window.MAPBOX_TOKEN });
 
 export function getFilteredContexts(context) {
   const includeCtxs = ['region', 'district', 'place', 'locality', 'neighborhood'];
@@ -129,7 +125,7 @@ export async function reverseLookup(coords, navFormat = false) {
 
   const endpoint = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
   const params = {
-    access_token: MAPBOX_TOKEN,
+    access_token: window.MAPBOX_TOKEN,
     limit: 1,
   };
 
@@ -202,7 +198,7 @@ export async function forwardLookup(query, proximity, viewport) {
   }
 
   const params = {
-    apiKey: HERE_API_KEY,
+    apiKey: window.HERE_API_KEY,
     q: query,
     limit: 20,
     show: ['details'],
