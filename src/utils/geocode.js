@@ -234,20 +234,6 @@ export async function forwardLookup(query, proximity, viewport) {
   return json.items;
 }
 
-export async function networkPositioning(req) {
-  const resp = await fetch(`https://positioning.hereapi.com/v2/locate?apiKey=${HERE_API_KEY}&fallback=any,singleWifi`, {
-    method: 'POST',
-    headers: new Headers({ 'Content-Type': 'application/json' }),
-    body: JSON.stringify(req),
-  });
-  if (!resp.ok) {
-    console.error(resp);
-    return null;
-  }
-  const json = await resp.json();
-  return json.location;
-}
-
 export async function getDirections(points) {
   if (!directionsClient) {
     return null;

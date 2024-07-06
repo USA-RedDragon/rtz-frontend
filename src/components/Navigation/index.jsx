@@ -10,7 +10,7 @@ import dayjs from 'dayjs';
 
 import { athena as Athena, devices as Devices, navigation as NavigationApi } from '@commaai/api';
 import { primeNav } from '../../actions';
-import { DEFAULT_LOCATION, forwardLookup, getDirections, MAPBOX_STYLE, MAPBOX_TOKEN, networkPositioning, reverseLookup } from '../../utils/geocode';
+import { DEFAULT_LOCATION, forwardLookup, getDirections, MAPBOX_STYLE, MAPBOX_TOKEN, reverseLookup } from '../../utils/geocode';
 import Colors from '../../colors';
 import { PinCarIcon, PinMarkerIcon, PinHomeIcon, PinWorkIcon, PinPinnedIcon } from '../../icons';
 import { timeFromNow } from '../../utils';
@@ -329,7 +329,6 @@ class Navigation extends Component {
     this.deleteFavorite = this.deleteFavorite.bind(this);
     this.viewportChange = this.viewportChange.bind(this);
     this.getDeviceLastLocation = this.getDeviceLastLocation.bind(this);
-    this.getDeviceNetworkLocation = this.getDeviceNetworkLocation.bind(this);
     this.getCarLocation = this.getCarLocation.bind(this);
     this.carLocationCircle = this.carLocationCircle.bind(this);
     this.clearSearchSelect = this.clearSearchSelect.bind(this);
@@ -381,7 +380,6 @@ class Navigation extends Component {
 
   updateDevice() {
     this.getDeviceLastLocation();
-    this.getDeviceNetworkLocation();
     this.updateFavoriteLocations();
   }
 
@@ -400,37 +398,6 @@ class Navigation extends Component {
       }
     } catch (err) {
       if (!err.message || err.message.indexOf('no_segments_uploaded') === -1) {
-        console.error(err);
-      }
-    }
-  }
-
-  async getDeviceNetworkLocation() {
-    const { dongleId, hasNav } = this.props;
-    if (!hasNav) {
-      return;
-    }
-
-    const payload = {
-      method: 'getNetworks',
-      jsonrpc: '2.0',
-      id: 0,
-    };
-    try {
-      let resp = await Athena.postJsonRpcPayload(dongleId, payload);
-      if (!resp.result || Object.keys(resp.result).length === 0 || !this.mounted || dongleId !== this.props.dongleId) {
-        return;
-      }
-      resp = await networkPositioning(resp.result);
-      if (resp && this.mounted && dongleId === this.props.dongleId) {
-        this.setState({
-          carNetworkLocation: [resp.lng, resp.lat],
-          carNetworkLocationAccuracy: resp.accuracy,
-        }, this.flyToMarkers);
-      }
-    } catch (err) {
-      if (this.mounted && dongleId === this.props.dongleId
-        && (!err.message || err.message.indexOf('{"error": "Device not registered"}') === -1)) {
         console.error(err);
       }
     }
