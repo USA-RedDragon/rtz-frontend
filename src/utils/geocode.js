@@ -198,9 +198,9 @@ export async function forwardLookup(query, proximity, viewport) {
   }
 
   const params = {
-    apiKey: window.HERE_API_KEY,
+    access_token: window.MAPBOX_TOKEN,
     q: query,
-    limit: 20,
+    limit: 10,
     show: ['details'],
   };
   if (proximity) {
@@ -218,7 +218,7 @@ export async function forwardLookup(query, proximity, viewport) {
     params.in = 'bbox:-180,-90,180,90';
   }
 
-  const resp = await fetch(`https://autosuggest.search.hereapi.com/v1/autosuggest?${qs.stringify(params)}`, {
+  const resp = await fetch(`https://api.mapbox.com/search/geocode/v6/forward?${qs.stringify(params)}`, {
     method: 'GET',
   });
   if (!resp.ok) {

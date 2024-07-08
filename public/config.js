@@ -7,4 +7,3 @@ window.ATHENA_URL_ROOT = 'https://openpilot.jacob.network/';
 window.BILLING_URL_ROOT = 'https://openpilot.jacob.network/';
 window.MAPBOX_STYLE = 'mapbox://styles/usa-reddragon/clyd2ske5010r01qr2lde0k3n';
 window.MAPBOX_TOKEN = 'pk.eyJ1IjoidXNhLXJlZGRyYWdvbiIsImEiOiJjbHlkMzl6cW4wMGtnMmxvcWY1MTZpeGg2In0.AHfA3k-lG_b48str7o3xQw'
-window.HERE_API_KEY = 'O0atgmTwzKnwYJL2hk5N5qqG2R9y78f5GdHlvr_mtiw';
