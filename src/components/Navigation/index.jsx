@@ -476,7 +476,7 @@ class Navigation extends Component {
         this.setState({
           noFly: false,
           searchSelect: null,
-          search: features.filter((item) => !(['categoryQuery', 'chainQuery', 'administrativeArea'].includes(item.resultType))).slice(0, 10),
+          search: features.filter((item) => !(['categoryQuery', 'chainQuery', 'administrativeArea'].includes(item.properties.feature_type))).slice(0, 10),
           searchLooking: false,
           savingAs: false,
           savedAs: false,
@@ -714,7 +714,7 @@ class Navigation extends Component {
     if (item.access && item.access.length) {
       return item.access[0];
     }
-    return item.position;
+    return item.properties.position;
   }
 
   itemLngLat(item, bounds = false) {
@@ -839,7 +839,7 @@ class Navigation extends Component {
       this.setState({
         noFly: true,
         searchSelect: null,
-        search: features.filter((item) => !(['categoryQuery', 'chainQuery', 'administrativeArea'].includes(item.resultType))).slice(0, 10),
+        search: features.filter((item) => !(['categoryQuery', 'chainQuery', 'administrativeArea'].includes(item.properties.feature_type))).slice(0, 10),
         searchLooking: windowWidth < 600,
         savingAs: false,
         savedAs: false,

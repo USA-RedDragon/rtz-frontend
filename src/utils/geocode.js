@@ -227,7 +227,7 @@ export async function forwardLookup(query, proximity, viewport) {
   }
 
   const json = await resp.json();
-  return json.items;
+  return json.features;
 }
 
 export async function getDirections(points) {
