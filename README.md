@@ -11,6 +11,7 @@ The frontend to the comma connect progressive web app. This a react app using [C
 - Installed Renovate to keep dependencies up to date
 - Removed HERE API geocoding based on Comma networks RPC call
 - Remove billing-related code
+- User-configurable Mapbox token. The style is public at [Mapbox](https://api.mapbox.com/styles/v1/usa-reddragon/clyd2ske5010r01qr2lde0k3n.html?title=copy&access_token=pk.eyJ1IjoidXNhLXJlZGRyYWdvbiIsImEiOiJjbHlkMzl6cW4wMGtnMmxvcWY1MTZpeGg2In0.AHfA3k-lG_b48str7o3xQw&zoomwheel=true&fresh=true)
 
 ## Development
 
