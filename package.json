@@ -1,5 +1,5 @@
 {
-  "name": "connect",
+  "name": "RTZ",
   "version": "0.8.0",
   "scripts": {
     "start": "vite --host 0.0.0.0",
@@ -13,7 +13,7 @@
     "test-puppeteer": "jest -c src/__puppeteer__/jest.config.js",
     "test-puppeteer-build": "JEST_PUPPETEER_CONFIG=jest-puppeteer.build.config.js pnpm test-puppeteer"
   },
-  "repository": "https://github.com/commaai/connect.git",
+  "repository": "https://github.com/USA-RedDragon/rtz-frontend.git",
   "author": "Chris Vickery <chrisinajar@gmail.com>",
   "contributors": [
     "Joost Wooning <jwooning@gmail.com>",

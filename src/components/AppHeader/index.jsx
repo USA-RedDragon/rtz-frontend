@@ -42,8 +42,7 @@ const styles = () => ({
   },
   logoImg: {
     height: 34,
-    width: 18.9,
-    margin: '0px 28px',
+    margin: '0px 18px',
   },
   logoText: {
     fontSize: 20,
@@ -107,7 +106,7 @@ const AppHeader = ({
               href={`/${dongleId}`}
               onClick={filterRegularClick(() => dispatch(selectDevice(dongleId)))}
             >
-              <Typography className={classes.logoText}>connect</Typography>
+              <Typography className={classes.logoText}>RTZ</Typography>
             </a>
           </div>
           <div className="flex flex-row gap-2">

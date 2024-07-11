@@ -120,7 +120,7 @@ class AnonymousLanding extends Component {
             <img alt="comma" src="/images/comma-white.png" className={classes.logoImg} />
           </div>
           <div className={classes.logoSpacer}>&nbsp;</div>
-          <Typography className={classes.logoText}>comma connect</Typography>
+          <Typography className={classes.logoText}>RTZ</Typography>
           <Typography className={classes.tagline}>
             Manage your comma device, view your drives, and use comma prime features
           </Typography>

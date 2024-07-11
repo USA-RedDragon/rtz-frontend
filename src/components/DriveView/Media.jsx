@@ -311,7 +311,7 @@ class Media extends Component {
   async shareCurrentRoute() {
     try {
       await navigator.share({
-        title: 'comma connect',
+        title: 'RTZ',
         url: window.location.href,
       });
     } catch (err) {

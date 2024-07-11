@@ -1,6 +1,6 @@
-# comma connect
+# RTZ Frontend
 
-The frontend to the comma connect progressive web app. This a react app using [Create React App](https://github.com/facebookincubator/create-react-app)
+This is the frontend to the RTZ (pronounced Routes) project. It is a fork of the [comma connect frontend](https://github.com/commaai/connect) with some changes to update dependencies, remove tracking, and enable its usage in RTZ.
 
 ## Changes from upstream
 

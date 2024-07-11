@@ -1,12 +1,7 @@
 {
-  "short_name": "connect",
-  "name": "connect",
+  "short_name": "RTZ",
+  "name": "RTZ",
   "icons": [
-    {
-      "src": "/icon-vector.svg",
-      "sizes": "128x128",
-      "type": "image/svg+xml"
-    },
     {
       "src": "/icon-192x192.png",
       "sizes": "192x192",
@@ -26,12 +21,6 @@
       "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
-    },
-    {
-      "src": "/icon-maskable.svg",
-      "sizes": "128x128",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
     }
   ],
   "lang": "en-US",

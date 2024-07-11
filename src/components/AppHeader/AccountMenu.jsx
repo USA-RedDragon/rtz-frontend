@@ -24,7 +24,7 @@ const Version = () => {
   let content = ['Version: '];
 
   if (sha) {
-    const commitUrl = `https://github.com/commaai/connect/commit/${sha}`;
+    const commitUrl = `https://github.com/USA-RedDragon/rtz-frontend/commit/${sha}`;
     content.push(<a key="0" className="text-blue-400 underline" href={commitUrl} target="_blank" rel="noreferrer">{sha.substring(0, 7)}</a>);
 
     if (timestamp) {
