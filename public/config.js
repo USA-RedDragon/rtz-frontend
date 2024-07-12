@@ -6,8 +6,8 @@ window.DEMO_AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDg1O
 window.ATHENA_URL_ROOT = 'https://openpilot.jacob.network/';
 window.BILLING_URL_ROOT = 'https://openpilot.jacob.network/';
 window.MAPBOX_STYLE = 'mapbox://styles/usa-reddragon/clyd2ske5010r01qr2lde0k3n';
-window.MAPBOX_TOKEN = 'pk.eyJ1IjoidXNhLXJlZGRyYWdvbiIsImEiOiJjbHlkMzl6cW4wMGtnMmxvcWY1MTZpeGg2In0.AHfA3k-lG_b48str7o3xQw'
-window.HERE_API_KEY = 'gQ6y5miQkOPdgEMnkoNJHz3JgR2eD5pbLSmgzkhNyBs';
+window.MAPBOX_TOKEN = 'pk.eyJ1IjoidXNhLXJlZGRyYWdvbiIsImEiOiJjbHdxc3AzdXEwNWJrMmpweGthNm92YXByIn0.sMNsr0rwN7bYyVn499Z7cw'
+window.HERE_API_KEY = 'OExV3yLzO5h15cl-UzdOpxpMEp3jOvbBvovBosXIJTw';
 window.CUSTOM_REDIRECT_LINK = 'https://authentik.mcswain.dev/login/oauth/authorize?response_type=code&client_id=ZYml3VDAwur3Y75MLvYy5rXO5dUrUIR6UlKOMdGh&redirect_uri=https%3A%2F%2Fopenpilot.jacob.network%2Fv2%2Fauth%2Fc%2Fredirect%2F&scope=user%3aemail';
 window.CUSTOM_ENABLED = true;
 window.CUSTOM_NAME = 'Authentik';

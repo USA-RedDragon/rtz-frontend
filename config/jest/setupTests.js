@@ -1,6 +1,7 @@
 /* eslint-env jest */
 import '@testing-library/jest-dom';
 import 'whatwg-fetch';
+import '../../public/config';
 
 jest.mock('localforage');
 
