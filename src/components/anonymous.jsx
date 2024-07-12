@@ -124,14 +124,26 @@ class AnonymousLanding extends Component {
           <Typography className={classes.tagline}>
             Manage your comma device, view your drives, and use comma prime features
           </Typography>
-          <a href={window.GOOGLE_REDIRECT_LINK} className={classes.logInButton}>
-            <img className={classes.buttonImage} src={AuthGoogleIcon} alt="" />
-            <Typography className={classes.buttonText}>Sign in with Google</Typography>
-          </a>
-          <a href={window.GITHUB_REDIRECT_LINK} className={`${classes.logInButton} githubAuth`}>
-            <img className={classes.buttonImage} src={AuthGithubIcon} alt="" />
-            <Typography className={classes.buttonText}>Sign in with GitHub</Typography>
-          </a>
+          {
+            window.CUSTOM_ENABLED &&
+            <a href={window.CUSTOM_REDIRECT_LINK} className={classes.logInButton}>
+              <Typography className={classes.buttonText}>Sign in with {window.CUSTOM_NAME}</Typography>
+            </a>
+          }
+          {
+            window.GOOGLE_ENABLED &&
+            <a href={window.GOOGLE_REDIRECT_LINK} className={classes.logInButton}>
+              <img className={classes.buttonImage} src={AuthGoogleIcon} alt="" />
+              <Typography className={classes.buttonText}>Sign in with Google</Typography>
+            </a>
+          }
+          {
+            window.GITHUB_ENABLED &&
+            <a href={window.GITHUB_REDIRECT_LINK} className={`${classes.logInButton} githubAuth`}>
+              <img className={classes.buttonImage} src={AuthGithubIcon} alt="" />
+              <Typography className={classes.buttonText}>Sign in with GitHub</Typography>
+            </a>
+          }
 
           <span className="max-w-sm text-center mt-2 mb-8 text-sm">
             Make sure to sign in with the same account if you have previously

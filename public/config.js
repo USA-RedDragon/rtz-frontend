@@ -1,10 +1,14 @@
 window.COMMA_URL_ROOT = 'https://openpilot.jacob.network/';
 window.USERADMIN_URL_ROOT = 'https://useradmin.comma.ai/';
-window.GOOGLE_REDIRECT_LINK = 'https://accounts.google.com/o/oauth2/auth?type=web_server&client_id=841898570930-4avg0csiu3v3hgqp94eifh19pjigujvh.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fopenpilot.jacob.network%2Fv2%2Fauth%2Fg%2Fredirect%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&prompt=select_account';
+window.GOOGLE_ENABLED = false;
 window.GITHUB_REDIRECT_LINK = 'https://github.com/login/oauth/authorize?client_id=Ov23liF4KlrRqyHkvIVP&redirect_uri=https%3A%2F%2Fopenpilot.jacob.network%2Fv2%2Fauth%2Fh%2Fredirect%2F&scope=read%3Auser';
+window.GITHUB_ENABLED = true;
 window.DEMO_AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDg1ODI0NjUsIm5iZiI6MTcxNzA0NjQ2NSwiaWF0IjoxNzE3MDQ2NDY1LCJpZGVudGl0eSI6IjBkZWNkZGNmZGYyNDFhNjAifQ.g3khyJgOkNvZny6Vh579cuQj1HLLGSDeauZbfZri9jw'
 window.ATHENA_URL_ROOT = 'https://openpilot.jacob.network/';
 window.BILLING_URL_ROOT = 'https://openpilot.jacob.network/';
 window.MAPBOX_STYLE = 'mapbox://styles/usa-reddragon/clyd2ske5010r01qr2lde0k3n';
 window.MAPBOX_TOKEN = 'pk.eyJ1IjoidXNhLXJlZGRyYWdvbiIsImEiOiJjbHlkMzl6cW4wMGtnMmxvcWY1MTZpeGg2In0.AHfA3k-lG_b48str7o3xQw'
 window.HERE_API_KEY = 'O0atgmTwzKnwYJL2hk5N5qqG2R9y78f5GdHlvr_mtiw';
+window.CUSTOM_REDIRECT_LINK = 'https://authentik.mcswain.dev/application/o/authorize/?response_type=code&client_id=ZYml3VDAwur3Y75MLvYy5rXO5dUrUIR6UlKOMdGh&redirect_uri=https%3A%2F%2Fopenpilot.jacob.network%2Fv2%2Fauth%2Fc%2Fredirect%2F&scope=read%3Auser';
+window.CUSTOM_ENABLED = true;
+window.CUSTOM_NAME = 'Authentik';
