@@ -959,6 +959,7 @@ class Navigation extends Component {
             auto={hasFocus}
             fitBoundsOptions={{ maxZoom: 10 }}
             trackUserLocation
+            geolocation={ window.navigator.geolocation }
             onViewportChange={() => {}}
           />
           { searchSelect && searchSelect.route
