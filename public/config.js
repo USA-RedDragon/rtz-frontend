@@ -1,8 +1,7 @@
 window.COMMA_URL_ROOT = 'https://openpilot.jacob.network/';
 window.USERADMIN_URL_ROOT = 'https://useradmin.comma.ai/';
 window.GOOGLE_ENABLED = false;
-window.GITHUB_REDIRECT_LINK = 'https://github.com/login/oauth/authorize?client_id=Ov23liF4KlrRqyHkvIVP&redirect_uri=https%3A%2F%2Fopenpilot.jacob.network%2Fv2%2Fauth%2Fh%2Fredirect%2F&scope=read%3Auser';
-window.GITHUB_ENABLED = true;
+window.GITHUB_ENABLED = false;
 window.DEMO_AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDg1ODI0NjUsIm5iZiI6MTcxNzA0NjQ2NSwiaWF0IjoxNzE3MDQ2NDY1LCJpZGVudGl0eSI6IjBkZWNkZGNmZGYyNDFhNjAifQ.g3khyJgOkNvZny6Vh579cuQj1HLLGSDeauZbfZri9jw'
 window.ATHENA_URL_ROOT = 'https://openpilot.jacob.network/';
 window.BILLING_URL_ROOT = 'https://openpilot.jacob.network/';
