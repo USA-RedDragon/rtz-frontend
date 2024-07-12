@@ -813,9 +813,6 @@ packages:
   '@babel/regjsgen@0.8.0':
     resolution: {integrity: sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==}
 
-  '@babel/runtime@7.0.0-beta.56':
-    resolution: {integrity: sha512-vP9XV2VP013UEyZdU9eWClCsm6rQPUYHVNCfmpcv5uKviW7mKmUZq71Y5cr5dYsFKfnGDxSo8h6plUGR60lwHg==}
-
   '@babel/runtime@7.24.8':
     resolution: {integrity: sha512-5F7SDGs1T72ZczbRwbGO9lQi0NLjQxzl6i4lJxLxfW9U5UluCSyEJeniWvnhl3/euNiqQVbo8zruhsDfid0esA==}
     engines: {node: '>=6.9.0'}
@@ -4653,8 +4650,8 @@ packages:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
 
-  recompose@0.28.2:
-    resolution: {integrity: sha512-baVNKQBQAAAuLRnv6Cb/6/j59a1BVj6c6Pags1KXVyRB0yPfQVUZtuAUnqHDBXoR8iXPrLGWE4RNtCQ/AaRP3g==}
+  recompose@0.30.0:
+    resolution: {integrity: sha512-ZTrzzUDa9AqUIhRk4KmVFihH0rapdCSMFXjhHbNrjAWxBuUD/guYlyysMnuHjlZC/KRiOKRtB4jf96yYSkKE8w==}
     peerDependencies:
       react: ^0.14.0 || ^15.0.0 || ^16.0.0
 
@@ -4689,9 +4686,6 @@ packages:
 
   regenerator-runtime@0.11.1:
     resolution: {integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==}
-
-  regenerator-runtime@0.12.1:
-    resolution: {integrity: sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==}
 
   regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
@@ -6498,10 +6492,6 @@ snapshots:
 
   '@babel/regjsgen@0.8.0': {}
 
-  '@babel/runtime@7.0.0-beta.56':
-    dependencies:
-      regenerator-runtime: 0.12.1
-
   '@babel/runtime@7.24.8':
     dependencies:
       regenerator-runtime: 0.14.1
@@ -7018,7 +7008,7 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       react-event-listener: 0.6.6(react@18.3.1)
       react-transition-group: 2.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      recompose: 0.28.2(react@18.3.1)
+      recompose: 0.30.0(react@18.3.1)
       warning: 4.0.3
 
   '@material-ui/icons@3.0.2(@material-ui/core@3.9.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
@@ -7027,7 +7017,7 @@ snapshots:
       '@material-ui/core': 3.9.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      recompose: 0.28.2(react@18.3.1)
+      recompose: 0.30.0(react@18.3.1)
 
   '@material-ui/system@3.0.0-alpha.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -11072,9 +11062,9 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
-  recompose@0.28.2(react@18.3.1):
+  recompose@0.30.0(react@18.3.1):
     dependencies:
-      '@babel/runtime': 7.0.0-beta.56
+      '@babel/runtime': 7.24.8
       change-emitter: 0.1.6
       fbjs: 0.8.18
       hoist-non-react-statics: 2.5.5
@@ -11117,8 +11107,6 @@ snapshots:
   regenerate@1.4.2: {}
 
   regenerator-runtime@0.11.1: {}
-
-  regenerator-runtime@0.12.1: {}
 
   regenerator-runtime@0.14.1: {}
 
