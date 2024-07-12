@@ -31,10 +31,18 @@ export function checkRoutesData() {
     const { dongleId } = state.app;
     const fetchRange = state.app.filter;
 
-    routesRequest = {
-      req: Drives.getRoutesSegments(dongleId, fetchRange.start, fetchRange.end, state.app.limit),
-      dongleId,
-    };
+    // if requested segment range not in loaded routes, fetch it explicitly
+    if (state.segmentRange) {
+      routesRequest = {
+        req: Drives.getRoutesSegments(dongleId, undefined, undefined, undefined, `${dongleId}|${state.app.segmentRange.log_id}`),
+        dongleId,
+      };
+    } else {
+      routesRequest = {
+        req: Drives.getRoutesSegments(dongleId, fetchRange.start, fetchRange.end, state.app.limit),
+        dongleId,
+      };
+    }
 
     routesRequestPromise = routesRequest.req.then((routesData) => {
       state = getState();
@@ -146,8 +154,6 @@ export function urlForState(dongleId, log_id, start, end, prime) {
 }
 
 function updateTimeline(state, dispatch, log_id, start, end, allowPathChange) {
-  dispatch(checkRoutesData());
-
   if (!state.app.loop || !state.app.loop.startTime || !state.app.loop.duration || state.app.loop.startTime < start
     || state.app.loop.startTime + state.app.loop.duration > end || state.app.loop.duration < end - start) {
     dispatch(resetPlayback());
