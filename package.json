@@ -22,7 +22,7 @@
   ],
   "private": true,
   "engines": {
-    "node": ">=20.15.0"
+    "node": ">=20.15.1"
   },
   "packageManager": "pnpm@9.4.0",
   "dependencies": {
