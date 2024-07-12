@@ -30,7 +30,7 @@
     "@commaai/my-comma-auth": "^1.4.1",
     "@mapbox/mapbox-sdk": "^0.16.0",
     "@material-ui/core": "^1.5.1",
-    "@material-ui/icons": "^1.1.1",
+    "@material-ui/icons": "^2.0.3",
     "connected-react-router": "^4.5.0",
     "dayjs": "^1.11.11",
     "debounce": "^1.2.1",

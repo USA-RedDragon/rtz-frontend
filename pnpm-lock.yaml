@@ -21,8 +21,8 @@ importers:
         specifier: ^1.5.1
         version: 1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@material-ui/icons':
-        specifier: ^1.1.1
-        version: 1.1.1(@material-ui/core@1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^2.0.3
+        version: 2.0.3(@material-ui/core@1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       connected-react-router:
         specifier: ^4.5.0
         version: 4.5.0(react-redux@5.1.2(react@18.3.1)(redux@5.0.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@5.0.1)
@@ -813,9 +813,6 @@ packages:
   '@babel/regjsgen@0.8.0':
     resolution: {integrity: sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==}
 
-  '@babel/runtime@7.0.0-beta.42':
-    resolution: {integrity: sha512-iOGRzUoONLOtmCvjUsZv3mZzgCT6ljHQY5fr1qG1QIiJQwtM7zbPWGGpa3QWETq+UqwWyJnoi5XZDZRwZDFciQ==}
-
   '@babel/runtime@7.0.0-beta.56':
     resolution: {integrity: sha512-vP9XV2VP013UEyZdU9eWClCsm6rQPUYHVNCfmpcv5uKviW7mKmUZq71Y5cr5dYsFKfnGDxSo8h6plUGR60lwHg==}
 
@@ -1222,8 +1219,8 @@ packages:
       react: ^16.3.0
       react-dom: ^16.3.0
 
-  '@material-ui/icons@1.1.1':
-    resolution: {integrity: sha512-d7I2P1Td4S/1zMAYCIrVQVf+6NUZC5fcIuo0wTrKe/mKxYo9eQ+83lPesI9aBAh+ZTQTjPTqoIvm0WD5e+0uKQ==}
+  '@material-ui/icons@2.0.3':
+    resolution: {integrity: sha512-wgKUB4vgCzdKseV3MHdsR7lZMyNYKykrghKX4GHuMmlZrrWMh26jO1E6xyjuCpJ/E8DX+m+YGURbBYN9CxZ+rw==}
     engines: {node: '>=6.0.0'}
     deprecated: 'You can now upgrade to @mui/icons. See the guide: https://mui.com/guides/migration-v4/'
     peerDependencies:
@@ -4698,11 +4695,6 @@ packages:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
 
-  recompose@0.27.1:
-    resolution: {integrity: sha512-p7xsyi/rfNjHfdP7vPU02uSFa+Q1eHhjKrvO+3+kRP4Ortj+MxEmpmd+UQtBGM2D2iNAjzNI5rCyBKp9Ob5McA==}
-    peerDependencies:
-      react: ^0.14.0 || ^15.0.0 || ^16.0.0
-
   recompose@0.28.2:
     resolution: {integrity: sha512-baVNKQBQAAAuLRnv6Cb/6/j59a1BVj6c6Pags1KXVyRB0yPfQVUZtuAUnqHDBXoR8iXPrLGWE4RNtCQ/AaRP3g==}
     peerDependencies:
@@ -6556,11 +6548,6 @@ snapshots:
 
   '@babel/regjsgen@0.8.0': {}
 
-  '@babel/runtime@7.0.0-beta.42':
-    dependencies:
-      core-js: 2.6.12
-      regenerator-runtime: 0.11.1
-
   '@babel/runtime@7.0.0-beta.56':
     dependencies:
       regenerator-runtime: 0.12.1
@@ -7096,13 +7083,13 @@ snapshots:
       recompose: 0.28.2(react@18.3.1)
       warning: 4.0.3
 
-  '@material-ui/icons@1.1.1(@material-ui/core@1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@material-ui/icons@2.0.3(@material-ui/core@1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.0.0-beta.42
+      '@babel/runtime': 7.0.0-rc.1
       '@material-ui/core': 1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      recompose: 0.27.1(react@18.3.1)
+      recompose: 0.28.2(react@18.3.1)
 
   '@math.gl/web-mercator@3.6.3':
     dependencies:
@@ -11179,16 +11166,6 @@ snapshots:
   readdirp@3.6.0:
     dependencies:
       picomatch: 2.3.1
-
-  recompose@0.27.1(react@18.3.1):
-    dependencies:
-      babel-runtime: 6.26.0
-      change-emitter: 0.1.6
-      fbjs: 0.8.18
-      hoist-non-react-statics: 2.5.5
-      react: 18.3.1
-      react-lifecycles-compat: 3.0.4
-      symbol-observable: 1.2.0
 
   recompose@0.28.2(react@18.3.1):
     dependencies:
