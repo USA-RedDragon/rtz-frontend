@@ -5,7 +5,7 @@ import Obstruction from 'obstruction';
 
 import { withStyles, Divider, Typography, Menu, MenuItem, CircularProgress, Button, Popper, ListItem } from '@material-ui/core';
 import WarningIcon from '@material-ui/icons/Warning';
-import ContentCopyIcon from '@material-ui/icons/ContentCopy';
+import { ContentCopy as ContentCopyIcon } from '../../icons';
 import ShareIcon from '@material-ui/icons/Share';
 
 import { drives as Drives } from '@commaai/api';
