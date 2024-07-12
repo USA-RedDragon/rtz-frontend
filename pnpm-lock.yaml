@@ -24,8 +24,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(@material-ui/core@1.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       connected-react-router:
-        specifier: ^5.0.1
-        version: 5.0.1(history@5.3.0)(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@5.0.1)
+        specifier: ^6.9.3
+        version: 6.9.3(history@5.3.0)(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@5.0.1)
       dayjs:
         specifier: ^1.11.11
         version: 1.11.11
@@ -2253,13 +2253,13 @@ packages:
     resolution: {integrity: sha512-aMKprgk5YhBNyH25hj8wGt2+D52Sw1DRRIzqBwLp2Ya9mFmY8KPvvtvmna8SxVR9JMZ4kzMD68N22vlaRpkeFA==}
     engines: {node: '>=8'}
 
-  connected-react-router@5.0.1:
-    resolution: {integrity: sha512-0QwWYPRGZQ7f284lmqc5kwC4T3iW3zrAH3zzi6uUMzTOxbA+mn38tAgMOoVo9m3pbskvONFtXiajgVkCElE9EQ==}
+  connected-react-router@6.9.3:
+    resolution: {integrity: sha512-4ThxysOiv/R2Dc4Cke1eJwjKwH1Y51VDwlOrOfs1LjpdYOVvCNjNkZDayo7+sx42EeGJPQUNchWkjAIJdXGIOQ==}
     peerDependencies:
       history: ^4.7.2
-      react: ^15.5.4 || ^16.0.0
-      react-redux: ^4.4.8 || ^5.0.7
-      react-router: ^4.3.1
+      react: ^16.4.0 || ^17.0.0
+      react-redux: ^6.0.0 || ^7.1.0
+      react-router: ^4.3.1 || ^5.0.0
       redux: ^3.6.0 || ^4.0.0
 
   content-disposition@0.5.4:
@@ -3924,6 +3924,9 @@ packages:
 
   lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
+
+  lodash.isequalwith@4.4.0:
+    resolution: {integrity: sha512-dcZON0IalGBpRmJBmMkaoV7d3I80R2O+FrzsZyHdNSFrANq/cgDqKQNmAHE8UEj4+QYWwwhkQOVdLHiAopzlsQ==}
 
   lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
@@ -8216,14 +8219,17 @@ snapshots:
       write-file-atomic: 3.0.3
       xdg-basedir: 4.0.0
 
-  connected-react-router@5.0.1(history@5.3.0)(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@5.0.1):
+  connected-react-router@6.9.3(history@5.3.0)(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@5.0.1):
     dependencies:
       history: 5.3.0
-      immutable: 3.8.2
+      lodash.isequalwith: 4.4.0
+      prop-types: 15.8.1
       react: 18.3.1
       react-redux: 9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1)
       react-router: 5.3.4(react@18.3.1)
       redux: 5.0.1
+    optionalDependencies:
+      immutable: 3.8.2
       seamless-immutable: 7.1.4
 
   content-disposition@0.5.4:
@@ -9294,7 +9300,8 @@ snapshots:
 
   immediate@3.0.6: {}
 
-  immutable@3.8.2: {}
+  immutable@3.8.2:
+    optional: true
 
   import-fresh@3.3.0:
     dependencies:
@@ -10313,6 +10320,8 @@ snapshots:
   lodash.clonedeep@4.5.0: {}
 
   lodash.debounce@4.0.8: {}
+
+  lodash.isequalwith@4.4.0: {}
 
   lodash.isplainobject@4.0.6: {}
 
@@ -11369,7 +11378,8 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
-  seamless-immutable@7.1.4: {}
+  seamless-immutable@7.1.4:
+    optional: true
 
   semver@5.7.2: {}
 
