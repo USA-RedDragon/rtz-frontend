@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { CircularProgress, Typography } from '@material-ui/core';
+import { CircularProgress, Typography } from '@mui/material';
 import debounce from 'debounce';
 import Obstruction from 'obstruction';
 import ReactPlayer from 'react-player/file';

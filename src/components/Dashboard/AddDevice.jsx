@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 import qs from 'query-string';
 import QrScanner from 'qr-scanner';
-import { withStyles, Typography, Button, Modal, Paper, Divider, CircularProgress } from '@material-ui/core';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import { Typography, Button, Modal, Paper, Divider, CircularProgress } from '@mui/material';
+import { withStyles } from '@mui/styles';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 import { devices as Devices } from '@commaai/api';
 import { selectDevice, updateDevice } from '../../actions';
@@ -42,8 +43,8 @@ const styles = (theme) => ({
   },
   modal: {
     position: 'absolute',
-    padding: theme.spacing.unit * 2,
-    width: theme.spacing.unit * 50,
+    padding: theme.spacing(2),
+    width: theme.spacing(50),
     maxWidth: '90%',
     left: '50%',
     top: '50%',

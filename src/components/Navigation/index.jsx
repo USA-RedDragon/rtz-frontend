@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 import debounce from 'debounce';
 import ReactMapGL, { GeolocateControl, HTMLOverlay, Marker, Source, WebMercatorViewport, Layer } from 'react-map-gl';
-import { withStyles, TextField, InputAdornment, Typography, Button, Menu, MenuItem, CircularProgress, Popper }
-  from '@material-ui/core';
-import { Search, Clear, Refresh } from '@material-ui/icons';
+import { TextField, InputAdornment, Typography, Button, Menu, MenuItem, CircularProgress, Popper } from '@mui/material';
+import { withStyles } from '@mui/styles';
+import { Search, Clear, Refresh } from '@mui/icons-material';
 import dayjs from 'dayjs';
 
 import { athena as Athena, devices as Devices, navigation as NavigationApi } from '@commaai/api';
@@ -1148,6 +1148,7 @@ class Navigation extends Component {
         onClick={ this.focus }
       >
         <TextField
+          autoComplete='off'
           onChange={ this.onSearch }
           fullWidth
           inputRef={ this.searchInputRef }
@@ -1156,6 +1157,7 @@ class Navigation extends Component {
             onFocus: this.onFocus,
             onBlur: this.onSearchBlur,
             classes: { root: classes.overlayTextfield },
+            disableUnderline: true,
             endAdornment: <>
               { this.searchInputRef.current && this.searchInputRef.current.value
                 && (

@@ -10,12 +10,12 @@ import {
   Paper,
   TextField,
   Typography,
-  withStyles,
-} from '@material-ui/core';
-import CheckIcon from '@material-ui/icons/Check';
-import SaveIcon from '@material-ui/icons/Save';
-import ShareIcon from '@material-ui/icons/Share';
-import WarningIcon from '@material-ui/icons/Warning';
+} from '@mui/material';
+import { withStyles } from '@mui/styles';
+import CheckIcon from '@mui/icons-material/Check';
+import SaveIcon from '@mui/icons-material/Save';
+import ShareIcon from '@mui/icons-material/Share';
+import WarningIcon from '@mui/icons-material/Warning';
 
 import { devices as Devices } from '@commaai/api';
 import { primeNav, selectDevice, updateDevice } from '../../actions';
@@ -26,8 +26,8 @@ import UploadQueue from '../Files/UploadQueue';
 const styles = (theme) => ({
   modal: {
     position: 'absolute',
-    padding: theme.spacing.unit * 2,
-    width: theme.spacing.unit * 50,
+    padding: theme.spacing(2),
+    width: theme.spacing(50),
     maxWidth: '90%',
     left: '50%',
     top: '40%',
@@ -35,7 +35,7 @@ const styles = (theme) => ({
     outline: 'none',
   },
   modalUnpair: {
-    width: theme.spacing.unit * 45,
+    width: theme.spacing(45),
     maxWidth: '80%',
   },
   titleContainer: {
@@ -48,8 +48,8 @@ const styles = (theme) => ({
     textAlign: 'right',
   },
   form: {
-    paddingTop: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit,
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
   },
   formRow: {
     minHeight: 75,
@@ -69,7 +69,7 @@ const styles = (theme) => ({
     zIndex: 1,
   },
   wrapper: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(2),
     position: 'relative',
     display: 'inline-block',
   },
@@ -268,153 +268,150 @@ class DeviceSettingsModal extends Component {
       return null;
     }
 
-    return (
-      <>
-        <Modal
-          aria-labelledby="device-settings-modal"
-          aria-describedby="device-settings-modal-description"
-          open={this.props.isOpen}
-          onClose={this.props.onClose}
-        >
-          <Paper className={classes.modal}>
-            <div className={ classes.titleContainer }>
-              <Typography variant="title">
-                Device settings
-              </Typography>
-              <Typography variant="caption">
-                { device.dongle_id }
-              </Typography>
+    return <>
+      <Modal
+        aria-labelledby="device-settings-modal"
+        aria-describedby="device-settings-modal-description"
+        open={this.props.isOpen}
+        onClose={this.props.onClose}
+      >
+        <Paper className={classes.modal}>
+          <div className={ classes.titleContainer }>
+            <Typography variant="title">
+              Device settings
+            </Typography>
+            <Typography variant="caption">
+              { device.dongle_id }
+            </Typography>
+          </div>
+          <Divider />
+          <div>
+            <Button variant="outlined" className={ classes.primeManageButton } onClick={ this.onPrimeSettings }>
+              Prime settings
+            </Button>
+            <Button
+              variant="outlined"
+              className={ classes.primeManageButton }
+              onClick={ () => this.setState({ unpairConfirm: true }) }
+            >
+              Unpair
+            </Button>
+          </div>
+          <div>
+            <Button
+              variant="outlined"
+              className={ classes.primeManageButton }
+              onClick={ () => this.setState({ uploadModal: true }) }
+            >
+              Uploads
+            </Button>
+          </div>
+          <div className={classes.form}>
+            { this.state.error && (
+            <div className={ classes.formRowError }>
+              <Typography>{ this.state.error }</Typography>
             </div>
-            <Divider />
-            <div>
-              <Button variant="outlined" className={ classes.primeManageButton } onClick={ this.onPrimeSettings }>
-                Prime settings
-              </Button>
-              <Button
-                variant="outlined"
-                className={ classes.primeManageButton }
-                onClick={ () => this.setState({ unpairConfirm: true }) }
-              >
-                Unpair
-              </Button>
-            </div>
-            <div>
-              <Button
-                variant="outlined"
-                className={ classes.primeManageButton }
-                onClick={ () => this.setState({ uploadModal: true }) }
-              >
-                Uploads
-              </Button>
-            </div>
-            <div className={classes.form}>
-              { this.state.error && (
-              <div className={ classes.formRowError }>
-                <Typography>{ this.state.error }</Typography>
+            ) }
+            <div className={classes.formRow}>
+              <TextField
+                id="device_alias"
+                label="Device name"
+                className={ classes.textField }
+                value={ this.state.deviceAlias ? this.state.deviceAlias : '' }
+                onChange={this.handleAliasChange}
+                onKeyPress={ (ev) => this.callOnEnter(this.setDeviceAlias, ev) }
+              />
+              { (this.props.device.alias !== this.state.deviceAlias || this.state.hasSavedAlias)
+              && (
+              <div className={classes.wrapper}>
+                <IconButton variant="fab" onClick={this.setDeviceAlias} size="large">
+                  { this.state.hasSavedAlias ? <CheckIcon /> : <SaveIcon /> }
+                </IconButton>
+                {this.state.loadingDeviceAlias && <CircularProgress size={48} className={classes.fabProgress} />}
               </div>
-              ) }
-              <div className={classes.formRow}>
-                <TextField
-                  id="device_alias"
-                  label="Device name"
-                  className={ classes.textField }
-                  value={ this.state.deviceAlias ? this.state.deviceAlias : '' }
-                  onChange={this.handleAliasChange}
-                  onKeyPress={ (ev) => this.callOnEnter(this.setDeviceAlias, ev) }
-                />
-                { (this.props.device.alias !== this.state.deviceAlias || this.state.hasSavedAlias)
-                && (
-                <div className={classes.wrapper}>
-                  <IconButton variant="fab" onClick={this.setDeviceAlias}>
-                    { this.state.hasSavedAlias ? <CheckIcon /> : <SaveIcon /> }
-                  </IconButton>
-                  {this.state.loadingDeviceAlias && <CircularProgress size={48} className={classes.fabProgress} />}
-                </div>
-                )}
+              )}
+            </div>
+            <div className={classes.formRow}>
+              <TextField
+                id="device_share"
+                label="Share by email or user id"
+                className={ classes.textField }
+                value={this.state.shareEmail}
+                onChange={this.handleEmailChange}
+                onKeyPress={ (ev) => this.callOnEnter(this.shareDevice, ev) }
+                helperText="give another user read access to this device"
+              />
+              { (this.state.shareEmail.length > 0 || this.state.hasShared)
+              && (
+              <div className={classes.wrapper}>
+                <IconButton variant="fab" onClick={this.shareDevice} size="large">
+                  { this.state.hasShared ? <CheckIcon /> : <ShareIcon /> }
+                </IconButton>
+                {this.state.loadingDeviceShare && <CircularProgress size={48} className={classes.fabProgress} />}
               </div>
-              <div className={classes.formRow}>
-                <TextField
-                  id="device_share"
-                  label="Share by email or user id"
-                  className={ classes.textField }
-                  value={this.state.shareEmail}
-                  onChange={this.handleEmailChange}
+              )}
+            </div>
+          </div>
+          <div className={classes.buttonGroup}>
+            <Button variant="contained" className={ classes.cancelButton } onClick={this.props.onClose}>
+              Close
+            </Button>
+          </div>
+        </Paper>
+      </Modal>
+      <Modal
+        aria-labelledby="device-settings-modal"
+        aria-describedby="device-settings-modal-description"
+        open={this.state.unpairConfirm}
+        onClose={ this.closeUnpair }
+      >
+        <Paper className={ `${classes.modal} ${classes.modalUnpair}` }>
+          <div className={ classes.titleContainer }>
+            <Typography variant="title">
+              Unpair device
+            </Typography>
+            <Typography variant="caption">
+              { device.dongle_id }
+            </Typography>
+          </div>
+          <Divider />
+          { this.state.unpairError
+          && (
+          <div className={ classes.unpairError }>
+            <ErrorOutline />
+            <Typography>{ this.state.unpairError }</Typography>
+          </div>
+          )}
+          <div className={ classes.topButtonGroup }>
+            <Button
+              variant="contained"
+              className={ `${classes.primeManageButton} ${classes.cancelButton}` }
+              onClick={ this.closeUnpair }
+            >
+              { this.state.unpaired ? 'Close' : 'Cancel' }
+            </Button>
+            { this.state.unpaired
+              ? <Typography variant="body2">Unpaired</Typography>
+              : (
+                <Button
                   variant="outlined"
-                  onKeyPress={ (ev) => this.callOnEnter(this.shareDevice, ev) }
-                  helperText="give another user read access to this device"
-                />
-                { (this.state.shareEmail.length > 0 || this.state.hasShared)
-                && (
-                <div className={classes.wrapper}>
-                  <IconButton variant="fab" onClick={this.shareDevice}>
-                    { this.state.hasShared ? <CheckIcon /> : <ShareIcon /> }
-                  </IconButton>
-                  {this.state.loadingDeviceShare && <CircularProgress size={48} className={classes.fabProgress} />}
-                </div>
-                )}
-              </div>
-            </div>
-            <div className={classes.buttonGroup}>
-              <Button variant="contained" className={ classes.cancelButton } onClick={this.props.onClose}>
-                Close
-              </Button>
-            </div>
-          </Paper>
-        </Modal>
-        <Modal
-          aria-labelledby="device-settings-modal"
-          aria-describedby="device-settings-modal-description"
-          open={this.state.unpairConfirm}
-          onClose={ this.closeUnpair }
-        >
-          <Paper className={ `${classes.modal} ${classes.modalUnpair}` }>
-            <div className={ classes.titleContainer }>
-              <Typography variant="title">
-                Unpair device
-              </Typography>
-              <Typography variant="caption">
-                { device.dongle_id }
-              </Typography>
-            </div>
-            <Divider />
-            { this.state.unpairError
-            && (
-            <div className={ classes.unpairError }>
-              <ErrorOutline />
-              <Typography>{ this.state.unpairError }</Typography>
-            </div>
-            )}
-            <div className={ classes.topButtonGroup }>
-              <Button
-                variant="contained"
-                className={ `${classes.primeManageButton} ${classes.cancelButton}` }
-                onClick={ this.closeUnpair }
-              >
-                { this.state.unpaired ? 'Close' : 'Cancel' }
-              </Button>
-              { this.state.unpaired
-                ? <Typography variant="body2">Unpaired</Typography>
-                : (
-                  <Button
-                    variant="outlined"
-                    className={ classes.primeManageButton }
-                    onClick={ this.unpairDevice }
-                    disabled={ this.state.loadingUnpair }
-                  >
-                    { this.state.loadingUnpair ? 'Unpairing...' : 'Confirm' }
-                  </Button>
-                )}
-            </div>
-          </Paper>
-        </Modal>
-        <UploadQueue
-          open={ this.state.uploadModal }
-          update={ this.state.uploadModal }
-          onClose={ () => this.setState({ uploadModal: false }) }
-          device={ device }
-        />
-      </>
-    );
+                  className={ classes.primeManageButton }
+                  onClick={ this.unpairDevice }
+                  disabled={ this.state.loadingUnpair }
+                >
+                  { this.state.loadingUnpair ? 'Unpairing...' : 'Confirm' }
+                </Button>
+              )}
+          </div>
+        </Paper>
+      </Modal>
+      <UploadQueue
+        open={ this.state.uploadModal }
+        update={ this.state.uploadModal }
+        onClose={ () => this.setState({ uploadModal: false }) }
+        device={ device }
+      />
+    </>;
   }
 }
 

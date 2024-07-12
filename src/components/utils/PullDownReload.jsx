@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { withStyles } from '@material-ui/core';
-import ReplayIcon from '@material-ui/icons/Replay';
+import { withStyles } from '@mui/styles';
+import ReplayIcon from '@mui/icons-material/Replay';
 
 import Colors from '../../colors';
 

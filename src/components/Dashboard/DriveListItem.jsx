@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import dayjs from 'dayjs';
 
-import { withStyles, Grid, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@mui/material';
+import { withStyles } from '@mui/styles';
 
 import { pushTimelineRange } from '../../actions';
 import { fetchEvents, fetchLocations } from '../../actions/cached';

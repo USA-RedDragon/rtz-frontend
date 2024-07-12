@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
-import { withStyles, Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
+import { withStyles } from '@mui/styles';
 
 import { checkRoutesData, checkLastRoutesData } from '../../actions';
 import VisibilityHandler from '../VisibilityHandler';

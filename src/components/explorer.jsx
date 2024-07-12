@@ -4,7 +4,8 @@ import Obstruction from 'obstruction';
 import localforage from 'localforage';
 import { replace } from 'connected-react-router';
 
-import { withStyles, Button, CircularProgress, Divider, Modal, Paper, Typography } from '@material-ui/core';
+import { Button, CircularProgress, Divider, Modal, Paper, Typography } from '@mui/material';
+import { withStyles } from '@mui/styles';
 import 'mapbox-gl/src/css/mapbox-gl.css';
 
 import { devices as Devices } from '@commaai/api';
@@ -34,8 +35,8 @@ const styles = (theme) => ({
   },
   modal: {
     position: 'absolute',
-    padding: theme.spacing.unit * 2,
-    width: theme.spacing.unit * 50,
+    padding: theme.spacing(2),
+    width: theme.spacing(50),
     maxWidth: '90%',
     left: '50%',
     top: '40%',

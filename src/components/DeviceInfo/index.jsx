@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 import dayjs from 'dayjs';
 
-import { withStyles, Typography, Button, CircularProgress, Popper, Tooltip } from '@material-ui/core';
-import AccessTime from '@material-ui/icons/AccessTime';
+import { Typography, Button, CircularProgress, Popper, Tooltip } from '@mui/material';
+import { withStyles } from '@mui/styles';
+import AccessTime from '@mui/icons-material/AccessTime';
 
 import { athena as Athena, devices as Devices } from '@commaai/api';
 import Colors from '../../colors';
@@ -28,12 +29,12 @@ const styles = (theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 4,
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       marginBottom: 8,
     },
   },
   columnGap: {
-    columnGap: theme.spacing.unit * 4,
+    columnGap: theme.spacing(4),
   },
   bold: {
     fontWeight: 600,
@@ -86,17 +87,18 @@ const styles = (theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     maxWidth: 80,
-    padding: `0 ${theme.spacing.unit * 4}px`,
+    padding: `0 ${theme.spacing(4)}`,
   },
   carBattery: {
     padding: '5px 16px',
     borderRadius: 15,
-    margin: '0 10px',
+    margin: '0 8px',
     textAlign: 'center',
+    minWidth: 130,
     '& p': {
-      fontSize: 14,
+      fontSize: "0.875rem",
       fontWeight: 500,
-      lineHeight: '1.4em',
+      lineHeight: '1.75',
     },
   },
   actionButton: {
@@ -176,7 +178,7 @@ const styles = (theme) => ({
   },
   buttonIcon: {
     fontSize: 20,
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
   },
   popover: {
     borderRadius: 22,

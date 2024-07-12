@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 import dayjs from 'dayjs';
 
-import { IconButton, Typography } from '@material-ui/core';
+import { IconButton, Typography } from '@mui/material';
 
 import { popTimelineRange, pushTimelineRange, updateSegmentRange } from '../../actions';
 import { ArrowBackBold, CloseBold } from '../../icons';
@@ -55,7 +55,7 @@ class DriveView extends Component {
                 onClick={ () => this.onBack(zoom, currentRoute) }
                 aria-label="Go Back"
                 disabled={ backButtonDisabled }
-              >
+                size="large">
                 <ArrowBackBold />
               </IconButton>
               <div className="text-white text-lg font-medium">
@@ -66,7 +66,7 @@ class DriveView extends Component {
                 onClick={ filterRegularClick(this.close) }
                 aria-label="Close"
                 href={ `/${dongleId}` }
-              >
+                size="large">
                 <CloseBold />
               </IconButton>
             </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ClickAwayListener, Tooltip, Typography, withStyles } from '@material-ui/core';
+import { ClickAwayListener, Tooltip, Typography } from '@mui/material';
+import { withStyles } from '@mui/styles';
 
 import { InfoOutline } from '../../icons';
 
@@ -38,7 +39,7 @@ const styles = (theme) => ({
     marginBottom: 8,
   },
   icon: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
     fontSize: 18,
   },
 });

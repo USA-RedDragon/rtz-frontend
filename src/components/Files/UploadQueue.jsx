@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 
 import {
-  withStyles,
   Divider, Typography, CircularProgress, Button, Modal, Paper, LinearProgress,
-} from '@material-ui/core';
-import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-import WarningIcon from '@material-ui/icons/Warning';
+} from '@mui/material';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import WarningIcon from '@mui/icons-material/Warning';
+import { withStyles } from '@mui/styles';
 
 import { fetchUploadQueue, cancelUploads, cancelFetchUploadQueue } from '../../actions/files';
 import { deviceIsOnline, deviceOnCellular, deviceVersionAtLeast } from '../../utils';
@@ -17,7 +17,7 @@ import ResizeHandler from '../ResizeHandler';
 const styles = (theme) => ({
   modal: {
     position: 'absolute',
-    padding: theme.spacing.unit * 2,
+    padding: theme.spacing(2),
     width: 'max-content',
     maxWidth: '90%',
     left: '50%',
@@ -35,7 +35,7 @@ const styles = (theme) => ({
     textAlign: 'right',
   },
   uploadContainer: {
-    margin: `${theme.spacing.unit}px 0`,
+    margin: `${theme.spacing(1)} 0`,
     color: Colors.white90,
     textAlign: 'left',
     overflowY: 'auto',
@@ -100,11 +100,11 @@ const styles = (theme) => ({
   },
   cellularWarning: {
     backgroundColor: Colors.grey500,
-    padding: `${theme.spacing.unit * 1.5}px ${theme.spacing.unit * 2}px`,
+    padding: theme.spacing(1.5, 2),
     borderRadius: 4,
     display: 'flex',
     flexDirection: 'column',
-    marginBottom: theme.spacing.unit,
+    marginBottom: theme.spacing(1),
     '& div': {
       display: 'flex',
       alignItems: 'center',

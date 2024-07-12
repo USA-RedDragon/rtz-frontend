@@ -6,7 +6,7 @@ import {
   ListItem,
   Menu,
   MenuItem,
-} from '@material-ui/core';
+} from '@mui/material';
 
 import MyCommaAuth from '@commaai/my-comma-auth';
 

@@ -3,10 +3,11 @@ import qs from 'query-string';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 
-import { withStyles, Divider, Typography, Menu, MenuItem, CircularProgress, Button, Popper, ListItem } from '@material-ui/core';
-import WarningIcon from '@material-ui/icons/Warning';
-import { ContentCopy as ContentCopyIcon } from '../../icons';
-import ShareIcon from '@material-ui/icons/Share';
+import { Divider, Typography, Menu, MenuItem, CircularProgress, Button, Popper, ListItem } from '@mui/material';
+import { withStyles } from '@mui/styles';
+import WarningIcon from '@mui/icons-material/Warning';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import ShareIcon from '@mui/icons-material/Share';
 
 import { drives as Drives } from '@commaai/api';
 

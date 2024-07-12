@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@mui/styles';
 import raf from 'raf';
 import document from 'global/document';
 import dayjs from 'dayjs';

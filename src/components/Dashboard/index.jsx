@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 
-import { CircularProgress, Grid } from '@material-ui/core';
+import { CircularProgress, Grid } from '@mui/material';
 
 import DriveList from './DriveList';
 import Navigation from '../Navigation';

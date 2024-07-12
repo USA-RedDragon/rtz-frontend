@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 import dayjs from 'dayjs';
-import { withStyles, Typography, IconButton, Button, CircularProgress } from '@material-ui/core';
-import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
-import CheckIcon from '@material-ui/icons/Check';
+import { Typography, IconButton, Button, CircularProgress } from '@mui/material';
+import { withStyles } from '@mui/styles';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import CheckIcon from '@mui/icons-material/Check';
 
 import { billing as Billing } from '@commaai/api';
 
@@ -342,7 +343,10 @@ class PrimeCheckout extends Component {
       <div className={ classes.primeBox } style={ containerPadding }>
         <ResizeHandler onResize={this.onResize} />
         <div className={ classes.primeHeader }>
-          <IconButton aria-label="Go Back" onClick={() => dispatch(primeNav(false)) }>
+          <IconButton
+            aria-label="Go Back"
+            onClick={() => dispatch(primeNav(false)) }
+            size="large">
             <KeyboardBackspaceIcon />
           </IconButton>
           <div className={ classes.headerDevice }>

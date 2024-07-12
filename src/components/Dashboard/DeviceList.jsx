@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 
-import { withStyles, Typography, IconButton } from '@material-ui/core';
-import SettingsIcon from '@material-ui/icons/Settings';
+import { Typography, IconButton } from '@mui/material';
+import { withStyles } from '@mui/styles';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 import MyCommaAuth from '@commaai/my-comma-auth';
 import { devices as Devices } from '@commaai/api';
@@ -71,13 +72,13 @@ const styles = (theme) => ({
     },
   },
   nameField: {
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing(1),
   },
   saveButton: {
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing(1),
   },
   textField: {
-    marginBottom: theme.spacing.unit,
+    marginBottom: theme.spacing(1),
   },
   addDeviceContainer: {
     '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.25)' },
@@ -148,7 +149,7 @@ class DeviceList extends Component {
             className={classes.settingsButton}
             aria-label="device settings"
             onClick={ (ev) => this.handleOpenedSettingsModal(device.dongle_id, ev) }
-          >
+            size="large">
             <SettingsIcon className={classes.settingsButtonIcon} />
           </IconButton>
           )}

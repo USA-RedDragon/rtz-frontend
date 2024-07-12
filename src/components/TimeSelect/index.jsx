@@ -4,7 +4,8 @@ import Obstruction from 'obstruction';
 import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 
-import { Button, Divider, Modal, Paper, Typography, withStyles } from '@material-ui/core';
+import { Button, Divider, Modal, Paper, Typography } from '@mui/material';
+import { withStyles } from '@mui/styles';
 
 import Colors from '../../colors';
 import { selectTimeFilter } from '../../actions';
@@ -12,8 +13,8 @@ import { selectTimeFilter } from '../../actions';
 const styles = (theme) => ({
   modal: {
     position: 'absolute',
-    padding: theme.spacing.unit * 2,
-    width: theme.spacing.unit * 50,
+    padding: theme.spacing(2),
+    width: theme.spacing(50),
     maxWidth: '90%',
     margin: '0 auto',
     left: '50%',

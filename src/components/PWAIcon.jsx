@@ -5,7 +5,7 @@ import {
   CircularProgress,
   IconButton,
   Tooltip,
-} from '@material-ui/core';
+} from '@mui/material';
 
 import { CheckCircle, Download } from '../icons';
 
@@ -81,7 +81,7 @@ const PWAIcon = ({ immediate }) => {
         className="animate-fadein"
         onClick={callback}
         disabled={installing}
-      >
+        size="large">
         {installing ? (
           <CircularProgress className="flex text-[rgba(128,255,128,0.5)]" size={24} />
         ) : icon}

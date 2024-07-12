@@ -4,9 +4,9 @@ import Obstruction from 'obstruction';
 import raf from 'raf';
 import dayjs from 'dayjs';
 
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import { withStyles } from '@mui/styles';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 
 import { DownArrow, Forward10, Pause, PlayArrow, Replay10, UpArrow } from '../../icons';
 import { currentOffset } from '../../timeline';
@@ -30,7 +30,7 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.grey[999],
     height: '64px',
     borderRadius: '32px',
-    padding: theme.spacing.unit,
+    padding: theme.spacing(1),
     width: 400,
     maxWidth: '100%',
     margin: '0 auto',
@@ -48,7 +48,7 @@ const styles = (theme) => ({
     },
   },
   desiredPlaySpeedContainer: {
-    marginRight: theme.spacing.unit * 1,
+    marginRight: theme.spacing(1),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -88,7 +88,7 @@ const styles = (theme) => ({
     borderLeft: `1px solid ${theme.palette.grey[900]}`,
   },
   currentTime: {
-    margin: `0 ${theme.spacing.unit * 1}px`,
+    margin: `0 ${theme.spacing(1)}`,
     fontSize: 15,
     fontWeight: 500,
     display: 'block',
@@ -235,7 +235,7 @@ class TimeDisplay extends Component {
             className={ classes.iconButton }
             onClick={ () => this.jumpBack(10000) }
             aria-label="Jump back 10 seconds"
-          >
+            size="large">
             <Replay10 className={`${classes.icon} small dim`} />
           </IconButton>
         </div>
@@ -244,7 +244,7 @@ class TimeDisplay extends Component {
             className={ classes.iconButton }
             onClick={ () => this.jumpForward(10000) }
             aria-label="Jump forward 10 seconds"
-          >
+            size="large">
             <Forward10 className={`${classes.icon} small dim`} />
           </IconButton>
         </div>
@@ -263,7 +263,7 @@ class TimeDisplay extends Component {
               onClick={this.increaseSpeed}
               disabled={!this.canIncreaseSpeed()}
               aria-label="Increase play speed by 1 step"
-            >
+              size="large">
               <UpArrow className={classes.tinyArrowIcon} />
             </IconButton>
             <Typography variant="body2" align="center">
@@ -275,7 +275,7 @@ class TimeDisplay extends Component {
               onClick={this.decreaseSpeed}
               disabled={!this.canDecreaseSpeed()}
               aria-label="Decrease play speed by 1 step"
-            >
+              size="large">
               <DownArrow className={classes.tinyArrowIcon} />
             </IconButton>
           </div>
@@ -284,7 +284,7 @@ class TimeDisplay extends Component {
           <IconButton
             onClick={this.togglePause}
             aria-label={isPaused ? 'Unpause' : 'Pause'}
-          >
+            size="large">
             {isPaused
               ? (<PlayArrow className={classes.icon} />)
               : (<Pause className={classes.icon} />)}
