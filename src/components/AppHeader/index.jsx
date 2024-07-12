@@ -4,6 +4,7 @@ import Obstruction from 'obstruction';
 
 import { withStyles } from '@mui/styles';
 import { Typography, IconButton, Icon, AppBar } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import MyCommaAuth from '@commaai/my-comma-auth';
 
@@ -85,7 +86,7 @@ const AppHeader = ({
         <div className={classes.titleContainer}>
           {showDrawerButton ? (
             <IconButton aria-label="menu" className="mr-3" onClick={toggleDrawer} size="large">
-              <Icon>menu</Icon>
+              <MenuIcon />
             </IconButton>
           )
             : (
