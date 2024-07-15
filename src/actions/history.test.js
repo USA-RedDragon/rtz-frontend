@@ -62,9 +62,11 @@ describe('history middleware', () => {
     actionsIndex.selectDevice.mockReturnValue(fakeInner);
 
     const { store, next, invoke } = create({
-      dongleId: null,
-      zoom: null,
-      primeNav: false,
+      app: {
+        dongleId: null,
+        zoom: null,
+        primeNav: false,
+      },
     });
 
     const action = {
@@ -86,9 +88,11 @@ describe('history middleware', () => {
     actionsIndex.pushTimelineRange.mockReturnValue(fakeInner);
 
     const { store, next, invoke } = create({
-      dongleId: '0000aaaa0000aaaa',
-      zoom: null,
-      primeNav: false,
+      app: {
+        dongleId: '0000aaaa0000aaaa',
+        zoom: null,
+        primeNav: false,
+      },
     });
 
     const action = {
@@ -112,9 +116,11 @@ describe('history middleware', () => {
     actionsIndex.primeNav.mockReturnValue(fakeInner2);
 
     const { store, next, invoke } = create({
-      dongleId: '0000aaaa0000aaaa',
-      zoom: { start: 1230, end: 1234 },
-      primeNav: false,
+      app: {
+        dongleId: '0000aaaa0000aaaa',
+        zoom: { start: 1230, end: 1234 },
+        primeNav: false,
+      },
     });
 
     const action = {
