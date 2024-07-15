@@ -8,25 +8,25 @@ import store from '../store';
  */
 export function currentOffset(state = null) {
   if (!state) {
-    state = store.getState();
+    state = store.getState().app;
   }
 
   /** @type {number} */
   let offset;
-  if (state.app.offset === null && state.app.loop?.startTime) {
-    offset = state.app.loop.startTime;
+  if (state.offset === null && state.loop?.startTime) {
+    offset = state.loop.startTime;
   } else {
-    const playSpeed = state.app.isBufferingVideo ? 0 : state.app.desiredPlaySpeed;
-    offset = state.app.offset + ((Date.now() - state.app.startTime) * playSpeed);
+    const playSpeed = state.isBufferingVideo ? 0 : state.desiredPlaySpeed;
+    offset = state.offset + ((Date.now() - state.startTime) * playSpeed);
   }
 
-  if (offset !== null && state.app.loop?.startTime) {
+  if (offset !== null && state.loop?.startTime) {
     // respect the loop
-    const loopOffset = state.app.loop.startTime;
+    const loopOffset = state.loop.startTime;
     if (offset < loopOffset) {
       offset = loopOffset;
-    } else if (offset > loopOffset + state.app.loop.duration) {
-      offset = ((offset - loopOffset) % state.app.loop.duration) + loopOffset;
+    } else if (offset > loopOffset + state.loop.duration) {
+      offset = ((offset - loopOffset) % state.loop.duration) + loopOffset;
     }
   }
   return offset;

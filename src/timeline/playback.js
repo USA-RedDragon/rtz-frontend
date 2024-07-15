@@ -5,113 +5,101 @@ import { currentOffset } from '.';
 
 export function reducer(state, action) {
   let loopOffset = null;
-  if (state.app && state.app.loop && state.app.loop.startTime !== null) {
-    loopOffset = state.app.loop.startTime;
+  if (state.loop && state.loop.startTime !== null) {
+    loopOffset = state.loop.startTime;
   }
   switch (action.type) {
     case Types.ACTION_SEEK:
       state = {
-        app: {
-          ...state.app,
-          offset: action.offset,
-          startTime: Date.now(),
-        }
+        ...state,
+        offset: action.offset,
+        startTime: Date.now(),
       };
 
       if (loopOffset !== null) {
-        if (state.app.offset < loopOffset) {
-          state.app.offset = loopOffset;
-        } else if (state.app.offset > (loopOffset + state.app.loop.duration)) {
-          state.app.offset = loopOffset + state.app.loop.duration;
+        if (state.offset < loopOffset) {
+          state.offset = loopOffset;
+        } else if (state.offset > (loopOffset + state.loop.duration)) {
+          state.offset = loopOffset + state.loop.duration;
         }
       }
       break;
     case Types.ACTION_PAUSE:
       state = {
-        app: {
-          ...state.app,
-          offset: currentOffset(state),
-          startTime: Date.now(),
-          desiredPlaySpeed: 0,
-        },
+          ...state,
+        offset: currentOffset(state),
+        startTime: Date.now(),
+        desiredPlaySpeed: 0,
       };
       break;
     case Types.ACTION_PLAY:
-      if (action.speed !== state.app.desiredPlaySpeed) {
+      if (action.speed !== state.desiredPlaySpeed) {
         state = {
-          app: {
-            ...state.app,
-            offset: currentOffset(state),
-            desiredPlaySpeed: action.speed,
-            startTime: Date.now(),
-          },
+          ...state,
+          offset: currentOffset(state),
+          desiredPlaySpeed: action.speed,
+          startTime: Date.now(),
         };
       }
       break;
     case Types.ACTION_LOOP:
       if (action.start !== null && action.start !== undefined && action.end !== null && action.end !== undefined) {
-        state.app.loop = {
+        state.loop = {
           startTime: action.start,
           duration: action.end - action.start,
         };
       } else {
-        state.app.loop = null;
+        state.loop = null;
       }
       break;
     case Types.ACTION_BUFFER_VIDEO:
       state = {
-        app: {
-          ...state.app,
-          isBufferingVideo: action.buffering,
-          offset: currentOffset(state),
-          startTime: Date.now(),
-        },
+        ...state,
+        isBufferingVideo: action.buffering,
+        offset: currentOffset(state),
+        startTime: Date.now(),
       };
       break;
     case Types.ACTION_RESET:
       state = {
-        app: {
-          ...state.app,
+          ...state,
           desiredPlaySpeed: 1,
           isBufferingVideo: true,
           offset: 0,
           startTime: Date.now(),
-        },
       };
       break;
     default:
       break;
   }
 
-  if (state.app && state.app.currentRoute && state.app.currentRoute.videoStartOffset && state.app.loop && state.app.zoom
-    && state.app.loop.startTime === state.app.zoom.start && state.app.zoom.start === 0) {
-    const loopRouteOffset = state.app.loop.startTime - state.app.zoom.start;
-    if (state.app.currentRoute.videoStartOffset > loopRouteOffset) {
-      state.app.loop = {
-        startTime: state.app.zoom.start + state.app.currentRoute.videoStartOffset,
-        duration: state.app.loop.duration - (state.app.currentRoute.videoStartOffset - loopRouteOffset),
+  if (state.currentRoute && state.currentRoute.videoStartOffset && state.loop && state.zoom
+    && state.loop.startTime === state.zoom.start && state.zoom.start === 0) {
+    const loopRouteOffset = state.loop.startTime - state.zoom.start;
+    if (state.currentRoute.videoStartOffset > loopRouteOffset) {
+      state.loop = {
+        startTime: state.zoom.start + state.currentRoute.videoStartOffset,
+        duration: state.loop.duration - (state.currentRoute.videoStartOffset - loopRouteOffset),
       };
     }
   }
 
   // normalize over loop
-  if (state.app && state.app.offset !== null && state.app.loop?.startTime) {
-    const playSpeed = state.app.isBufferingVideo ? 0 : state.app.desiredPlaySpeed;
-    const offset = state.app.offset + (Date.now() - state.app.startTime) * playSpeed;
-    loopOffset = state.app.loop.startTime;
+  if (state.offset !== null && state.loop?.startTime) {
+    const playSpeed = state.isBufferingVideo ? 0 : state.desiredPlaySpeed;
+    const offset = state.offset + (Date.now() - state.startTime) * playSpeed;
+    loopOffset = state.loop.startTime;
     // has loop, trap offset within the loop
     if (offset < loopOffset) {
-      state.app.startTime = Date.now();
-      state.app.offset = loopOffset;
-    } else if (offset > loopOffset + state.app.loop.duration) {
-      state.app.offset = ((offset - loopOffset) % state.app.loop.duration) + loopOffset;
-      state.app.startTime = Date.now();
+      state.startTime = Date.now();
+      state.offset = loopOffset;
+    } else if (offset > loopOffset + state.loop.duration) {
+      state.offset = ((offset - loopOffset) % state.loop.duration) + loopOffset;
+      state.startTime = Date.now();
     }
   }
 
-  if (state.app) {
-    state.app.isBufferingVideo = Boolean(state.app.isBufferingVideo);
-  }
+  state.isBufferingVideo = Boolean(state.isBufferingVideo);
 
   return state;
 }

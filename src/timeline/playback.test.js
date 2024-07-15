@@ -5,13 +5,11 @@ import { bufferVideo, pause, play, reducer, seek, selectLoop } from './playback'
 
 const makeDefaultStruct = function makeDefaultStruct() {
   return {
-    app: {
-      desiredPlaySpeed: 1, // 0 = stopped, 1 = playing, 2 = 2x speed
-      offset: 0, // in miliseconds from the start
-      startTime: Date.now(), // millisecond timestamp in which play began
+    desiredPlaySpeed: 1, // 0 = stopped, 1 = playing, 2 = 2x speed
+    offset: 0, // in miliseconds from the start
+    startTime: Date.now(), // millisecond timestamp in which play began
 
-      isBuffering: true,
-    },
+    isBuffering: true,
   };
 };
 
@@ -33,28 +31,28 @@ describe('playback', () => {
 
     // should do nothing
     state = reducer(state, pause());
-    expect(state.app.desiredPlaySpeed).toEqual(0);
+    expect(state.desiredPlaySpeed).toEqual(0);
 
     // start playing, should set start time and such
     let playTime = newNow();
     state = reducer(state, play());
     // this is a (usually 1ms) race condition
-    expect(state.app.startTime).toEqual(playTime);
-    expect(state.app.desiredPlaySpeed).toEqual(1);
+    expect(state.startTime).toEqual(playTime);
+    expect(state.desiredPlaySpeed).toEqual(1);
 
     await asyncSleep(100 + Math.random() * 200);
     // should update offset
     let ellapsed = newNow() - playTime;
     state = reducer(state, pause());
 
-    expect(state.app.offset).toEqual(ellapsed);
+    expect(state.offset).toEqual(ellapsed);
 
     // start playing, should set start time and such
     playTime = newNow();
     state = reducer(state, play(0.5));
     // this is a (usually 1ms) race condition
-    expect(state.app.startTime).toEqual(playTime);
-    expect(state.app.desiredPlaySpeed).toEqual(0.5);
+    expect(state.startTime).toEqual(playTime);
+    expect(state.desiredPlaySpeed).toEqual(0.5);
 
     await asyncSleep(100 + Math.random() * 200);
     // should update offset, playback speed 1/2
@@ -62,13 +60,13 @@ describe('playback', () => {
     expect(currentOffset(state)).toEqual(ellapsed);
     state = reducer(state, pause());
 
-    expect(state.app.offset).toEqual(ellapsed);
+    expect(state.offset).toEqual(ellapsed);
 
     // seek!
     newNow();
     state = reducer(state, seek(123));
-    expect(state.app.offset).toEqual(123);
-    expect(state.app.startTime).toEqual(Date.now());
+    expect(state.offset).toEqual(123);
+    expect(state.startTime).toEqual(Date.now());
     expect(currentOffset(state)).toEqual(123);
   });
 
@@ -82,12 +80,12 @@ describe('playback', () => {
       1000,
       2000,
     ));
-    expect(state.app.loop.startTime).toEqual(1000);
+    expect(state.loop.startTime).toEqual(1000);
 
     // seek past loop end boundary a
     state = reducer(state, seek(3000));
-    expect(state.app.loop.startTime).toEqual(1000);
-    expect(state.app.offset).toEqual(2000);
+    expect(state.loop.startTime).toEqual(1000);
+    expect(state.offset).toEqual(2000);
   });
 
   it('should clamp loop when seeked before loop start time', () => {
@@ -100,12 +98,12 @@ describe('playback', () => {
       1000,
       2000,
     ));
-    expect(state.app.loop.startTime).toEqual(1000);
+    expect(state.loop.startTime).toEqual(1000);
 
     // seek past loop end boundary a
     state = reducer(state, seek(0));
-    expect(state.app.loop.startTime).toEqual(1000);
-    expect(state.app.offset).toEqual(1000);
+    expect(state.loop.startTime).toEqual(1000);
+    expect(state.offset).toEqual(1000);
   });
 
   it('should buffer video and data', async () => {
@@ -113,24 +111,24 @@ describe('playback', () => {
     let state = makeDefaultStruct();
 
     state = reducer(state, play());
-    expect(state.app.desiredPlaySpeed).toEqual(1);
+    expect(state.desiredPlaySpeed).toEqual(1);
 
     // claim the video is buffering
     state = reducer(state, bufferVideo(true));
-    expect(state.app.desiredPlaySpeed).toEqual(1);
-    expect(state.app.isBufferingVideo).toEqual(true);
+    expect(state.desiredPlaySpeed).toEqual(1);
+    expect(state.isBufferingVideo).toEqual(true);
 
     state = reducer(state, play(0.5));
-    expect(state.app.desiredPlaySpeed).toEqual(0.5);
-    expect(state.app.isBufferingVideo).toEqual(true);
+    expect(state.desiredPlaySpeed).toEqual(0.5);
+    expect(state.isBufferingVideo).toEqual(true);
 
-    expect(state.app.desiredPlaySpeed).toEqual(0.5);
+    expect(state.desiredPlaySpeed).toEqual(0.5);
 
     state = reducer(state, play(2));
     state = reducer(state, bufferVideo(false));
-    expect(state.app.desiredPlaySpeed).toEqual(2);
-    expect(state.app.isBufferingVideo).toEqual(false);
+    expect(state.desiredPlaySpeed).toEqual(2);
+    expect(state.isBufferingVideo).toEqual(false);
 
-    expect(state.app.desiredPlaySpeed).toEqual(2);
+    expect(state.desiredPlaySpeed).toEqual(2);
   });
 });

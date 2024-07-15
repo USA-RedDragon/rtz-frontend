@@ -155,7 +155,7 @@ export function fetchUploadQueue(dongleId) {
     }
     dispatch(updateDeviceOnline(dongleId, Math.floor(Date.now() / 1000)));
 
-    const prevFilesUploading = getState().filesUploading || {};
+    const prevFilesUploading = getState().app.filesUploading || {};
     const device = getDeviceFromState(getState(), dongleId);
     const uploadingFiles = {};
     const newCurrentUploading = {};
@@ -183,7 +183,7 @@ export function fetchUploadQueue(dongleId) {
       delete prevFilesUploading[uploading.id];
     });
     // some item is done uploading
-    if (getState().dongleId === dongleId && Object.keys(prevFilesUploading).length) {
+    if (getState().app.dongleId === dongleId && Object.keys(prevFilesUploading).length) {
       const routeName = Object.values(prevFilesUploading)[0].fileName.split('--').slice(0, 2).join('--');
       dispatch(fetchFiles(routeName, true));
     }

@@ -36,77 +36,65 @@ describe('segments', () => {
     expect(hasRoutesData()).toBe(false);
     expect(hasRoutesData({})).toBe(false);
     expect(hasRoutesData({
-      app: {
-        routesMeta: {},
-      },
+      routesMeta: {},
     })).toBe(false);
     expect(hasRoutesData({
-      app: {
-        routes: [],
-        routesMeta: {
-          dongleId: 'asdfasdf',
-        },
-      },
-    })).toBe(false);
-    expect(hasRoutesData({
-      app: {
-        routes: [],
-        routesMeta: {
-          dongleId: 'asdfasdf',
-          start: 10,
-          end: 20,
-        },
-        filter: {
-          start: 0,
-          end: 30,
-        },
+      routes: [],
+      routesMeta: {
         dongleId: 'asdfasdf',
       },
     })).toBe(false);
     expect(hasRoutesData({
-      app: {
-        routes: [],
-        routesMeta: {
-          dongleId: 'asdfasdf',
-          start: 0,
-          end: 20,
-        },
-        filter: {
-          start: 10,
-          end: 30,
-        },
+      routes: [],
+      routesMeta: {
         dongleId: 'asdfasdf',
+        start: 10,
+        end: 20,
       },
+      filter: {
+        start: 0,
+        end: 30,
+      },
+      dongleId: 'asdfasdf',
     })).toBe(false);
     expect(hasRoutesData({
-      app: {
-        routes: [],
-        routesMeta: {
-          dongleId: 'asdfasdf',
-          start: 10,
-          end: 30,
-        },
-        filter: {
-          start: 0,
-          end: 20,
-        },
+      routes: [],
+      routesMeta: {
         dongleId: 'asdfasdf',
+        start: 0,
+        end: 20,
       },
+      filter: {
+        start: 10,
+        end: 30,
+      },
+      dongleId: 'asdfasdf',
     })).toBe(false);
     expect(hasRoutesData({
-      app: {
-        routes: [],
-        routesMeta: {
-          dongleId: 'asdfasdf',
-          start: 0,
-          end: 30,
-        },
-        filter: {
-          start: 10,
-          end: 20,
-        },
+      routes: [],
+      routesMeta: {
         dongleId: 'asdfasdf',
+        start: 10,
+        end: 30,
       },
+      filter: {
+        start: 0,
+        end: 20,
+      },
+      dongleId: 'asdfasdf',
+    })).toBe(false);
+    expect(hasRoutesData({
+      routes: [],
+      routesMeta: {
+        dongleId: 'asdfasdf',
+        start: 0,
+        end: 30,
+      },
+      filter: {
+        start: 10,
+        end: 20,
+      },
+      dongleId: 'asdfasdf',
     })).toBe(true);
   });
 });
