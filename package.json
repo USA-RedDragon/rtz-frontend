@@ -80,7 +80,7 @@
     "eslint": "^9.7.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest-dom": "^5.4.0",
-    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react": "^7.34.4",
     "eslint-plugin-react-hooks": "^4.6.2",
     "expect-puppeteer": "^10.0.0",
     "globals": "^15.8.0",
