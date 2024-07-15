@@ -1,7 +1,7 @@
 import React, { Component, lazy, Suspense, createContext } from 'react';
 import { Provider } from 'react-redux';
-import { Route, Switch, Redirect } from 'react-router';
-import { ConnectedRouter } from 'connected-react-router';
+import { Route, Navigate, Routes } from 'react-router';
+import { BrowserRouter as Router } from "react-router-dom";
 import qs from 'query-string';
 import localforage from 'localforage';
 
@@ -11,7 +11,7 @@ import MyCommaAuth, { config as AuthConfig, storage as AuthStorage } from '@comm
 import { athena as Athena, auth as Auth, billing as Billing, request as Request } from '@commaai/api';
 
 import { getZoom, getSegmentRange } from './url';
-import store, { history } from './store';
+import { store, history } from './store';
 
 const Explorer = lazy(() => import('./components/explorer'));
 const AnonymousLanding = lazy(() => import('./components/anonymous'));
@@ -85,23 +85,19 @@ class App extends Component {
 
   authRoutes() {
     return (
-      <Switch>
-        <Route path="/auth/">
-          <Redirect to={this.redirectLink()} />
-        </Route>
-        <Route path="/" component={Explorer} />
-      </Switch>
+      <Routes>
+        <Route path="/auth/*" element={<Navigate replace to={this.redirectLink()} />} />
+        <Route path="/*" element={<Explorer />} />
+      </Routes>
     );
   }
 
   anonymousRoutes() {
     return (
-      <Switch>
-        <Route path="/auth/">
-          <Redirect to="/" />
-        </Route>
-        <Route path="/" component={AnonymousLanding} />
-      </Switch>
+      <Routes>
+        <Route path="/auth/*" element={<Navigate replace to="/" />} />
+        <Route path="/*" element={<AnonymousLanding />} />
+      </Routes>
     );
   }
 
@@ -129,9 +125,9 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <ConnectedRouter history={history}>
+        <Router history={history}>
           {content}
-        </ConnectedRouter>
+        </Router>
       </Provider>
     );
   }

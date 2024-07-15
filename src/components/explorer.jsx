@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Obstruction from 'obstruction';
 import localforage from 'localforage';
-import { replace } from 'connected-react-router';
+import { replace } from 'redux-first-history';
 
 import { Button, CircularProgress, Divider, Modal, Paper, Typography } from '@mui/material';
 import { withStyles } from '@mui/styles';

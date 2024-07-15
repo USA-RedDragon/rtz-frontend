@@ -35,9 +35,6 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^2.2.6
         version: 2.2.6(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
-      connected-react-router:
-        specifier: ^6.9.3
-        version: 6.9.3(history@4.10.1)(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@5.0.1)
       dayjs:
         specifier: ^1.11.11
         version: 1.11.11
@@ -48,8 +45,8 @@ importers:
         specifier: ^4.4.0
         version: 4.4.0
       history:
-        specifier: ^4.10.1
-        version: 4.10.1
+        specifier: ^5.3.0
+        version: 5.3.0
       jwt-decode:
         specifier: ^4.0.0
         version: 4.0.0
@@ -93,17 +90,20 @@ importers:
         specifier: ^9.1.2
         version: 9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1)
       react-router:
-        specifier: ^5.3.4
-        version: 5.3.4(react@18.3.1)
+        specifier: ^6.24.1
+        version: 6.24.1(react@18.3.1)
       react-router-dom:
-        specifier: ^5.3.4
-        version: 5.3.4(react@18.3.1)
+        specifier: ^6.24.1
+        version: 6.24.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       reduce-reducers:
         specifier: ^1.0.4
         version: 1.0.4
       redux:
         specifier: ^5.0.1
         version: 5.0.1
+      redux-first-history:
+        specifier: ^5.2.0
+        version: 5.2.0(history@5.3.0)(redux@5.0.1)
       redux-thunk:
         specifier: ^3.1.0
         version: 3.1.0(redux@5.0.1)
@@ -1430,6 +1430,10 @@ packages:
       react-redux:
         optional: true
 
+  '@remix-run/router@1.17.1':
+    resolution: {integrity: sha512-mCOMec4BKd6BRGBZeSnGiIgwsbLGp3yhVqAD8H+PxiRNEHgDpZb8J1TnrSDlg97t0ySKMQJTHCWBCmBpSmkF6Q==}
+    engines: {node: '>=14.0.0'}
+
   '@rollup/plugin-babel@5.3.1':
     resolution: {integrity: sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q==}
     engines: {node: '>= 10.0.0'}
@@ -2427,15 +2431,6 @@ packages:
     resolution: {integrity: sha512-aMKprgk5YhBNyH25hj8wGt2+D52Sw1DRRIzqBwLp2Ya9mFmY8KPvvtvmna8SxVR9JMZ4kzMD68N22vlaRpkeFA==}
     engines: {node: '>=8'}
 
-  connected-react-router@6.9.3:
-    resolution: {integrity: sha512-4ThxysOiv/R2Dc4Cke1eJwjKwH1Y51VDwlOrOfs1LjpdYOVvCNjNkZDayo7+sx42EeGJPQUNchWkjAIJdXGIOQ==}
-    peerDependencies:
-      history: ^4.7.2
-      react: ^16.4.0 || ^17.0.0
-      react-redux: ^6.0.0 || ^7.1.0
-      react-router: ^4.3.1 || ^5.0.0
-      redux: ^3.6.0 || ^4.0.0
-
   content-disposition@0.5.4:
     resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==}
     engines: {node: '>= 0.6'}
@@ -3284,8 +3279,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  history@4.10.1:
-    resolution: {integrity: sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew==}
+  history@5.3.0:
+    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
 
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
@@ -3376,10 +3371,6 @@ packages:
 
   immer@10.1.1:
     resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
-
-  immutable@3.8.2:
-    resolution: {integrity: sha512-15gZoQ38eYjEjxkorfbcgBKBL6R7T459OuK+CpcWt7O3KF4uPCx2tD0uFETlUDIyo+1789crbMhTvQBSR5yBMg==}
-    engines: {node: '>=0.10.0'}
 
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -4039,9 +4030,6 @@ packages:
   lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
 
-  lodash.isequalwith@4.4.0:
-    resolution: {integrity: sha512-dcZON0IalGBpRmJBmMkaoV7d3I80R2O+FrzsZyHdNSFrANq/cgDqKQNmAHE8UEj4+QYWwwhkQOVdLHiAopzlsQ==}
-
   lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
 
@@ -4468,9 +4456,6 @@ packages:
   path-to-regexp@0.1.7:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
 
-  path-to-regexp@1.8.0:
-    resolution: {integrity: sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==}
-
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
@@ -4728,15 +4713,18 @@ packages:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
     engines: {node: '>=0.10.0'}
 
-  react-router-dom@5.3.4:
-    resolution: {integrity: sha512-m4EqFMHv/Ih4kpcBCONHbkT68KoAeHN4p3lAGoNryfHi0dMy0kCzEZakiKRsvg5wHZ/JLrLW8o8KomWiz/qbYQ==}
+  react-router-dom@6.24.1:
+    resolution: {integrity: sha512-U19KtXqooqw967Vw0Qcn5cOvrX5Ejo9ORmOtJMzYWtCT4/WOfFLIZGGsVLxcd9UkBO0mSTZtXqhZBsWlHr7+Sg==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
-      react: '>=15'
+      react: '>=16.8'
+      react-dom: '>=16.8'
 
-  react-router@5.3.4:
-    resolution: {integrity: sha512-Ys9K+ppnJah3QuaRiLxk+jDWOR1MekYQrlytiXxC1RyfbdsZkS5pvKAzCCr031xHixZwpnsYNT5xysdFHQaYsA==}
+  react-router@6.24.1:
+    resolution: {integrity: sha512-PTXFXGK2pyXpHzVo3rR9H7ip4lSPZZc0bHG5CARmj65fTT6qG7sTngmb6lcYu1gf3y/8KxORoy9yn59pGpCnpg==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
-      react: '>=15'
+      react: '>=16.8'
 
   react-shallow-renderer@16.15.0:
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
@@ -4779,6 +4767,12 @@ packages:
 
   reduce-reducers@1.0.4:
     resolution: {integrity: sha512-Mb2WZ2bJF597exiqX7owBzrqJ74DHLK3yOQjCyPAaNifRncE8OD0wFIuoMhXxTnHK07+8zZ2SJEKy/qtiyR7vw==}
+
+  redux-first-history@5.2.0:
+    resolution: {integrity: sha512-7kLqtSXGPZIgvEhl3B+3wRvzePvvZggpVqg+jpR2ZVqu2ESGj9DF6hMHpoEP7bGHqddljjKYjnRmtSetYEiG2Q==}
+    peerDependencies:
+      history: ^4.7.2 || ^5.0
+      redux: ^3.6.0 || ^4.0.0 || ^5.0.0
 
   redux-thunk@3.1.0:
     resolution: {integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==}
@@ -4862,9 +4856,6 @@ packages:
   resolve-from@5.0.0:
     resolution: {integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==}
     engines: {node: '>=8'}
-
-  resolve-pathname@3.0.0:
-    resolution: {integrity: sha512-C7rARubxI8bXFNB/hqcp/4iUeIXJhJZvFPFPiSPRnhU5UPxzMFIl+2E6yY6c4k9giDJAhtV+enfA+G89N6Csng==}
 
   resolve-protobuf-schema@2.1.0:
     resolution: {integrity: sha512-kI5ffTiZWmJaS/huM8wZfEMer1eRd7oJQhDuxeCLe3t7N7mX3z94CN0xPxBQxFYQTSNz9T0i+v6inKqSdK8xrQ==}
@@ -4956,9 +4947,6 @@ packages:
 
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
-
-  seamless-immutable@7.1.4:
-    resolution: {integrity: sha512-XiUO1QP4ki4E2PHegiGAlu6r82o5A+6tRh7IkGGTVg/h+UoeX4nFBeCGPOhb4CYjvkqsfm/TUtvOMYC1xmV30A==}
 
   semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
@@ -5302,9 +5290,6 @@ packages:
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
-  tiny-invariant@1.3.3:
-    resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
-
   tiny-lru@11.2.11:
     resolution: {integrity: sha512-27BIW0dIWTYYoWNnqSmoNMKe5WIbkXsc0xaCQHd3/3xT2XMuMJrzHdrO9QBFR14emBz1Bu0dOAs2sCBBrvgPQA==}
     engines: {node: '>=12'}
@@ -5514,9 +5499,6 @@ packages:
 
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
-
-  value-equal@1.0.1:
-    resolution: {integrity: sha512-NOJ6JZCAWr0zlxZt+xqCHNTEKOsrks2HQd4MqhP1qy4z1SkbEP467eNx6TgDKXMvUOb+OENfJCZwM+16n7fRfw==}
 
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
@@ -7377,6 +7359,8 @@ snapshots:
       react: 18.3.1
       react-redux: 9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1)
 
+  '@remix-run/router@1.17.1': {}
+
   '@rollup/plugin-babel@5.3.1(@babel/core@7.24.8)(@types/babel__core@7.20.5)(rollup@2.79.1)':
     dependencies:
       '@babel/core': 7.24.8
@@ -8459,19 +8443,6 @@ snapshots:
       write-file-atomic: 3.0.3
       xdg-basedir: 4.0.0
 
-  connected-react-router@6.9.3(history@4.10.1)(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)(redux@5.0.1):
-    dependencies:
-      history: 4.10.1
-      lodash.isequalwith: 4.4.0
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-redux: 9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1)
-      react-router: 5.3.4(react@18.3.1)
-      redux: 5.0.1
-    optionalDependencies:
-      immutable: 3.8.2
-      seamless-immutable: 7.1.4
-
   content-disposition@0.5.4:
     dependencies:
       safe-buffer: 5.2.1
@@ -9431,14 +9402,9 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  history@4.10.1:
+  history@5.3.0:
     dependencies:
       '@babel/runtime': 7.24.8
-      loose-envify: 1.4.0
-      resolve-pathname: 3.0.0
-      tiny-invariant: 1.3.3
-      tiny-warning: 1.0.3
-      value-equal: 1.0.1
 
   hoist-non-react-statics@3.3.2:
     dependencies:
@@ -9534,9 +9500,6 @@ snapshots:
   immediate@3.0.6: {}
 
   immer@10.1.1: {}
-
-  immutable@3.8.2:
-    optional: true
 
   import-fresh@3.3.0:
     dependencies:
@@ -10521,8 +10484,6 @@ snapshots:
 
   lodash.debounce@4.0.8: {}
 
-  lodash.isequalwith@4.4.0: {}
-
   lodash.isplainobject@4.0.6: {}
 
   lodash.merge@4.6.2: {}
@@ -10967,10 +10928,6 @@ snapshots:
 
   path-to-regexp@0.1.7: {}
 
-  path-to-regexp@1.8.0:
-    dependencies:
-      isarray: 0.0.1
-
   path-type@4.0.0: {}
 
   pbf@3.3.0:
@@ -11254,29 +11211,17 @@ snapshots:
 
   react-refresh@0.14.2: {}
 
-  react-router-dom@5.3.4(react@18.3.1):
+  react-router-dom@6.24.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@babel/runtime': 7.24.8
-      history: 4.10.1
-      loose-envify: 1.4.0
-      prop-types: 15.8.1
+      '@remix-run/router': 1.17.1
       react: 18.3.1
-      react-router: 5.3.4(react@18.3.1)
-      tiny-invariant: 1.3.3
-      tiny-warning: 1.0.3
+      react-dom: 18.3.1(react@18.3.1)
+      react-router: 6.24.1(react@18.3.1)
 
-  react-router@5.3.4(react@18.3.1):
+  react-router@6.24.1(react@18.3.1):
     dependencies:
-      '@babel/runtime': 7.24.8
-      history: 4.10.1
-      hoist-non-react-statics: 3.3.2
-      loose-envify: 1.4.0
-      path-to-regexp: 1.8.0
-      prop-types: 15.8.1
+      '@remix-run/router': 1.17.1
       react: 18.3.1
-      react-is: 16.13.1
-      tiny-invariant: 1.3.3
-      tiny-warning: 1.0.3
 
   react-shallow-renderer@16.15.0(react@18.3.1):
     dependencies:
@@ -11331,6 +11276,11 @@ snapshots:
       strip-indent: 3.0.0
 
   reduce-reducers@1.0.4: {}
+
+  redux-first-history@5.2.0(history@5.3.0)(redux@5.0.1):
+    dependencies:
+      history: 5.3.0
+      redux: 5.0.1
 
   redux-thunk@3.1.0(redux@5.0.1):
     dependencies:
@@ -11410,8 +11360,6 @@ snapshots:
   resolve-from@4.0.0: {}
 
   resolve-from@5.0.0: {}
-
-  resolve-pathname@3.0.0: {}
 
   resolve-protobuf-schema@2.1.0:
     dependencies:
@@ -11520,9 +11468,6 @@ snapshots:
   scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
-
-  seamless-immutable@7.1.4:
-    optional: true
 
   semver@5.7.2: {}
 
@@ -11939,8 +11884,6 @@ snapshots:
 
   through@2.3.8: {}
 
-  tiny-invariant@1.3.3: {}
-
   tiny-lru@11.2.11: {}
 
   tiny-warning@1.0.3: {}
@@ -12138,8 +12081,6 @@ snapshots:
     dependencies:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
-
-  value-equal@1.0.1: {}
 
   vary@1.1.2: {}
 

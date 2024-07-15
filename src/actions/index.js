@@ -1,4 +1,4 @@
-import { push } from 'connected-react-router';
+import { push } from 'redux-first-history';
 import document from 'global/document';
 import { athena as Athena, billing as Billing, devices as Devices, drives as Drives } from '@commaai/api';
 import MyCommaAuth from '@commaai/my-comma-auth';

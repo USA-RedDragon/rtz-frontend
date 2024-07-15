@@ -1,9 +1,9 @@
 /* eslint-env jest */
-import { push } from 'connected-react-router';
+import { push } from 'redux-first-history';
 import { pushTimelineRange } from './index';
 
-jest.mock('connected-react-router', () => {
-  const originalModule = jest.requireActual('connected-react-router');
+jest.mock('redux-first-history', () => {
+  const originalModule = jest.requireActual('redux-first-history');
   return {
     __esModule: true,
     ...originalModule,

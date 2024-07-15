@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { routerMiddleware, LOCATION_CHANGE } from 'connected-react-router';
+import { LOCATION_CHANGE, createReduxHistoryContext } from 'redux-first-history';
 import { thunk } from 'redux-thunk';
 
 import { history } from '../store';
@@ -19,8 +19,12 @@ const create = (initialState) => {
   };
   const next = jest.fn();
 
+  const { routerMiddleware } = createReduxHistoryContext({
+    history: history,
+  });
+
   const middleware = (s) => (n) => (action) => {
-    routerMiddleware(history)(s)(n)(action);
+    routerMiddleware(s)(n)(action);
     onHistoryMiddleware(s)(n)(action);
     thunk(s)(n)(action);
   };
