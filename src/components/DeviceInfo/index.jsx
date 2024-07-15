@@ -570,8 +570,8 @@ class DeviceInfo extends Component {
 }
 
 const stateToProps = Obstruction({
-  dongleId: 'dongleId',
-  device: 'device',
+  dongleId: 'app.dongleId',
+  device: 'app.device',
 });
 
 export default connect(stateToProps)(withStyles(styles)(DeviceInfo));

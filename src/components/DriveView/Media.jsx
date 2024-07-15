@@ -834,15 +834,15 @@ class Media extends Component {
 }
 
 const stateToProps = Obstruction({
-  dongleId: 'dongleId',
-  device: 'device',
-  routes: 'routes',
-  currentRoute: 'currentRoute',
-  loop: 'loop',
-  filter: 'filter',
-  files: 'files',
-  profile: 'profile',
-  isBufferingVideo: 'isBufferingVideo',
+  dongleId: 'app.dongleId',
+  device: 'app.device',
+  routes: 'app.routes',
+  currentRoute: 'app.currentRoute',
+  loop: 'app.loop',
+  filter: 'app.filter',
+  files: 'app.files',
+  profile: 'app.profile',
+  isBufferingVideo: 'app.isBufferingVideo',
 });
 
 export default connect(stateToProps)(withStyles(styles)(Media));

@@ -84,10 +84,10 @@ class DriveView extends Component {
 }
 
 const stateToProps = Obstruction({
-  dongleId: 'dongleId',
-  routes: 'routes',
-  zoom: 'zoom',
-  currentRoute: 'currentRoute',
+  dongleId: 'app.dongleId',
+  routes: 'app.routes',
+  zoom: 'app.zoom',
+  currentRoute: 'app.currentRoute',
 });
 
 export default connect(stateToProps)(DriveView);

@@ -86,7 +86,7 @@ class VisibilityHandler extends Component {
 }
 
 const stateToProps = Obstruction({
-  dongleId: 'dongleId',
+  dongleId: 'app.dongleId',
 });
 
 VisibilityHandler.propTypes = {

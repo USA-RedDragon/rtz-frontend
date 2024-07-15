@@ -252,12 +252,12 @@ class ExplorerApp extends Component {
 }
 
 const stateToProps = Obstruction({
-  zoom: 'zoom',
+  zoom: 'app.zoom',
   pathname: 'router.location.pathname',
-  dongleId: 'dongleId',
-  devices: 'devices',
-  currentRoute: 'currentRoute',
-  limit: 'limit',
+  dongleId: 'app.dongleId',
+  devices: 'app.devices',
+  currentRoute: 'app.currentRoute',
+  limit: 'app.limit',
 });
 
 export default connect(stateToProps)(withStyles(styles)(ExplorerApp));

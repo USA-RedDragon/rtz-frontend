@@ -71,7 +71,6 @@ const theme = createTheme({
     },
     MuiInputBase: {
       defaultProps: {
-        disableUnderline: true,
       },
       styleOverrides: {
         root: {

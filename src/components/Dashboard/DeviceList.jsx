@@ -213,9 +213,9 @@ class DeviceList extends Component {
 }
 
 const stateToProps = Obstruction({
-  devices: 'devices',
-  device: 'device',
-  profile: 'profile',
+  devices: 'app.devices',
+  device: 'app.device',
+  profile: 'app.profile',
 });
 
 export default connect(stateToProps)(withStyles(styles)(DeviceList));

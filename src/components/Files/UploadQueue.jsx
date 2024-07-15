@@ -306,8 +306,8 @@ class UploadQueue extends Component {
 }
 
 const stateToProps = Obstruction({
-  filesUploading: 'filesUploading',
-  filesUploadingMeta: 'filesUploadingMeta',
+  filesUploading: 'app.filesUploading',
+  filesUploadingMeta: 'app.filesUploadingMeta',
 });
 
 export default connect(stateToProps)(withStyles(styles)(UploadQueue));

@@ -447,8 +447,8 @@ class Timeline extends Component {
 }
 
 const stateToProps = Obstruction({
-  zoom: 'zoom',
-  loop: 'loop',
+  zoom: 'app.zoom',
+  loop: 'app.loop',
 });
 
 export default connect(stateToProps)(withStyles(styles)(Timeline));

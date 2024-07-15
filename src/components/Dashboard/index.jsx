@@ -41,9 +41,9 @@ const Dashboard = ({ primeNav, device, dongleId }) => {
 };
 
 const stateToProps = Obstruction({
-  dongleId: 'dongleId',
-  primeNav: 'primeNav',
-  device: 'device',
+  dongleId: 'app.dongleId',
+  primeNav: 'app.primeNav',
+  device: 'app.device',
 });
 
 export default connect(stateToProps)(Dashboard);
