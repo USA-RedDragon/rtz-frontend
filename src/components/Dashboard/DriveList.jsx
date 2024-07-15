@@ -75,9 +75,9 @@ const DriveList = (props) => {
 };
 
 const stateToProps = Obstruction({
-  routes: 'routes',
-  lastRoutes : 'lastRoutes',
-  device: 'device',
+  routes: 'app.routes',
+  lastRoutes : 'app.lastRoutes',
+  device: 'app.device',
 });
 
 export default connect(stateToProps)(withStyles(styles)(DriveList));

@@ -258,12 +258,12 @@ function parseEvents(route, driveEvents) {
 export function fetchEvents(route) {
   return async (dispatch, getState) => {
     const state = getState();
-    if (!state.routes) {
+    if (!state.app.routes) {
       return;
     }
 
     // loaded?
-    for (const r of state.routes) {
+    for (const r of state.app.routes) {
       if (r.fullname === route.fullname) {
         if (r.events) {
           return;
@@ -341,12 +341,12 @@ export function fetchEvents(route) {
 export function fetchCoord(route, coord, locationKey) {
   return async (dispatch, getState) => {
     const state = getState();
-    if (!state.routes || (!coord[0] && !coord[1])) {
+    if (!state.app.routes || (!coord[0] && !coord[1])) {
       return;
     }
 
     // loaded?
-    for (const r of state.routes) {
+    for (const r of state.app.routes) {
       if (r.fullname === route.fullname) {
         if (r[locationKey]) {
           return;
@@ -414,12 +414,12 @@ export function fetchLocations(route) {
 export function fetchDriveCoords(route) {
   return async (dispatch, getState) => {
     const state = getState();
-    if (!state.routes) {
+    if (!state.app.routes) {
       return;
     }
 
     // loaded?
-    for (const r of state.routes) {
+    for (const r of state.app.routes) {
       if (r.fullname === route.fullname) {
         if (r.driveCoords) {
           return;

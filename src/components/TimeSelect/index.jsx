@@ -162,7 +162,7 @@ class TimeSelect extends Component {
 }
 
 const stateToProps = Obstruction({
-  filter: 'filter',
+  filter: 'app.filter',
 });
 
 TimeSelect.propTypes = {

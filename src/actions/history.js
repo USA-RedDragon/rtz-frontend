@@ -14,19 +14,19 @@ export const onHistoryMiddleware = ({ dispatch, getState }) => (next) => async (
     next(action); // must be first, otherwise breaks history
 
     const pathDongleId = getDongleID(action.payload.location.pathname);
-    if (pathDongleId && pathDongleId !== state.dongleId) {
+    if (pathDongleId && pathDongleId !== state.app.dongleId) {
       dispatch(selectDevice(pathDongleId, false));
     }
 
     const pathZoom = getZoom(action.payload.location.pathname);
     const pathSegmentRange = getSegmentRange(action.payload.location.pathname);
 
-    if ((pathZoom !== state.zoom) && pathZoom && !pathSegmentRange) {
+    if ((pathZoom !== state.app.zoom) && pathZoom && !pathSegmentRange) {
       const [start, end] = [pathZoom.start, pathZoom.end];
 
       Drives.getRoutesSegments(pathDongleId, start, end).then((routesData) => {
         if (routesData && routesData.length > 0) {
-          const log_id = routesData[0].fullname.split('|')[1]; 
+          const log_id = routesData[0].fullname.split('|')[1];
           const duration = routesData[0].end_time_utc_millis - routesData[0].start_time_utc_millis;
 
           dispatch(pushTimelineRange(log_id, null, null, true));
@@ -37,13 +37,12 @@ export const onHistoryMiddleware = ({ dispatch, getState }) => (next) => async (
       });
     }
 
-    
-    if (pathSegmentRange !== state.segmentRange) {
+    if (pathSegmentRange !== state.app.segmentRange) {
       dispatch(pushTimelineRange(pathSegmentRange?.log_id, pathSegmentRange?.start, pathSegmentRange?.end, false));
     }
 
     const pathPrimeNav = getPrimeNav(action.payload.location.pathname);
-    if (pathPrimeNav !== state.primeNav) {
+    if (pathPrimeNav !== state.app.primeNav) {
       dispatch(primeNav(pathPrimeNav));
     }
   } else {

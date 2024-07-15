@@ -385,9 +385,9 @@ class PrimeManage extends Component {
 }
 
 const stateToProps = Obstruction({
-  dongleId: 'dongleId',
-  device: 'device',
-  subscription: 'subscription',
+  dongleId: 'app.dongleId',
+  device: 'app.device',
+  subscription: 'app.subscription',
 });
 
 export default connect(stateToProps)(withStyles(styles)(PrimeManage));

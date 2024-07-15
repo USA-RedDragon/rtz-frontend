@@ -302,13 +302,13 @@ class DriveVideo extends Component {
 }
 
 const stateToProps = Obstruction({
-  dongleId: 'dongleId',
-  desiredPlaySpeed: 'desiredPlaySpeed',
-  offset: 'offset',
-  startTime: 'startTime',
-  isBufferingVideo: 'isBufferingVideo',
-  routes: 'routes',
-  currentRoute: 'currentRoute',
+  dongleId: 'app.dongleId',
+  desiredPlaySpeed: 'app.desiredPlaySpeed',
+  offset: 'app.offset',
+  startTime: 'app.startTime',
+  isBufferingVideo: 'app.isBufferingVideo',
+  routes: 'app.routes',
+  currentRoute: 'app.currentRoute',
 });
 
 export default connect(stateToProps)(DriveVideo);

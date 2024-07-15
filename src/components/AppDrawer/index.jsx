@@ -58,8 +58,8 @@ const AppDrawer = ({
 };
 
 const stateToProps = Obstruction({
-  selectedDongleId: 'dongleId',
-  device: 'device',
+  selectedDongleId: 'app.dongleId',
+  device: 'app.device',
 });
 
 export default connect(stateToProps)(AppDrawer);

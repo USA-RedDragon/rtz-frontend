@@ -31,9 +31,9 @@ const Prime = (props) => {
 };
 
 const stateToProps = Obstruction({
-  subscription: 'subscription',
-  device: 'device',
-  profile: 'profile',
+  subscription: 'app.subscription',
+  device: 'app.device',
+  profile: 'app.profile',
 });
 
 export default connect(stateToProps)(Prime);

@@ -296,9 +296,9 @@ class TimeDisplay extends Component {
 }
 
 const stateToProps = Obstruction({
-  currentRoute: 'currentRoute',
-  zoom: 'zoom',
-  desiredPlaySpeed: 'desiredPlaySpeed'
+  currentRoute: 'app.currentRoute',
+  zoom: 'app.zoom',
+  desiredPlaySpeed: 'app.desiredPlaySpeed'
 });
 
 export default connect(stateToProps)(withStyles(styles)(TimeDisplay));

@@ -38,7 +38,7 @@ async function initDevices() {
 export default function init() {
   return async (dispatch, getState) => {
     let state = getState();
-    if (state.dongleId && !state.routes) {
+    if (state.app.dongleId && !state.app.routes) {
       dispatch(checkLastRoutesData());
     }
 
@@ -46,7 +46,7 @@ export default function init() {
     state = getState();
 
     if (devices.length > 0) {
-      if (!state.dongleId) {
+      if (!state.app.dongleId) {
         const selectedDongleId = window.localStorage.getItem('selectedDongleId');
         if (selectedDongleId && devices.find((d) => d.dongle_id === selectedDongleId)) {
           dispatch(selectDevice(selectedDongleId));
@@ -54,7 +54,7 @@ export default function init() {
           dispatch(selectDevice(devices[0].dongle_id));
         }
       }
-      const dongleId = state.dongleId || devices[0].dongle_id || null;
+      const dongleId = state.app.dongleId || devices[0].dongle_id || null;
       const device = devices.find((dev) => dev.dongle_id === dongleId);
       if (device) {
         dispatch(primeFetchSubscription(dongleId, device, profile));

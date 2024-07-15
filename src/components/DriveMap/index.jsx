@@ -308,9 +308,9 @@ class DriveMap extends Component {
 }
 
 const stateToProps = Obstruction({
-  offset: 'offset',
-  currentRoute: 'currentRoute',
-  startTime: 'startTime',
+  offset: 'app.offset',
+  currentRoute: 'app.currentRoute',
+  startTime: 'app.startTime',
 });
 
 export default connect(stateToProps)(DriveMap);

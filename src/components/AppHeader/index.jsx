@@ -131,10 +131,10 @@ const AppHeader = ({
 };
 
 const stateToProps = Obstruction({
-  dongleId: 'dongleId',
-  filter: 'filter',
-  profile: 'profile',
-  primeNav: 'primeNav',
+  dongleId: 'app.dongleId',
+  filter: 'app.filter',
+  profile: 'app.profile',
+  primeNav: 'app.primeNav',
 });
 
 export default connect(stateToProps)(withStyles(styles)(AppHeader));

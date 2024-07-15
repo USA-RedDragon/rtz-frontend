@@ -16,32 +16,32 @@ const FIVE_YEARS = 1000 * 60 * 60 * 24 * 365 * 5;
 export function checkRoutesData() {
   return (dispatch, getState) => {
     let state = getState();
-    if (!state.dongleId) {
+    if (!state.app.dongleId) {
       return;
     }
     if (hasRoutesData(state)) {
       // already has metadata, don't bother
       return;
     }
-    if (routesRequest && routesRequest.dongleId === state.dongleId) {
+    if (routesRequest && routesRequest.dongleId === state.app.dongleId) {
       // there is already an pending request
       return routesRequestPromise;
     }
     console.debug('We need to update the segment metadata...');
-    const { dongleId } = state;
-    const fetchRange = state.filter;
+    const { dongleId } = state.app;
+    const fetchRange = state.app.filter;
 
     routesRequest = {
-      req: Drives.getRoutesSegments(dongleId, fetchRange.start, fetchRange.end, state.limit),
+      req: Drives.getRoutesSegments(dongleId, fetchRange.start, fetchRange.end, state.app.limit),
       dongleId,
     };
 
     routesRequestPromise = routesRequest.req.then((routesData) => {
       state = getState();
-      const currentRange = state.filter;
+      const currentRange = state.app.filter;
       if (currentRange.start !== fetchRange.start
         || currentRange.end !== fetchRange.end
-        || state.dongleId !== dongleId) {
+        || state.app.dongleId !== dongleId) {
         routesRequest = null;
         dispatch(checkRoutesData());
         return;
@@ -148,14 +148,14 @@ export function urlForState(dongleId, log_id, start, end, prime) {
 function updateTimeline(state, dispatch, log_id, start, end, allowPathChange) {
   dispatch(checkRoutesData());
 
-  if (!state.loop || !state.loop.startTime || !state.loop.duration || state.loop.startTime < start
-    || state.loop.startTime + state.loop.duration > end || state.loop.duration < end - start) {
+  if (!state.app.loop || !state.app.loop.startTime || !state.app.loop.duration || state.app.loop.startTime < start
+    || state.app.loop.startTime + state.app.loop.duration > end || state.app.loop.duration < end - start) {
     dispatch(resetPlayback());
     dispatch(selectLoop(start, end));
   }
 
   if (allowPathChange) {
-    const desiredPath = urlForState(state.dongleId, log_id, Math.floor(start/1000), Math.floor(end/1000), false);
+    const desiredPath = urlForState(state.app.dongleId, log_id, Math.floor(start/1000), Math.floor(end/1000), false);
     if (window.location.pathname !== desiredPath) {
       dispatch(push(desiredPath));
     }
@@ -165,12 +165,12 @@ function updateTimeline(state, dispatch, log_id, start, end, allowPathChange) {
 export function popTimelineRange(log_id, allowPathChange = true) {
   return (dispatch, getState) => {
     const state = getState();
-    if (state.zoom.previous) {
+    if (state.app.zoom.previous) {
       dispatch({
         type: Types.TIMELINE_POP_SELECTION,
       });
 
-      const { start, end } = state.zoom.previous;
+      const { start, end } = state.app.zoom.previous;
       updateTimeline(state, dispatch, log_id, start, end, allowPathChange);
     }
   };
@@ -180,7 +180,7 @@ export function pushTimelineRange(log_id, start, end, allowPathChange = true) {
   return (dispatch, getState) => {
     const state = getState();
 
-    if (state.zoom?.start !== start || state.zoom?.end !== end || state.segmentRange?.log_id !== log_id) {
+    if (state.app.zoom?.start !== start || state.app.zoom?.end !== end || state.app.segmentRange?.log_id !== log_id) {
       dispatch({
         type: Types.TIMELINE_PUSH_SELECTION,
         log_id,
@@ -206,11 +206,11 @@ export function primeFetchSubscription(dongleId, device, profile) {
   return (dispatch, getState) => {
     const state = getState();
 
-    if (!device && state.device && state.device === dongleId) {
-      device = state.device;
+    if (!device && state.app.device && state.app.device === dongleId) {
+      device = state.app.device;
     }
-    if (!profile && state.profile) {
-      profile = state.profile;
+    if (!profile && state.app.profile) {
+      profile = state.app.profile;
     }
 
     if (device && (device.is_owner || profile.superuser)) {
@@ -261,11 +261,11 @@ export function selectDevice(dongleId, allowPathChange = true) {
   return (dispatch, getState) => {
     const state = getState();
     let device;
-    if (state.devices && state.devices.length > 1) {
-      device = state.devices.find((d) => d.dongle_id === dongleId);
+    if (state.app.devices && state.app.devices.length > 1) {
+      device = state.app.devices.find((d) => d.dongle_id === dongleId);
     }
-    if (!device && state.device && state.device.dongle_id === dongleId) {
-      device = state.device;
+    if (!device && state.app.device && state.app.device.dongle_id === dongleId) {
+      device = state.app.device;
     }
 
     dispatch({
@@ -275,7 +275,7 @@ export function selectDevice(dongleId, allowPathChange = true) {
 
     dispatch(pushTimelineRange(null, null, null, false));
     dispatch(updateSegmentRange(null, null, null));
-    if ((device && !device.shared) || state.profile?.superuser) {
+    if ((device && !device.shared) || state.app.profile?.superuser) {
       dispatch(primeFetchSubscription(dongleId, device));
       dispatch(fetchDeviceOnline(dongleId));
     }
@@ -294,11 +294,11 @@ export function selectDevice(dongleId, allowPathChange = true) {
 export function primeNav(nav, allowPathChange = true) {
   return (dispatch, getState) => {
     const state = getState();
-    if (!state.dongleId) {
+    if (!state.app.dongleId) {
       return;
     }
 
-    if (state.primeNav !== nav) {
+    if (state.app.primeNav !== nav) {
       dispatch({
         type: Types.ACTION_PRIME_NAV,
         primeNav: nav,
@@ -307,7 +307,7 @@ export function primeNav(nav, allowPathChange = true) {
 
     if (allowPathChange) {
       const curPath = document.location.pathname;
-      const desiredPath = urlForState(state.dongleId, null, null, null, nav);
+      const desiredPath = urlForState(state.app.dongleId, null, null, null, nav);
       if (curPath !== desiredPath) {
         dispatch(push(desiredPath));
       }
