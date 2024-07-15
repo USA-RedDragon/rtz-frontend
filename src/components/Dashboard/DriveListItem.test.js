@@ -1,27 +1,33 @@
 /* eslint-env jest */
 import React from 'react';
-import * as Redux from 'redux';
+import { configureStore } from '@reduxjs/toolkit'
 import { thunk } from 'redux-thunk';
 import { render, screen } from '@testing-library/react';
 import DriveListItem from './DriveListItem';
+import { Provider } from 'react-redux';
 
 const defaultState = {
-  start: Date.now(),
+  app: {
+    start: Date.now(),
+  },
 };
 
 jest.mock('../Timeline');
 
-const store = Redux.createStore((state) => {
-  if (!state) {
-    return { ...defaultState };
-  }
-  return state;
-}, Redux.applyMiddleware(thunk));
+const store = configureStore({
+  reducer: (state) => {
+    if (!state) {
+      return { ...defaultState };
+    }
+    return state;
+  },
+  middleware: () => [thunk],
+});
 
 describe('drive list items', () => {
   it('has DriveEntry class', () => {
-    render(<DriveListItem
-      store={store}
+    render(<Provider store={store}>
+      <DriveListItem
       drive={{
         start_time_utc_millis: 1570830798378,
         end_time_utc_millis: 1570830798378 + 1234,
@@ -29,7 +35,7 @@ describe('drive list items', () => {
         startCoord: [0, 0],
         endCoord: [0, 0],
       }}
-    />);
+    /></Provider>);
     expect(screen.getByRole('link')).toHaveClass('DriveEntry');
   });
 });

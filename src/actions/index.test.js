@@ -18,9 +18,11 @@ describe('timeline actions', () => {
     const actionThunk = pushTimelineRange("log_id", 123, 1234);
 
     getState.mockImplementationOnce(() => ({
-      dongleId: 'statedongle',
-      loop: {},
-      zoom: {},
+      app: {
+        dongleId: 'statedongle',
+        loop: {},
+        zoom: {},
+      },
     }));
     actionThunk(dispatch, getState);
     expect(push).toBeCalledWith('/statedongle/log_id');
