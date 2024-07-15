@@ -193,8 +193,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       jest-puppeteer:
-        specifier: ^6.2.0
-        version: 6.2.0(puppeteer@21.11.0)
+        specifier: ^7.0.1
+        version: 7.0.1(puppeteer@21.11.0)
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
@@ -2125,9 +2125,6 @@ packages:
     resolution: {integrity: sha512-QbUdXJVTpvUTHU7871ppZkdOLBeGUKBQWHkHrvN2V9IQWGMt61zf3B45BtzjxEJzYuj0JBjBZP/hmYS/R9pmAw==}
     engines: {node: '>=4'}
 
-  axios@0.25.0:
-    resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==}
-
   axios@1.7.2:
     resolution: {integrity: sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==}
 
@@ -2954,8 +2951,9 @@ packages:
     resolution: {integrity: sha512-E7sE6nVdEbrnpDOBMmcLgyqLJKt876AlBg1A+gsu5R8cWx+SLafreOgJAgzXg5Qko7Tk0cW5oZdRbHQLU738dg==}
     engines: {node: '>=16'}
 
-  expect-puppeteer@6.1.1:
-    resolution: {integrity: sha512-cnQF96qdoEcOD63j5NQMc0RtW9WRMW/WHKXEKsuDQ2tszhVH3qC7zkXXS4D0LTt9qCB3DEExioqylsQXvqPrUw==}
+  expect-puppeteer@7.0.1:
+    resolution: {integrity: sha512-v0JGhtGmiTMAaPbvEekxSXMLhK6wY4pVr/UNhYgCHwom5MXaV1qTjWGZv9MAMLJe9bqDeN8Mh1hIL/JVkr6+qA==}
+    engines: {node: '>=14.0.0'}
 
   expect@27.5.1:
     resolution: {integrity: sha512-E1q5hSUG2AmYQwQJ041nvgpkODHQvB+RKlB4IYdru6uJsyFTRyZAP463M+1lINorwbqAmUggi6+WwkD8lCS/Dw==}
@@ -3680,8 +3678,9 @@ packages:
     resolution: {integrity: sha512-FtyBBDxrAIfTX3hyKSOwj5KU6Z7fFLew5pQYOFpwyf+qpPpULL8aYxtsFkbkAwcs+Mb7qhcNbVLeiWsLOd7CKw==}
     engines: {node: '>=16'}
 
-  jest-dev-server@6.2.0:
-    resolution: {integrity: sha512-ZWh8CuvxwjhYfvw4tGeftziqIvw/26R6AG3OTgNTQeXul8aZz48RQjDpnlDwnWX53jxJJl9fcigqIdSU5lYZuw==}
+  jest-dev-server@7.0.1:
+    resolution: {integrity: sha512-0GXo3KEtPU+WaDNYYZIieS9wrdNk5CwpB7oi2tiMIUxTKf3CzWFy6zZE/NN6TgAdxUqjFg7IzZIOBibczzGalA==}
+    engines: {node: '>=14.0.0'}
 
   jest-diff@27.5.1:
     resolution: {integrity: sha512-m0NvkX55LDt9T4mctTEgnZk3fmEg3NRYutvMPWM/0iPnkFj2wIeF45O1718cMSOFO1vINkqmxqD8vE37uTEbqw==}
@@ -3711,8 +3710,9 @@ packages:
     resolution: {integrity: sha512-FxMzVRyqieQqSy5CPWiwdK5t9dkRHid5eoRTVa8RtYeXLlpW6lU0dAmxEfPkdnDVCiPUhC2APeKOXq0J72bgag==}
     engines: {node: '>=16'}
 
-  jest-environment-puppeteer@6.2.0:
-    resolution: {integrity: sha512-a/oSu6dO9D+XoDDe3ZY/0Sk79Jl2FcJl7Q0D+3x22l1eWNOYe4ikXnPGhtmNZ3mJIpuAVIX6LytA8EraOk/aqQ==}
+  jest-environment-puppeteer@7.0.1:
+    resolution: {integrity: sha512-ZfNK2jfY4Ru7WQW9aq/WStkyf6I74Y141j1FTGiZtKfj6xh058N+vtWnt7o1yw3SOumrIAL9lMdKWZxWZRVHuA==}
+    engines: {node: '>=14.0.0'}
 
   jest-get-type@27.5.1:
     resolution: {integrity: sha512-2KY95ksYSaK7DMBWQn6dQz3kqAf3BB64y2udeG+hv4KfSOb9qwcYQstTJc1KCbsix+wLZWZYN8t7nwX3GOBLRw==}
@@ -3759,10 +3759,11 @@ packages:
       jest-resolve:
         optional: true
 
-  jest-puppeteer@6.2.0:
-    resolution: {integrity: sha512-4Ynkgcf9FkHlTNEpdsojGLb3KtsToWqjO6SCigxb9Qj3HzIqhzJzNbDJ/XhiciNDpqDe6KHW9sZ6fjHphNLr6g==}
+  jest-puppeteer@7.0.1:
+    resolution: {integrity: sha512-B1VAGvYNwugSBjQa2rFBUrqOQ2oU/mzBYpmz0+xXOsy2hGUW9u00nS+dfAdCcE0VWenFzgQ6pVJavkCQvi0HEQ==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
-      puppeteer: '>= 1.5.0'
+      puppeteer: '>=19'
 
   jest-regex-util@27.5.1:
     resolution: {integrity: sha512-4bfKq2zie+x16okqDXjXn9ql2B0dScQu+vcwe4TvFVhkVyuWLqpZrZtXxLLWoXYgn0E87I6r6GRYHF7wFZBUvg==}
@@ -5074,8 +5075,9 @@ packages:
     resolution: {integrity: sha512-6GKcakMTryb5b1SWCvdubCDHEsR2k+5VZUD5G19umZRarkvj1RyCGyizcqhjewI7cqZo8fTVD8HpnDZbVOLMtg==}
     engines: {node: '>=16'}
 
-  spawnd@6.2.0:
-    resolution: {integrity: sha512-qX/I4lQy4KgVEcNle0kuc4FxFWHISzBhZW1YemPfwmrmQjyZmfTK/OhBKkhrD2ooAaFZEm1maEBLE6/6enwt+g==}
+  spawnd@7.0.0:
+    resolution: {integrity: sha512-TU/M4qYmigdeET4HTR7l9nqySTTvStWM6rW8QyixXRxWn90E718y5Q31ZVXyG7VEqT6oo6EUvE9zk4rGU39HbA==}
+    engines: {node: '>=14.0.0'}
 
   spdx-correct@3.2.0:
     resolution: {integrity: sha512-kN9dJbvnySHULIluDHy32WHRUu3Og7B9sbY7tsFLctQkIqnMh3hErYgdMjTYuqmcXX+lK5T1lnUt3G7zNswmZA==}
@@ -5563,11 +5565,6 @@ packages:
   w3c-xmlserializer@2.0.0:
     resolution: {integrity: sha512-4tzD0mF8iSiMiNs30BiLO3EpfGLZUT2MSX/G+o7ZywDzliWQ3OPtTZ0PTC3B3ca1UAf4cJMHB+2Bf56EriJuRA==}
     engines: {node: '>=10'}
-
-  wait-on@6.0.1:
-    resolution: {integrity: sha512-zht+KASY3usTY5u2LgaNqn/Cd8MukxLGjdcZxT2ns5QzDmTFc4XoWBgC+C/na+sMRZTuVygQoMYwdcVjHnYIVw==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
 
   wait-on@7.2.0:
     resolution: {integrity: sha512-wCQcHkRazgjG5XoAq9jbTMLpNIjoSlZslrJ2+N9MxDsGEv1HnFoVjOCexL0ESva7Y9cu350j+DWADdk54s4AFQ==}
@@ -8046,12 +8043,6 @@ snapshots:
 
   axe-core@4.9.1: {}
 
-  axios@0.25.0:
-    dependencies:
-      follow-redirects: 1.15.6
-    transitivePeerDependencies:
-      - debug
-
   axios@1.7.2:
     dependencies:
       follow-redirects: 1.15.6
@@ -9023,7 +9014,7 @@ snapshots:
 
   expect-puppeteer@10.0.0: {}
 
-  expect-puppeteer@6.1.1: {}
+  expect-puppeteer@7.0.1: {}
 
   expect@27.5.1:
     dependencies:
@@ -9863,15 +9854,15 @@ snapshots:
       - debug
       - supports-color
 
-  jest-dev-server@6.2.0:
+  jest-dev-server@7.0.1:
     dependencies:
       chalk: 4.1.2
       cwd: 0.10.0
       find-process: 1.4.7
       prompts: 2.4.2
-      spawnd: 6.2.0
+      spawnd: 7.0.0
       tree-kill: 1.2.2
-      wait-on: 6.0.1
+      wait-on: 7.2.0
     transitivePeerDependencies:
       - debug
       - supports-color
@@ -9940,12 +9931,12 @@ snapshots:
       - supports-color
       - typescript
 
-  jest-environment-puppeteer@6.2.0:
+  jest-environment-puppeteer@7.0.1:
     dependencies:
       chalk: 4.1.2
       cwd: 0.10.0
-      jest-dev-server: 6.2.0
-      jest-environment-node: 27.5.1
+      jest-dev-server: 7.0.1
+      jest-environment-node: 29.7.0
       merge-deep: 3.0.3
     transitivePeerDependencies:
       - debug
@@ -10043,10 +10034,10 @@ snapshots:
     optionalDependencies:
       jest-resolve: 27.5.1
 
-  jest-puppeteer@6.2.0(puppeteer@21.11.0):
+  jest-puppeteer@7.0.1(puppeteer@21.11.0):
     dependencies:
-      expect-puppeteer: 6.1.1
-      jest-environment-puppeteer: 6.2.0
+      expect-puppeteer: 7.0.1
+      jest-environment-puppeteer: 7.0.1
       puppeteer: 21.11.0
     transitivePeerDependencies:
       - debug
@@ -11598,7 +11589,7 @@ snapshots:
       signal-exit: 4.1.0
       tree-kill: 1.2.2
 
-  spawnd@6.2.0:
+  spawnd@7.0.0:
     dependencies:
       exit: 0.1.2
       signal-exit: 3.0.7
@@ -12125,16 +12116,6 @@ snapshots:
   w3c-xmlserializer@2.0.0:
     dependencies:
       xml-name-validator: 3.0.0
-
-  wait-on@6.0.1:
-    dependencies:
-      axios: 0.25.0
-      joi: 17.13.3
-      lodash: 4.17.21
-      minimist: 1.2.8
-      rxjs: 7.8.1
-    transitivePeerDependencies:
-      - debug
 
   wait-on@7.2.0:
     dependencies:
