@@ -16,8 +16,6 @@ const rootReducer = (providedHistory) => combineReducers({
   app: reduceReducers(initialState, ...reducers),
 });
 
-console.log(rootReducer(history))
-
 const store = configureStore({
   reducer: rootReducer(history),
   middleware: () => [thunk, onHistoryMiddleware, routerMiddleware(history)],
