@@ -12,12 +12,13 @@ This is the frontend to the RTZ (pronounced Routes) project. It is a fork of the
 - Removed HERE API geocoding based on Comma networks RPC call
 - Remove billing-related code
 - User-configurable Mapbox token. The style is public at [Mapbox](https://api.mapbox.com/styles/v1/usa-reddragon/clyd2ske5010r01qr2lde0k3n.html?title=copy&access_token=pk.eyJ1IjoidXNhLXJlZGRyYWdvbiIsImEiOiJjbHlkMzl6cW4wMGtnMmxvcWY1MTZpeGg2In0.AHfA3k-lG_b48str7o3xQw&zoomwheel=true&fresh=true)
+- Updated all dependencies to latest versions
 
 ## Development
 
 - Install pnpm: <https://pnpm.io/installation>
 - Install dependencies: `pnpm install`
-- Start dev server: `pnpm start`
+- Start dev server: `pnpm dev`
 
 ## Contributing
 
@@ -35,4 +36,4 @@ There's a ton of them, but these are worth mentioning because they sort of affec
 - `React` - Object oriented components with basic lifecycle callbacks rendered by state and prop changes.
 - `Redux` - Sane formal *global* scope. This is not a replacement for component state, which is the best way to store local component level variables and trigger re-renders. Redux state is for global state that many unrelated components care about. No free-form editing, only specific pre-defined actions. [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) can be very helpful.
 - `@mui` - Lots of fully featured highly customizable components for building the UIs with. Theming system with global and per-component overrides of any CSS values.
-- `react-router-redux` - the newer one, 5.x.... Mindlessly simple routing with convenient global access due to redux
+- `react-router-redux` - Mindlessly simple routing with convenient global access due to redux
