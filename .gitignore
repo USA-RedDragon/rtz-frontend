@@ -30,3 +30,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .pnpm-store/
+cypress/videos/
+cypress/screenshots/
+reports/
+eslint_report.json
