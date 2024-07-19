@@ -6,7 +6,7 @@ import { replace } from 'redux-first-history';
 
 import { Button, CircularProgress, Divider, Modal, Paper, Typography } from '@mui/material';
 import { withStyles } from '@mui/styles';
-import 'mapbox-gl/src/css/mapbox-gl.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { devices as Devices } from '@commaai/api';
 
