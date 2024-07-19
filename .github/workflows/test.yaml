@@ -34,7 +34,7 @@ jobs:
       - uses: ./.github/actions/setup-pnpm
 
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build:production
+      - run: pnpm build
 
       - name: run Lighthouse CI
         run: pnpm run lighthouse
