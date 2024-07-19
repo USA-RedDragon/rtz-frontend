@@ -1,7 +1,7 @@
 const cwd = process.cwd();
 
 /** @type {import('jest').Config} */
-const config = {
+export default {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
@@ -17,13 +17,13 @@ const config = {
       'jest-chain-transform',
       {
         transformers: [
-          `${cwd}/config/jest/importMetaTransform.js`,
+          `${cwd}/config/jest/importMetaTransform.cjs`,
           '@swc/jest',
         ],
       },
     ],
-    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
-    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.mjs',
+    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.cjs',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
   },
   transformIgnorePatterns: [
     '^.+\\.module\\.(css|sass|scss)$',
@@ -34,5 +34,3 @@ const config = {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
 };
-
-module.exports = config;

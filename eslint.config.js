@@ -25,7 +25,9 @@ export default [{
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:jest-dom/recommended",
+    "plugin:cypress/recommended",
 )), {
+    settings: { react: { version: "detect" } },
     languageOptions: {
         globals: {
             ...globals.node,
