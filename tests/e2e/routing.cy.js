@@ -1,6 +1,7 @@
 /* eslint-env cypress */
 
 beforeEach(() => {
+  cy.clearAllLocalStorage();
   cy.visit('/');
   cy.get('a').contains('Try the demo').click();
 });
