@@ -1,7 +1,6 @@
-/* eslint-env jest */
+import { describe, test, expect, vi } from 'vitest';
 import React from 'react';
-import { configureStore } from '@reduxjs/toolkit'
-import { thunk } from 'redux-thunk';
+import { store } from '../../store';
 import { render, screen } from '@testing-library/react';
 import DriveListItem from './DriveListItem';
 import { Provider } from 'react-redux';
@@ -12,20 +11,10 @@ const defaultState = {
   },
 };
 
-jest.mock('../Timeline');
-
-const store = configureStore({
-  reducer: (state) => {
-    if (!state) {
-      return { ...defaultState };
-    }
-    return state;
-  },
-  middleware: () => [thunk],
-});
+vi.mock('../Timeline');
 
 describe('drive list items', () => {
-  it('has DriveEntry class', () => {
+  test('has DriveEntry class', () => {
     render(<Provider store={store}>
       <DriveListItem
       drive={{

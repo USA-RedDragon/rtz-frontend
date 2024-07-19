@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, test, expect } from 'vitest';
 import * as Utils from './utils';
 
 describe('navigation formatting utils', () => {

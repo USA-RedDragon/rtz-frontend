@@ -24,7 +24,6 @@ export default [{
 }, ...fixupConfigRules(compat.extends(
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jest-dom/recommended",
     "plugin:cypress/recommended",
 )), {
     settings: { react: { version: "detect" } },
@@ -32,7 +31,6 @@ export default [{
         globals: {
             ...globals.node,
             ...globals.browser,
-            ...globals.jest,
             gtag: "readonly",
             page: "readonly",
         },

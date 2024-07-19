@@ -1,8 +1,8 @@
-/* eslint-env jest */
+import { describe, test, expect } from 'vitest';
 import { priorityGetContext, reverseLookup, forwardLookup } from './geocode';
 
 describe('priorityGetContext', () => {
-  it('should return the first context with a priority', () => {
+  test('should return the first context with a priority', () => {
     const contexts = [
       { id: 'place.123' },
       { id: 'locality.123' },
@@ -13,14 +13,12 @@ describe('priorityGetContext', () => {
 });
 
 describe('reverseLookup', () => {
-  jest.setTimeout(10000);
-
-  it('should return null if coords are [0, 0]', async () => {
+  test('should return null if coords are [0, 0]', async () => {
     const result = await reverseLookup([0, 0]);
     expect(result).toBeNull();
   });
 
-  it('should return place names', async () => {
+  test('should return place names', async () => {
     expect(await reverseLookup([-117.12547, 32.71137], true)).toEqual({
       details: 'San Diego, CA 92102, United States',
       place: 'Market St',
@@ -45,14 +43,12 @@ describe('reverseLookup', () => {
 });
 
 describe('forwardLookup', () => {
-  jest.setTimeout(10000);
-
-  it('should return null if query is empty', async () => {
+  test('should return null if query is empty', async () => {
     const result = await forwardLookup('');
     expect(result).toHaveLength(0);
   });
 
-  it('should return taco bell', async () => {
+  test('should return taco bell', async () => {
     const result = await forwardLookup('Taco Bell, 3195 Market St, San Diego, CA 92102');
     const { lat, lng } = result[0].position;
     expect(lat).toBeCloseTo(32.71137, 2);

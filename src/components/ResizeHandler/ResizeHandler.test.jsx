@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, test, expect, vi } from 'vitest';
 import React from 'react';
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
@@ -6,12 +6,12 @@ import ResizeHandler from '.';
 import { asyncSleep } from '../../utils';
 
 describe('resize handler', () => {
-  it('registers, triggers and unregistered resize listener', async () => {
+  test('registers, triggers and unregistered resize listener', async () => {
     let aResizeEventListenerWasAddedToWindow = false;
     let aResizeEventListenerWasRemovedFromWindow = false;
 
     const originalAddMethod = window.addEventListener;
-    const addSpy = jest.spyOn(window, 'addEventListener');
+    const addSpy = vi.spyOn(window, 'addEventListener');
 
     addSpy.mockImplementation((...args) => {
       originalAddMethod(...args);
@@ -23,7 +23,7 @@ describe('resize handler', () => {
     });
 
     const originalRemoveMethod = window.removeEventListener;
-    const removeSpy = jest.spyOn(window, 'removeEventListener');
+    const removeSpy = vi.spyOn(window, 'removeEventListener');
 
     removeSpy.mockImplementation((...args) => {
       const [eventType] = args;
@@ -35,7 +35,7 @@ describe('resize handler', () => {
     });
 
     const container = document.createElement('div');
-    const callback = jest.fn();
+    const callback = vi.fn();
     const { unmount } = render(<ResizeHandler onResize={callback} />, { container });
 
     // Wait for the resize handler in the component to be registered (useEffect callback is async)

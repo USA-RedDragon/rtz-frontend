@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, test, expect } from 'vitest';
 import { asyncSleep } from '../utils';
 import { currentOffset } from '.';
 import { bufferVideo, pause, play, reducer, seek, selectLoop } from './playback';
@@ -25,7 +25,7 @@ function newNow() {
 }
 
 describe('playback', () => {
-  it('has playback controls', async () => {
+  test('has playback controls', async () => {
     newNow();
     let state = makeDefaultStruct();
 
@@ -70,7 +70,7 @@ describe('playback', () => {
     expect(currentOffset(state)).toEqual(123);
   });
 
-  it('should clamp loop when seeked after loop end time', () => {
+  test('should clamp loop when seeked after loop end time', () => {
     newNow();
     let state = makeDefaultStruct();
 
@@ -88,7 +88,7 @@ describe('playback', () => {
     expect(state.offset).toEqual(2000);
   });
 
-  it('should clamp loop when seeked before loop start time', () => {
+  test('should clamp loop when seeked before loop start time', () => {
     newNow();
     let state = makeDefaultStruct();
 
@@ -106,7 +106,7 @@ describe('playback', () => {
     expect(state.offset).toEqual(1000);
   });
 
-  it('should buffer video and data', async () => {
+  test('should buffer video and data', async () => {
     newNow();
     let state = makeDefaultStruct();
 

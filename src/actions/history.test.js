@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { LOCATION_CHANGE, createReduxHistoryContext } from 'redux-first-history';
 import { thunk } from 'redux-thunk';
 
@@ -6,18 +6,18 @@ import { history } from '../store';
 import { onHistoryMiddleware } from './history';
 import * as actionsIndex from './index';
 
-jest.mock('./index', () => ({
-  selectDevice: jest.fn(),
-  pushTimelineRange: jest.fn(),
-  primeNav: jest.fn(),
+vi.mock('./index', () => ({
+  selectDevice: vi.fn(),
+  pushTimelineRange: vi.fn(),
+  primeNav: vi.fn(),
 }));
 
 const create = (initialState) => {
   const store = {
-    getState: jest.fn(() => initialState),
-    dispatch: jest.fn(),
+    getState: vi.fn(() => initialState),
+    dispatch: vi.fn(),
   };
-  const next = jest.fn();
+  const next = vi.fn();
 
   const { routerMiddleware } = createReduxHistoryContext({
     history: history,
@@ -34,25 +34,25 @@ const create = (initialState) => {
 };
 
 beforeEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 });
 
 describe('history middleware', () => {
-  it('passes through non-function action', () => {
+  test('passes through non-function action', () => {
     const { next, invoke } = create();
     const action = { type: 'TEST' };
     invoke(action);
     expect(next).toHaveBeenCalledWith(action);
   });
 
-  it('calls the function', () => {
+  test('calls the function', () => {
     const { invoke } = create();
-    const fn = jest.fn();
+    const fn = vi.fn();
     invoke(fn);
     expect(fn).toHaveBeenCalled();
   });
 
-  it('passes dispatch and getState', () => {
+  test('passes dispatch and getState', () => {
     const { store, invoke } = create();
     invoke((dispatch, getState) => {
       dispatch('TEST DISPATCH');
@@ -61,7 +61,7 @@ describe('history middleware', () => {
     expect(store.dispatch).toHaveBeenCalledWith('TEST DISPATCH');
   });
 
-  it('should call select dongle with history', async () => {
+  test('should call select dongle with history', async () => {
     const fakeInner = { id: 'kahjfiowenv' };
     actionsIndex.selectDevice.mockReturnValue(fakeInner);
 
@@ -87,7 +87,7 @@ describe('history middleware', () => {
     expect(actionsIndex.selectDevice).toHaveBeenCalledWith('0000aaaa0000aaaa', false);
   });
 
-  it('should call select zoom with history', async () => {
+  test('should call select zoom with history', async () => {
     const fakeInner = { id: 'asdfsd83242' };
     actionsIndex.pushTimelineRange.mockReturnValue(fakeInner);
 
@@ -113,7 +113,7 @@ describe('history middleware', () => {
     expect(actionsIndex.pushTimelineRange).toHaveBeenCalledWith("00000000--000f00000d", 1230000, 1234000, false);
   });
 
-  it('should call prime nav with history', async () => {
+  test('should call prime nav with history', async () => {
     const fakeInner = { id: 'n27u3n9va' };
     const fakeInner2 = { id: 'vmklxmsd' };
     actionsIndex.pushTimelineRange.mockReturnValue(fakeInner);

@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, test, expect, vi, beforeEach } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Thumbnails from './thumbnails';
@@ -6,7 +6,7 @@ import Thumbnails from './thumbnails';
 const screenHeight = 1000;
 const screenWidth = 1600;
 const gutter = 20;
-const percentToOffsetMock = jest.fn();
+const percentToOffsetMock = vi.fn();
 const mockRoute = {
   offset: 1600,
   segment_numbers: Array.from(Array(4).keys()),
@@ -27,11 +27,11 @@ const heightWithBlackBorder = 120;
 
 describe('timeline thumbnails', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     percentToOffsetMock.mockImplementation((percent) => Math.round(percent * 30000));
   });
 
-  it('should check the segment for every image', () => {
+  test('should check the segment for every image', () => {
     render(
       <Thumbnails
         thumbnail={thumbnailBounds}
@@ -55,7 +55,7 @@ describe('timeline thumbnails', () => {
     });
   });
 
-  it('doesn\'t render before bounds are set', () => {
+  test('doesn\'t render before bounds are set', () => {
     render(
       <Thumbnails
         thumbnail={{
@@ -74,7 +74,7 @@ describe('timeline thumbnails', () => {
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
   });
 
-  it('works when theres no blank at the end', () => {
+  test('works when theres no blank at the end', () => {
     const route = {
       offset: 1600,
       segment_numbers: Array.from(Array(4).keys()),
@@ -105,7 +105,7 @@ describe('timeline thumbnails', () => {
     });
   });
 
-  it('works when it\'s supermegaskinny', () => {
+  test('works when it\'s supermegaskinny', () => {
     render(
       <Thumbnails
         thumbnail={{

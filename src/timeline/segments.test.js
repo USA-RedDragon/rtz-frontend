@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, test, expect } from 'vitest';
 import { hasRoutesData } from './segments';
 import { getSegmentNumber } from '../utils';
 
@@ -27,12 +27,12 @@ const routes = [{
 }];
 
 describe('segments', () => {
-  it('finds current segment', async () => {
+  test('finds current segment', async () => {
     const [route] = routes;
     expect(getSegmentNumber(route)).toBe(0);
   });
 
-  it('can check if it has segment metadata', () => {
+  test('can check if it has segment metadata', () => {
     expect(hasRoutesData()).toBe(false);
     expect(hasRoutesData({})).toBe(false);
     expect(hasRoutesData({

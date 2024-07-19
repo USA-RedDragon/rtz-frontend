@@ -1,12 +1,12 @@
-/* eslint-env jest */
 import React from 'react';
+import { test, describe } from 'vitest';
 import { act, render } from '@testing-library/react';
-import App from '../App';
+import App from '../../src/App';
 
 describe('App', () => {
-  it('should not crash', () => {
+  test('should not crash', () => {
     act(() => {
       render(<App />);
     });
-  });
+  }, 1000);
 });
