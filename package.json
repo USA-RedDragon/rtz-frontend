@@ -50,7 +50,7 @@
     "obstruction": "^2.1.0",
     "prop-types": "^15.8.1",
     "qr-scanner": "^1.4.2",
-    "query-string": "^8.2.0",
+    "query-string": "^9.0.0",
     "raf": "^3.4.1",
     "react": "~18.3.1",
     "react-dom": "~18.3.1",
