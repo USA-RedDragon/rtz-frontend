@@ -19,7 +19,7 @@ export const store = configureStore({
     app: reduceReducers(initialState, ...reducers),
   }),
   middleware: () => [thunk, onHistoryMiddleware, routerMiddleware],
-  devTools: true,
+  devTools: !!import.meta.env.VITE_APP_DEVTOOLS,
 });
 
 export const history = createReduxHistory(store);
