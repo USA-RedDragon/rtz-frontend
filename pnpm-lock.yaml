@@ -1407,8 +1407,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@puppeteer/browsers@2.2.3':
-    resolution: {integrity: sha512-bJ0UBsk0ESOs6RFcLXOt99a3yTDcOKlzfjad+rhFwdaG1Lu/Wzq58GHYCDTlZ9z6mldf4g+NTb+TXEfe0PpnsQ==}
+  '@puppeteer/browsers@2.2.4':
+    resolution: {integrity: sha512-BdG2qiI1dn89OTUUsx2GZSpUzW+DRffR1wlMJyKxVHYrhnKoELSDxDd+2XImUkuWPEKk76H5FcM/gPFrEK1Tfw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2370,8 +2370,8 @@ packages:
     engines: {node: '>=12.13.0'}
     hasBin: true
 
-  chromium-bidi@0.6.0:
-    resolution: {integrity: sha512-VnxVrpGojAjkiGFN2I+KtsDILFAjiGWVEDizOEnKzEDkT93eQT1cqTfUkqmOyLq33i1q4a1KDYbH+52CUe4Ufw==}
+  chromium-bidi@0.6.1:
+    resolution: {integrity: sha512-kSxJRj0VgtUKz6nmzc2JPfyfJGzwzt65u7PqhPHtgGQUZLF5oG+ST6l6e5ONfStUMAlhSutFCjaGKllXZa16jA==}
     peerDependencies:
       devtools-protocol: '*'
 
@@ -4700,8 +4700,8 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
-  puppeteer-core@22.13.0:
-    resolution: {integrity: sha512-ZkpRX8nm/S39BnpcCverMzIc6oGWBPOUeOeaWRLKHqiKVCZ1l28HxPTYLitJlDiB16xZATSKpjul+sl+ZEm0HQ==}
+  puppeteer-core@22.13.1:
+    resolution: {integrity: sha512-NmhnASYp51QPRCAf9n0OPxuPMmzkKd8+2sB9Q+BjwwCG25gz6iuNc3LQDWa+cH2tyivmJppLhNNFt6Q3HmoOpw==}
     engines: {node: '>=18'}
 
   qr-scanner@1.4.2:
@@ -5055,11 +5055,6 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  semver@7.6.0:
-    resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.6.2:
     resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
     engines: {node: '>=10'}
@@ -5346,8 +5341,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  tar-fs@3.0.5:
-    resolution: {integrity: sha512-JOgGAmZyMgbqpLwct7ZV8VzkEB6pxXFBVErLtb+XCOqzc6w1xiWKI9GVd6bwk68EX7eJ4DWmfXVmq8K2ziZTGg==}
+  tar-fs@3.0.6:
+    resolution: {integrity: sha512-iokBDQQkUyeXhgPYaZxmczGPhnhXZ0CmrqI+MOb/WFGS9DW5wnfrLgtjUJBvz50vQ3qfRwJ62QVoCFu8mPVu5w==}
 
   tar-stream@3.1.7:
     resolution: {integrity: sha512-qJj60CXt7IU1Ffyc3NJMjh6EkuCFej46zUqJ4J7pqYlThyd9bO0XBTmcOIhSzZJVWfsLks0+nle/j538YAW9RQ==}
@@ -7460,14 +7455,14 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@puppeteer/browsers@2.2.3':
+  '@puppeteer/browsers@2.2.4':
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.5(supports-color@8.1.1)
       extract-zip: 2.0.1(supports-color@8.1.1)
       progress: 2.0.3
       proxy-agent: 6.4.0
-      semver: 7.6.0
-      tar-fs: 3.0.5
+      semver: 7.6.2
+      tar-fs: 3.0.6
       unbzip2-stream: 1.4.3
       yargs: 17.7.2
     transitivePeerDependencies:
@@ -8481,7 +8476,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  chromium-bidi@0.6.0(devtools-protocol@0.0.1299070):
+  chromium-bidi@0.6.1(devtools-protocol@0.0.1299070):
     dependencies:
       devtools-protocol: 0.0.1299070
       mitt: 3.0.1
@@ -10580,7 +10575,7 @@ snapshots:
       metaviewport-parser: 0.3.0
       open: 8.4.2
       parse-cache-control: 1.0.1
-      puppeteer-core: 22.13.0
+      puppeteer-core: 22.13.1
       robots-parser: 3.0.1
       semver: 5.7.2
       speedline-core: 1.4.3
@@ -11302,10 +11297,10 @@ snapshots:
 
   punycode@2.3.1: {}
 
-  puppeteer-core@22.13.0:
+  puppeteer-core@22.13.1:
     dependencies:
-      '@puppeteer/browsers': 2.2.3
-      chromium-bidi: 0.6.0(devtools-protocol@0.0.1299070)
+      '@puppeteer/browsers': 2.2.4
+      chromium-bidi: 0.6.1(devtools-protocol@0.0.1299070)
       debug: 4.3.5(supports-color@8.1.1)
       devtools-protocol: 0.0.1299070
       ws: 8.18.0
@@ -11687,10 +11682,6 @@ snapshots:
 
   semver@6.3.1: {}
 
-  semver@7.6.0:
-    dependencies:
-      lru-cache: 6.0.0
-
   semver@7.6.2: {}
 
   send@0.18.0:
@@ -12056,7 +12047,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  tar-fs@3.0.5:
+  tar-fs@3.0.6:
     dependencies:
       pump: 3.0.0
       tar-stream: 3.1.7

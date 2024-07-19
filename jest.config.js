@@ -11,7 +11,7 @@ export default {
   coveragePathIgnorePatterns: [],
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.js'],
   testEnvironment: 'jsdom',
-  testPathIgnorePatterns: ['node_modules', 'src/__puppeteer__'],
+  testPathIgnorePatterns: ['node_modules'],
   transform: {
     '^.+\\.(t|j)sx?$': [
       'jest-chain-transform',
