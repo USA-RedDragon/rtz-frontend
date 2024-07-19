@@ -14,13 +14,13 @@ describe('drive view', () => {
   it('back button disabled when in route bounds', () => {
     cy.visit(DEMO_ROUTE_URL);
     cy.get('.DriveView').should('be.visible');
-    cy.get('.DriveView button[aria-label="Go Back"]').invoke('attr', 'disabled').should('be.true');
+    cy.get('.DriveView button[aria-label="Go Back"]').invoke('attr', 'disabled').should('exist');
   });
 
   it('back button selects route bounds if timeline is zoomed when clicked', () => {
     cy.visit(ZOOMED_DEMO_URL);
     cy.get('.DriveView').should('be.visible');
-    cy.get('.DriveView button[aria-label="Go Back"]').invoke('attr', 'disabled').should('be.false');
+    cy.get('.DriveView button[aria-label="Go Back"]').invoke('attr', 'disabled').should('be.undefined');
     cy.get('.DriveView button[aria-label="Go Back"]').click();
     cy.url().should('include', DEMO_ROUTE_URL);
   });
