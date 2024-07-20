@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+ 
 import { defineConfig } from 'cypress';
 import process from 'process';
 import cypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin.js';
@@ -23,6 +23,9 @@ export default defineConfig({
       cypressMochawesomeReporter(on);
       return config;
     },
+    blockHosts: [
+      "events.mapbox.com",
+    ],
     defaultCommandTimeout: 10000,
     pageLoadTimeout: 600000,
     specPattern: 'tests/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',

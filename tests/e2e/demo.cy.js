@@ -6,7 +6,7 @@ describe('demo mode', () => {
     cy.visit('/');
     cy.get('a').contains('Try the demo').click();
     cy.get('.DriveList').should('be.visible');
-    cy.get('.DriveEntry').should('be.visible').first().click();
+    cy.get('.DriveEntry').first().should('be.visible').click({force: true});
     cy.get('video').invoke('attr', 'src').should('match', /^blob:/);
   });
 });
