@@ -18,8 +18,8 @@ const logOut = async () => {
 };
 
 const Version = () => {
-  const sha = import.meta.env.VITE_APP_GIT_SHA;
-  const timestamp = import.meta.env.VITE_APP_GIT_TIMESTAMP;
+  const sha = import.meta.env.__GIT_SHA__;
+  const timestamp = import.meta.env.__GIT_TIMESTAMP__;
 
   let content = ['Version: '];
 
