@@ -26,7 +26,6 @@ export default defineConfig({
       "events.mapbox.com",
     ],
     defaultCommandTimeout: 10000,
-    pageLoadTimeout: 600000,
     specPattern: 'tests/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
     excludeSpecPattern: 'tests/e2e/screenshots/*',
     baseUrl: 'http://localhost:4173',
