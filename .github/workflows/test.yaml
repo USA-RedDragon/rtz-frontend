@@ -3,40 +3,201 @@ name: test
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
-  workflow_dispatch:
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  install:
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-pnpm
 
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm run build:development
+      - uses: actions/upload-artifact@v4
+        with:
+          name: node_modules
+          path: node_modules/
+
+  build:
+    needs: [ install ]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pnpm
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: node_modules
+          path: node_modules
+
+      - run: pnpm run build:production
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: dist/
+
+  lint:
+    needs: [ install ]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pnpm
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: node_modules
+          path: node_modules
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm lint:report
+
+      - name: Annotate Code Linting Results
+        if: always()
+        uses: ataylorme/eslint-annotate-action@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          report-json: "eslint_report.json"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eslint-report
+          if-no-files-found: error
+          retention-days: 30
+          path: eslint_report.json
+
+  unit:
+    runs-on: ubuntu-22.04
+    needs: [ build ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pnpm
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: node_modules
+          path: node_modules
 
       - name: Run unit tests
         run: pnpm test:unit
 
-      - run: npx cypress install
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unit-test-report
+          if-no-files-found: error
+          retention-days: 30
+          path: reports/unit
 
-      - name: Run end-to-end tests
-        run: pnpm test:e2e
+      - name: Publish Test Report
+        if: always()
+        uses: mikepenz/action-junit-report@v4
+        with:
+          report_paths: "reports/unit/*.xml"
+          require_tests: true
+          check_retries: true
+          detailed_summary: true
+          fail_on_failure: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          check_name: Unit Tests
+          job_name: Tests
 
-  lighthouse:
-    runs-on: ubuntu-latest
+  e2e:
+    runs-on: ubuntu-22.04
+    needs: [ build ]
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chrome, firefox]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-pnpm
 
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm build
+      - uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist
+
+      - run: npx cypress install
+
+      - name: Run end-to-end tests
+        run: pnpm test:e2e:${{ matrix.browser }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-test-report-${{ matrix.browser }}
+          if-no-files-found: error
+          retention-days: 30
+          path: reports/e2e
+
+      - name: Publish Test Report
+        if: always()
+        uses: mikepenz/action-junit-report@v4
+        with:
+          report_paths: "reports/e2e/*.xml"
+          require_tests: true
+          check_retries: true
+          detailed_summary: true
+          fail_on_failure: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          check_name: E2E Tests (${{ matrix.browser }})
+          job_name: Tests
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-screenshots-${{ matrix.browser }}
+          path: cypress/screenshots
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-videos-${{ matrix.browser }}
+          path: cypress/videos
+          if-no-files-found: ignore
+          retention-days: 30
+
+  e2e-results:
+    if: always()
+    needs: [ e2e ]
+    runs-on: ubuntu-22.04
+    steps:
+      - run: |
+          result="${{ needs.e2e.outputs.results }}"
+          if [[ "$result" == "success" || "$result" == "skipped" ]]; then
+            echo "All e2e tests passed"
+          else
+            echo "One or more e2e tests failed" >&2
+            exit 1
+          fi
+
+  lighthouse:
+    needs: [ build ]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pnpm
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: node_modules
+          path: node_modules
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist
 
       - name: run Lighthouse CI
         run: pnpm run lighthouse
