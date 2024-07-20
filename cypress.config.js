@@ -1,4 +1,3 @@
- 
 import { defineConfig } from 'cypress';
 import process from 'process';
 import cypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin.js';
