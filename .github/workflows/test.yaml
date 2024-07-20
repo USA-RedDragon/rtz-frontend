@@ -158,7 +158,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - run: |
-          result="${{ needs.e2e.outputs.results }}"
+          result="${{ needs.e2e.result }}"
           if [[ "$result" == "success" || "$result" == "skipped" ]]; then
             echo "All e2e tests passed"
           else
