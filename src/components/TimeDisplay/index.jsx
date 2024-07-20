@@ -70,8 +70,8 @@ const styles = (theme) => ({
     },
   },
   iconButton: {
-    width: '40px',
-    height: '40px',
+    width: '64px',
+    height: '64px',
   },
   tinyArrowIcon: {
     width: 12,
@@ -86,6 +86,7 @@ const styles = (theme) => ({
   },
   playButtonBox: {
     borderLeft: `1px solid ${theme.palette.grey[900]}`,
+    width: 64,
   },
   currentTime: {
     margin: `0 ${theme.spacing(1)}`,
