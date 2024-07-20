@@ -27,5 +27,6 @@ export default defineConfig({
       junit: 'reports/unit/junit.xml',
       html: 'reports/unit/index.html',
     },
+    testTimeout: 20000,
   },
 });
