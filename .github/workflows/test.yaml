@@ -86,6 +86,7 @@ jobs:
           check_retries: true
           detailed_summary: true
           fail_on_failure: true
+          include_passed: true
           token: ${{ secrets.GITHUB_TOKEN }}
           check_name: Unit Tests
           job_name: Tests
@@ -130,6 +131,7 @@ jobs:
           check_retries: true
           detailed_summary: true
           fail_on_failure: true
+          include_passed: true
           token: ${{ secrets.GITHUB_TOKEN }}
           check_name: E2E Tests (${{ matrix.browser }})
           job_name: Tests
