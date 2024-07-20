@@ -2,7 +2,6 @@
 
 describe('demo mode', () => {
   it('should load demo route', () => {
-    cy.viewport(1600, 1200);
     cy.visit('/');
     cy.get('a').contains('Try the demo').click();
     cy.get('.DriveList').should('be.visible');

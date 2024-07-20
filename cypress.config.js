@@ -22,12 +22,14 @@ export default defineConfig({
       cypressMochawesomeReporter(on);
       return config;
     },
-    blockHosts: [
-      "events.mapbox.com",
-    ],
     defaultCommandTimeout: 10000,
     specPattern: 'tests/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
     excludeSpecPattern: 'tests/e2e/screenshots/*',
     baseUrl: 'http://localhost:4173',
   },
+  viewportHeight: 1200,
+  viewportWidth: 1600,
+  blockHosts: [
+    "events.mapbox.com",
+  ],
 });
