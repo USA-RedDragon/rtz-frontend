@@ -19,7 +19,7 @@ export function checkRoutesData() {
     if (!state.app.dongleId) {
       return;
     }
-    if (hasRoutesData(state)) {
+    if (hasRoutesData(state.app)) {
       // already has metadata, don't bother
       return;
     }
@@ -32,7 +32,7 @@ export function checkRoutesData() {
     const fetchRange = state.app.filter;
 
     // if requested segment range not in loaded routes, fetch it explicitly
-    if (state.segmentRange) {
+    if (state.app.segmentRange) {
       routesRequest = {
         req: Drives.getRoutesSegments(dongleId, undefined, undefined, undefined, `${dongleId}|${state.app.segmentRange.log_id}`),
         dongleId,

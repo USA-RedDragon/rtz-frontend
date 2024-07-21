@@ -169,10 +169,10 @@ export function deviceVersionAtLeast(device, version) {
 }
 
 export function getDeviceFromState(state, dongleId) {
-  if (state.device.dongle_id === dongleId) {
-    return state.device;
+  if (state.app.device.dongle_id === dongleId) {
+    return state.app.device;
   }
-  return state.devices.find((d) => d.dongle_id === dongleId) || null;
+  return state.app.devices.find((d) => d.dongle_id === dongleId) || null;
 }
 
 export function getSegmentNumber(route, offset) {
