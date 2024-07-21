@@ -1,5 +1,7 @@
 # RTZ Frontend
 
+![RTZ logo](./public/images/hero.png)
+
 This is the frontend to the RTZ (pronounced Routes) project. It is a fork of the [comma connect frontend](https://github.com/commaai/connect) with some changes to update dependencies, remove tracking, and enable its usage in RTZ.
 
 ## Changes from upstream
