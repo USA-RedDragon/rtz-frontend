@@ -117,7 +117,7 @@ class AnonymousLanding extends Component {
       <div className={classes.baseContainer}>
         <div className={classes.base}>
           <div className={classes.logoContainer}>
-            <img alt="comma" src="/images/comma-white.png" className={classes.logoImg} />
+            <img alt="rtz" src="/images/rtz-white.png" className={classes.logoImg} />
           </div>
           <div className={classes.logoSpacer}>&nbsp;</div>
           <Typography className={classes.logoText}>RTZ</Typography>

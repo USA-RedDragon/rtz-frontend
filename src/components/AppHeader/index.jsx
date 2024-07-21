@@ -95,7 +95,7 @@ const AppHeader = ({
                 className={classes.logoImgLink}
                 onClick={filterRegularClick(() => dispatch(selectDevice(dongleId)))}
               >
-                <img alt="comma" src="/images/comma-white.png" className={classes.logoImg} />
+                <img alt="rtz" src="/images/rtz-white.png" className={classes.logoImg} />
               </a>
             )}
           <a
