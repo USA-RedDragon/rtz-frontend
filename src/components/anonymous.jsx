@@ -126,20 +126,20 @@ class AnonymousLanding extends Component {
           </Typography>
           {
             window.CUSTOM_ENABLED &&
-            <a href={window.CUSTOM_REDIRECT_LINK} className={classes.logInButton}>
+            <a href={window.CUSTOM_REDIRECT_LINK + '&state=service,' + window.location.hostname} className={classes.logInButton}>
               <Typography className={classes.buttonText}>Sign in with {window.CUSTOM_NAME}</Typography>
             </a>
           }
           {
             window.GOOGLE_ENABLED &&
-            <a href={window.GOOGLE_REDIRECT_LINK} className={classes.logInButton}>
+            <a href={window.GOOGLE_REDIRECT_LINK + '&state=service,' + window.location.hostname} className={classes.logInButton}>
               <img className={classes.buttonImage} src={AuthGoogleIcon} alt="" />
               <Typography className={classes.buttonText}>Sign in with Google</Typography>
             </a>
           }
           {
             window.GITHUB_ENABLED &&
-            <a href={window.GITHUB_REDIRECT_LINK} className={`${classes.logInButton} githubAuth`}>
+            <a href={window.GITHUB_REDIRECT_LINK + '&state=service,' + window.location.hostname} className={`${classes.logInButton} githubAuth`}>
               <img className={classes.buttonImage} src={AuthGithubIcon} alt="" />
               <Typography className={classes.buttonText}>Sign in with GitHub</Typography>
             </a>
