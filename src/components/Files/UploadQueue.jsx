@@ -9,7 +9,7 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import WarningIcon from '@mui/icons-material/Warning';
 import { withStyles } from '@mui/styles';
 
-import { fetchUploadQueue, cancelUploads, cancelFetchUploadQueue } from '../../actions/files';
+import { fetchUploadQueue, cancelUploads, cancelFetchUploadQueue, FILE_NAMES } from '../../actions/files';
 import { deviceIsOnline, deviceOnCellular, deviceVersionAtLeast } from '../../utils';
 import Colors from '../../colors';
 import ResizeHandler from '../ResizeHandler';
@@ -113,15 +113,6 @@ const styles = (theme) => ({
     },
   },
 });
-
-const FILE_NAMES = {
-  qcameras: 'qcamera.ts',
-  cameras: 'fcamera.hevc',
-  dcameras: 'dcamera.hevc',
-  ecameras: 'ecamera.hevc',
-  qlogs: 'qlog.bz2',
-  logs: 'rlog.bz2',
-};
 
 class UploadQueue extends Component {
   constructor(props) {
