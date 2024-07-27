@@ -39,7 +39,7 @@
     "@mui/icons-material": "^5.16.5",
     "@mui/material": "^5.16.5",
     "@mui/styles": "^5.16.5",
-    "@reduxjs/toolkit": "^2.2.6",
+    "@reduxjs/toolkit": "^2.2.7",
     "dayjs": "^1.11.12",
     "debounce": "^1.2.1",
     "global": "^4.4.0",
