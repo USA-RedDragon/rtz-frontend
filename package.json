@@ -78,7 +78,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "@vitest/ui": "^2.0.5",
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.20",
     "camelcase": "^8.0.0",
     "cypress": "^13.13.2",
     "cypress-mochawesome-reporter": "^3.8.2",
