@@ -108,8 +108,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(redux@5.0.1)
       web-vitals:
-        specifier: ^4.2.2
-        version: 4.2.2
+        specifier: ^4.2.3
+        version: 4.2.3
     devDependencies:
       '@eslint/compat':
         specifier: ^1.1.1
@@ -5256,8 +5256,8 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  web-vitals@4.2.2:
-    resolution: {integrity: sha512-nYfoOqb4EmElljyXU2qdeE76KsvoHdftQKY4DzA9Aw8DervCg2bG634pHLrJ/d6+B4mE3nWTSJv8Mo7B2mbZkw==}
+  web-vitals@4.2.3:
+    resolution: {integrity: sha512-/CFAm1mNxSmOj6i0Co+iGFJ58OS4NRGVP+AWS/l509uIK5a1bSoIVaHz/ZumpHTfHSZBpgrJ+wjfpAOrTHok5Q==}
 
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
@@ -11217,7 +11217,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  web-vitals@4.2.2: {}
+  web-vitals@4.2.3: {}
 
   webidl-conversions@3.0.1: {}
 
