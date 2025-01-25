@@ -28,8 +28,8 @@ describe('reverseLookup', () => {
       place: 'W Laurel St',
     });
     expect(await reverseLookup([-77.036551, 38.898104], true)).toEqual({
-      details: 'Washington, DC 20500, United States',
-      place: 'White House Lawn',
+      details: 'Washington, DC 20037, United States',
+      place: 'Pennsylvania Ave NW',
     });
     expect(await reverseLookup([-0.106640, 51.514209], true)).toEqual({
       details: 'London, EC4A 2BB, United Kingdom',
