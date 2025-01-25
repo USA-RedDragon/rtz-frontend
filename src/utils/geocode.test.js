@@ -32,7 +32,7 @@ describe('reverseLookup', () => {
       place: 'Pennsylvania Ave NW',
     });
     expect(await reverseLookup([-0.106640, 51.514209], true)).toEqual({
-      details: 'London, EC4A 2BB, United Kingdom',
+      details: 'London, EC4Y 1HY, United Kingdom',
       place: 'Fleet St',
     });
     expect(await reverseLookup([-2.076843, 51.894799], true)).toEqual({
