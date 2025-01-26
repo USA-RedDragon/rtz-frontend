@@ -101,7 +101,7 @@
     "vite-plugin-svgr": "^4.3.0",
     "vitest": "^2.0.5",
     "whatwg-fetch": "^3.6.20",
-    "workbox-window": "^7.1.0"
+    "workbox-window": "^7.3.0"
   },
   "browserslist": {
     "production": [
