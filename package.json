@@ -97,7 +97,7 @@
     "start-server-and-test": "^2.0.10",
     "tailwindcss": "^3.4.17",
     "vite": "^5.4.14",
-    "vite-plugin-pwa": "^0.20.3",
+    "vite-plugin-pwa": "^0.21.1",
     "vite-plugin-svgr": "^4.2.0",
     "vitest": "^2.0.5",
     "whatwg-fetch": "^3.6.20",
