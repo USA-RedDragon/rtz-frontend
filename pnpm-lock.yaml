@@ -21,8 +21,8 @@ importers:
         specifier: ^11.13.0
         version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1)
       '@mapbox/mapbox-sdk':
-        specifier: ^0.16.0
-        version: 0.16.0
+        specifier: ^0.16.1
+        version: 0.16.1
       '@mui/icons-material':
         specifier: ^6.0.1
         version: 6.0.1(@mui/material@6.0.1(@emotion/react@11.13.3(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.18)(react@18.3.1)
@@ -1201,8 +1201,8 @@ packages:
   '@mapbox/mapbox-gl-supported@3.0.0':
     resolution: {integrity: sha512-2XghOwu16ZwPJLOFVuIOaLbN0iKMn867evzXFyf0P22dqugezfJwLmdanAgU25ITvz1TvOfVP4jsDImlDJzcWg==}
 
-  '@mapbox/mapbox-sdk@0.16.0':
-    resolution: {integrity: sha512-9ZsVY+YVCsodvSAxWvcV2fQiW0WmfY7tSPTLDtiziTo749Muv/N8Z6g1+nySmml4kkuGT2LKjgEPIiMf2MvfIg==}
+  '@mapbox/mapbox-sdk@0.16.1':
+    resolution: {integrity: sha512-dyZrmg+UL/Gp5mGG3CDbcwGSUMYYrfbd9hdp0rcA3pHSf3A9eYoXO9nFiIk6SzBwBVMzHENJz84ZHdqM0MDncQ==}
     engines: {node: '>=6'}
 
   '@mapbox/parse-mapbox-token@0.2.0':
@@ -6849,7 +6849,7 @@ snapshots:
 
   '@mapbox/mapbox-gl-supported@3.0.0': {}
 
-  '@mapbox/mapbox-sdk@0.16.0':
+  '@mapbox/mapbox-sdk@0.16.1':
     dependencies:
       '@mapbox/fusspot': 0.4.0
       '@mapbox/parse-mapbox-token': 0.2.0
