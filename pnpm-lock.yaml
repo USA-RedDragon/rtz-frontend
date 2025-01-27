@@ -157,8 +157,8 @@ importers:
         specifier: ^3.8.2
         version: 3.8.2(cypress@13.17.0)(mocha@11.1.0)
       cypress-multi-reporters:
-        specifier: ^1.6.4
-        version: 1.6.4(mocha@11.1.0)
+        specifier: ^2.0.5
+        version: 2.0.5(mocha@11.1.0)
       cypress-wait-for-stable-dom:
         specifier: ^0.1.0
         version: 0.1.0
@@ -2320,8 +2320,8 @@ packages:
     peerDependencies:
       cypress: '>=6.2.0'
 
-  cypress-multi-reporters@1.6.4:
-    resolution: {integrity: sha512-3xU2t6pZjZy/ORHaCvci5OT1DAboS4UuMMM8NBAizeb2C9qmHt+cgAjXgurazkwkPRdO7ccK39M5ZaPCju0r6A==}
+  cypress-multi-reporters@2.0.5:
+    resolution: {integrity: sha512-5ReXlNE7C/9/rpDI3z0tAJbPXsTHK7P3ogvUtBntQlmctRQ+sSMts7dIQY5MTb0XfBSge3CuwvNvaoqtw90KSQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       mocha: '>=3.1.2'
@@ -7863,11 +7863,12 @@ snapshots:
     transitivePeerDependencies:
       - mocha
 
-  cypress-multi-reporters@1.6.4(mocha@11.1.0):
+  cypress-multi-reporters@2.0.5(mocha@11.1.0):
     dependencies:
       debug: 4.4.0(supports-color@8.1.1)
       lodash: 4.17.21
       mocha: 11.1.0
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
