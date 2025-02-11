@@ -151,11 +151,11 @@ importers:
         specifier: ^8.0.0
         version: 8.0.0
       cypress:
-        specifier: ^13.17.0
-        version: 13.17.0
+        specifier: ^14.0.3
+        version: 14.0.3
       cypress-mochawesome-reporter:
         specifier: ^3.8.2
-        version: 3.8.2(cypress@13.17.0)(mocha@11.1.0)
+        version: 3.8.2(cypress@14.0.3)(mocha@11.1.0)
       cypress-multi-reporters:
         specifier: ^1.6.4
         version: 1.6.4(mocha@11.1.0)
@@ -2329,9 +2329,9 @@ packages:
   cypress-wait-for-stable-dom@0.1.0:
     resolution: {integrity: sha512-iVJc6CDzlu1xUnTcZph+zbkOlImaDelpvRv4G+3naugvjkF6b9EFpDmRCC/16xL1pqpkFq4rFyfhuNw4C3PQjw==}
 
-  cypress@13.17.0:
-    resolution: {integrity: sha512-5xWkaPurwkIljojFidhw8lFScyxhtiFHl/i/3zov+1Z5CmY4t9tjIdvSXfu82Y3w7wt0uR9KkucbhkVvJZLQSA==}
-    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+  cypress@14.0.3:
+    resolution: {integrity: sha512-yIdvobANw3kS+KF/t5vwjjPNufBA8ux7iQHaWxPTkUw2yCKI72m9mKM24eOwE84Wk4ALPsSvEcGbDrwgmhr4RA==}
+    engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
   dashdash@1.14.1:
@@ -7852,10 +7852,10 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  cypress-mochawesome-reporter@3.8.2(cypress@13.17.0)(mocha@11.1.0):
+  cypress-mochawesome-reporter@3.8.2(cypress@14.0.3)(mocha@11.1.0):
     dependencies:
       commander: 10.0.1
-      cypress: 13.17.0
+      cypress: 14.0.3
       fs-extra: 10.1.0
       mochawesome: 7.1.3(mocha@11.1.0)
       mochawesome-merge: 4.3.0
@@ -7873,7 +7873,7 @@ snapshots:
 
   cypress-wait-for-stable-dom@0.1.0: {}
 
-  cypress@13.17.0:
+  cypress@14.0.3:
     dependencies:
       '@cypress/request': 3.0.7
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
