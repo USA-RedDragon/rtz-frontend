@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-pnpm
@@ -27,7 +27,7 @@ jobs:
           path: dist/
 
   lint:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-pnpm
@@ -53,7 +53,7 @@ jobs:
           path: eslint_report.json
 
   unit:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [ build ]
     steps:
       - uses: actions/checkout@v4
@@ -92,7 +92,7 @@ jobs:
           job_name: Tests
 
   e2e:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [ build ]
     strategy:
       fail-fast: false
@@ -155,7 +155,7 @@ jobs:
   e2e-results:
     if: always()
     needs: [ e2e ]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - run: |
           result="${{ needs.e2e.result }}"
@@ -168,7 +168,7 @@ jobs:
 
   lighthouse:
     needs: [ build ]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-pnpm
