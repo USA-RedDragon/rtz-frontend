@@ -35,7 +35,7 @@
     "@commaai/my-comma-auth": "^1.4.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@mapbox/mapbox-sdk": "^0.16.1",
+    "@mapbox/mapbox-sdk": "^0.16.2",
     "@mui/icons-material": "^6.4.2",
     "@mui/material": "^6.4.2",
     "@mui/styles": "^6.4.2",
